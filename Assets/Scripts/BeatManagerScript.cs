@@ -90,6 +90,7 @@ public class BeatManagerScript : MonoBehaviour
             {
                 onOrOff = false;
                 player.GetComponent<Player>().maxVelocity = 5;
+                player.GetComponent<Player>().nextSection();
             }
         }
     }
