@@ -20,7 +20,7 @@ public class BeatManagerScript : MonoBehaviour
     private float time = 0;
     private int count = 0;
 
-    
+
     [SerializeField] float timeToClick;
     [SerializeField] float timingWindow;
     [SerializeField] float spawnDistanceMultiplier;
@@ -43,6 +43,7 @@ public class BeatManagerScript : MonoBehaviour
 
     //bool so code can stop and start
     public bool onOrOff = false;
+    public float timeToPlay;
 
 
 
@@ -64,9 +65,9 @@ public class BeatManagerScript : MonoBehaviour
         foreach (NoteDirection noteDirection in Enum.GetValues(typeof(NoteDirection)))
         {
             GameObject lineToSpawn;
-            if(noteDirection==NoteDirection.left || noteDirection==NoteDirection.right) lineToSpawn = VerticalLine;
+            if (noteDirection == NoteDirection.left || noteDirection == NoteDirection.right) lineToSpawn = VerticalLine;
             else lineToSpawn = HorizontalLine;
-            Instantiate(lineToSpawn,this.transform.position + GetDirectionVector(noteDirection)*targetPositionMultiplier,this.transform.rotation,this.transform);
+            Instantiate(lineToSpawn, this.transform.position + GetDirectionVector(noteDirection) * targetPositionMultiplier, this.transform.rotation, this.transform);
         }
     }
 
@@ -76,6 +77,7 @@ public class BeatManagerScript : MonoBehaviour
         if(onOrOff)
         {
             time += Time.deltaTime;
+            timeToPlay -= Time.deltaTime;
             if (time >= timeInterval)
             {
                 if (count % 4 == 0) SpawnObject(NoteDirection.up);
@@ -84,6 +86,13 @@ public class BeatManagerScript : MonoBehaviour
                 if (count % 4 == 3) SpawnObject(NoteDirection.right);
                 time -= timeInterval;
                 count++;
+            }
+            //keeping track of time left to fix this section
+            if(timeToPlay <= 0)
+            {
+                onOrOff = false;
+                player.GetComponent<Player>().maxVelocity = 5;
+                player.GetComponent<Player>().nextSection();
             }
         }
     }
@@ -112,7 +121,11 @@ public class BeatManagerScript : MonoBehaviour
     public void OnTap(NoteDirection noteDirection)
     {
         Queue<GameObject> currentQueue = GetQueue(noteDirection);
-        GameObject objectHit = currentQueue.Peek();
+        GameObject objectHit = null;
+        if (currentQueue.Count > 0)
+        {
+            objectHit = currentQueue.Peek();
+        }
         if (objectHit != null)
         {
             objectHit.GetComponent<BeatScript>().OnHit();
