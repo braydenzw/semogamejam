@@ -14,4 +14,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   songName: Danse Macabre
   songBpm: 120
-  beats: []
+  notesPerMeasure: 4
+  noteDivision: 4
+  beats:
+  - timestamp: 0
+    duration: 0
+    noteDirection: 0
+  - timestamp: 0
+    duration: 0
+    noteDirection: 0
+  - timestamp: 1
+    duration: 0
+    noteDirection: 0
+  - timestamp: 2
+    duration: 0
+    noteDirection: 0
+  - timestamp: 2.5
+    duration: 0
+    noteDirection: 0
+  - timestamp: 3
+    duration: 1
+    noteDirection: 3

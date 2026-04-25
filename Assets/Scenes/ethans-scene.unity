@@ -3495,6 +3495,8 @@ GameObject:
   - component: {fileID: 661002526}
   - component: {fileID: 661002525}
   - component: {fileID: 661002524}
+  - component: {fileID: 661002527}
+  - component: {fileID: 661002528}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -3563,9 +3565,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 661002523}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a09fc68bca0257e43803815275cd4fad, type: 3}
+  m_Script: {fileID: 11500000, guid: 40d3605040f69c64f923e06c1fea1981, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 0}
+  animator: {fileID: 0}
+  PlayerSprite: []
+  beatManager: {fileID: 1788880444}
+  velocityAdder: 20
+  maxVelocity: 30
+  score: 0
+  circleCollider: {fileID: 0}
+  player: {fileID: 0}
 --- !u!4 &661002526
 Transform:
   m_ObjectHideFlags: 0
@@ -3578,9 +3589,50 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1788880446}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &661002527
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661002523}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &661002528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661002523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35cdc46d5dd6f6a4dba4f8c9af01806f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hpText: {fileID: 0}
 --- !u!1 &667825902
 GameObject:
   m_ObjectHideFlags: 0
@@ -7702,10 +7754,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1788880444}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb94507008cb30a448b88bcc0c939362, type: 3}
+  m_Script: {fileID: 11500000, guid: 0069d6769874feb4dbea2a775d3c2bb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeInterval: 1
+  timeToClick: 0.5
+  timingWindow: 0.1
+  spawnDistanceMultiplier: 5
+  targetPositionMultiplier: 1
+  HorizontalLine: {fileID: 6999076754036511898, guid: 6b7c5139db90e2e499e7bce78768fc60, type: 3}
+  VerticalLine: {fileID: 3644432699344485201, guid: 91e016006016fcb44a237bf3f66d8e2b, type: 3}
   beatPrefab: {fileID: 8170639857555179204, guid: d18da8aa325b546469e8a13cc10d3bd2, type: 3}
+  player: {fileID: 661002523}
+  scoreText: {fileID: 0}
+  onOrOff: 0
+  timeToPlay: 0
 --- !u!4 &1788880446
 Transform:
   m_ObjectHideFlags: 0
@@ -7714,12 +7777,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1788880444}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 661002526}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1797305734
 GameObject:
@@ -9085,5 +9148,4 @@ SceneRoots:
   m_Roots:
   - {fileID: 1029122201}
   - {fileID: 1534191896}
-  - {fileID: 1788880446}
   - {fileID: 661002526}
