@@ -10,6 +10,9 @@ public class Enums : MonoBehaviour
         Success,
         Failure, 
     }
+
+    public enum NoteDirection { Left, Down, Up, Right }
+
     void Start()
     {
 
