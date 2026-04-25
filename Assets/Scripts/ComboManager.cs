@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Xml.Linq;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 
+// handles combos and attacking the enemy
 // call ComboManager.instance to use these functions/variables
 public class ComboManager : MonoBehaviour
 {
@@ -17,6 +19,8 @@ public class ComboManager : MonoBehaviour
     [SerializeField] AudioClip success;
     [SerializeField] AudioClip failure;
     [SerializeField] TMP_Text comboText;
+    [SerializeField] GameObject currentEnemy;
+    private Enemy currentEnemyScript;
     
     private void Awake()
     {
@@ -24,6 +28,13 @@ public class ComboManager : MonoBehaviour
         {
             instance = this;
         }
+
+        UpdateEnemy();
+    }
+
+    private void UpdateEnemy()
+    {
+        currentEnemyScript = currentEnemy.GetComponent<Enemy>();
     }
 
     // on hit, extend combo
@@ -32,7 +43,7 @@ public class ComboManager : MonoBehaviour
         combo++;
         SoundManager.instance.PlaySound(success, transform, 1f);
         comboText.text = "Combo: " + combo;
-        CalculateDamage();
+        DoDamage();
     }
 
     // on miss, reset combo to 0
@@ -41,7 +52,7 @@ public class ComboManager : MonoBehaviour
         combo = 0;
         SoundManager.instance.PlaySound(failure, transform, 1f);
         comboText.text = "Combo: " + combo;
-        CalculateDamage();
+        DoDamage();
     }
 
     private void CalculateDamage()
@@ -67,6 +78,18 @@ public class ComboManager : MonoBehaviour
         {
             comboText.color = Color.red;
             damage = 5;
+        }
+    }
+
+    private void DoDamage()
+    {
+        CalculateDamage();
+        if (currentEnemyScript != null)
+        {
+            currentEnemyScript.TakeDamage(damage);
+        } else
+        {
+            Debug.Log("CURRENT ENEMY UNASSIGNED IN COMBOMANAGER");
         }
     }
 }
