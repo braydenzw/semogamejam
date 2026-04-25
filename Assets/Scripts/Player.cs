@@ -13,20 +13,25 @@ public class Player : MonoBehaviour
     [SerializeField] private Sprite[] PlayerSprite;
     [SerializeField] private GameObject beatManager;
     [SerializeField] private float velocityAdder;
-    [SerializeField] private float maxVelocity;
+    [SerializeField] public float maxVelocity;
 
     private Rigidbody2D rigidbody;
     public Collider2D circleCollider;
+    public GameObject player;
+    private int sectionNumber;
+
 
     // Start is called before the first frame update
     void Start()
     {
         rigidbody = this.GetComponent<Rigidbody2D>();
+        nextSection();
     }
 
     // Update is called once per frame
     void Update()
     {
+        beatManager.transform.position = player.transform.position;
         if (Input.GetKeyDown(KeyCode.W))
         {
             Attack(NoteDirection.up);
@@ -96,6 +101,29 @@ public class Player : MonoBehaviour
             this.rigidbody.velocity = Vector2.zero;
             Debug.Log("COLLISION");
             beatManager.GetComponent<BeatManagerScript>().onOrOff = true;
+            beatManager.GetComponent<BeatManagerScript>().timeToPlay = Random.value + 10;
+            maxVelocity = 0;
+        }
+    }
+    
+    //returns a game object based on a randomly generated value
+    public void nextSection()
+    {
+        sectionNumber = (int)(Random.value*3);
+        switch(sectionNumber)
+        {
+            case 0:
+                circleCollider = GameObject.Find("Brass Section").GetComponent<CircleCollider2D>();
+                Debug.Log("BRASS SELECTED!!!");
+                break;
+            case 1:
+                circleCollider =  GameObject.Find("Woodwind Section").GetComponent<CircleCollider2D>();
+                Debug.Log("WOOD SELECTED!!!");
+                break;
+            case 2:
+                circleCollider =  GameObject.Find("Strings Section").GetComponent<CircleCollider2D>();
+                Debug.Log("STRINGS SELECTED!!!");
+                break;
         }
     }
 }
