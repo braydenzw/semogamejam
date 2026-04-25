@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.Xml.Linq;
 using UnityEngine;
 
+// call ComboManager.instance to use these functions/variables
 public class ComboManager : MonoBehaviour
 {
+    public static ComboManager instance;
+
     // the no. of successful notes hit in a streak
     private int combo;
     // the player's damage value for each note hit,
@@ -18,6 +21,7 @@ public class ComboManager : MonoBehaviour
     {
         combo++;
         SoundManager.instance.PlaySound(success, transform, 1f);
+        CalculateDamage();
     }
 
     // on miss, reset combo to 0
@@ -25,6 +29,7 @@ public class ComboManager : MonoBehaviour
     {
         combo = 0;
         SoundManager.instance.PlaySound(failure, transform, 1f);
+        CalculateDamage();
     }
 
     private void CalculateDamage()
@@ -46,23 +51,5 @@ public class ComboManager : MonoBehaviour
         {
             damage = 5;
         }
-    }
-
-    private void Update()
-    {
-        // DEBUG; REMOVE IF NOT NEEDED
-        /*
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            ExtendCombo();
-            CalculateDamage();
-            Debug.Log("combo: " + combo);
-            Debug.Log("damage: " + damage);
-        } else if (Input.GetKeyDown(KeyCode.A))
-        {
-            EndCombo();
-            CalculateDamage();
-        }
-        */
     }
 }

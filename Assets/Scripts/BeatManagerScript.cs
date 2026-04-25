@@ -165,11 +165,13 @@ public class BeatManagerScript : MonoBehaviour
         {
            // Debug.Log("TEMP: FAILURE");
             player.GetComponent<Health>().Damage();
+            //ComboManager.instance.EndCombo();
         }
         else if (beatScore == BeatScore.Success)
         {
            // Debug.Log("TEMP: SUCCESS");
             player.GetComponent<Player>().score++;
+            //ComboManager.instance.ExtendCombo();
             scoreText.text = "Score: " + player.GetComponent<Player>().score;
         }
     }

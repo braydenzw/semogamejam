@@ -15,12 +15,6 @@ public class BeatScript : MonoBehaviour
     private double timeAlive;
     private GameObject scoringHandler;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -54,6 +48,7 @@ public class BeatScript : MonoBehaviour
         if(Math.Abs(timeAlive-timeToClick)<=timingWindow)
         {
             GetComponentInParent<BeatManagerScript>().BeatDeath(this.gameObject,BeatScore.Success,noteDirection);
+            
         }
         else
         {
