@@ -43,6 +43,7 @@ public class BeatManagerScript : MonoBehaviour
 
     //bool so code can stop and start
     public bool onOrOff = false;
+    public float timeToPlay;
 
 
 
@@ -74,6 +75,7 @@ public class BeatManagerScript : MonoBehaviour
         if(onOrOff)
         {
             time += Time.deltaTime;
+            timeToPlay -= Time.deltaTime;
             if (time >= timeInterval)
             {
                 if (count % 4 == 0) SpawnObject(NoteDirection.up);
@@ -82,6 +84,10 @@ public class BeatManagerScript : MonoBehaviour
                 if (count % 4 == 3) SpawnObject(NoteDirection.right);
                 time -= timeInterval;
                 count++;
+            }
+            if(timeToPlay <= 0)
+            {
+                onOrOff = false;
             }
         }
     }

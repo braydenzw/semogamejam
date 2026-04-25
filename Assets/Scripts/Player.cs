@@ -13,10 +13,12 @@ public class Player : MonoBehaviour
     [SerializeField] private Sprite[] PlayerSprite;
     [SerializeField] private GameObject beatManager;
     [SerializeField] private float velocityAdder;
-    [SerializeField] private float maxVelocity;
+    [SerializeField] public float maxVelocity;
 
     private Rigidbody2D rigidbody;
     public Collider2D circleCollider;
+    public GameObject player;
+
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +29,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        beatManager.transform.position = player.transform.position;
         if (Input.GetKeyDown(KeyCode.W))
         {
             Attack(NoteDirection.up);
@@ -96,6 +99,8 @@ public class Player : MonoBehaviour
             this.rigidbody.velocity = Vector2.zero;
             Debug.Log("COLLISION");
             beatManager.GetComponent<BeatManagerScript>().onOrOff = true;
+            beatManager.GetComponent<BeatManagerScript>().timeToPlay = Random.value + 10;
+            maxVelocity = 0;
         }
     }
 }
