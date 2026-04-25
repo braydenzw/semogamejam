@@ -79,12 +79,18 @@ public class RhythmRecorder : MonoBehaviour
         {
             // this will calculate the time interval in relation to bpm -> 60 seconds in a min / (bpm * time interval)
             // for instance, a quarter note @ 120bpm is 60 / (120 * (4/4)) = 0.5 sec
-            float beatInterval = 60f / (songMap.songBpm * (songMap.notesPerMeasure / songMap.noteDivision));
-            startTime = Mathf.Round(startTime / beatInterval) * beatInterval;
-            duration = Mathf.Round(duration / beatInterval) * beatInterval;
+            float beatInterval = 60f / (songMap.songBpm * ((float)songMap.notesPerMeasure / songMap.noteDivision));
+
+            // this is so held notes do not cause the rest of song to be offset
+            float rawEndTime = startTime + duration;
+            float snappedStart = Mathf.Round(startTime / beatInterval) * beatInterval;
+            float snappedEnd = Mathf.Round(rawEndTime / beatInterval) * beatInterval;
+
+            startTime = snappedStart;
+            duration = snappedEnd - snappedStart;
         }
 
-        // this just ensures that short taps are not counted as holds
+        // this just ensures that short taps are not counted as holds and that there are not negative times
         float noteDuration = (duration < 0.15f) ? 0f : duration;
 
         BeatData newBeat = new BeatData
@@ -95,9 +101,6 @@ public class RhythmRecorder : MonoBehaviour
         };
 
         songMap.beats.Add(newBeat);
-
-        string noteType = noteDuration > 0 ? "hold" : "tap";
-        Debug.Log($"recorded {noteType}: {direction} at {startTime:F2}s");
     }
 
     private void OnDrawGizmos() // this will actually display the beats as colored blocks rather than just a numbered list
