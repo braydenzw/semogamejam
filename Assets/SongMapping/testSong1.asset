@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19a106f63d32e614ea114e0aad4b3dd3, type: 3}
   m_Name: testSong1
   m_EditorClassIdentifier: 
-  songName: test song idk
-  songBpm: 67
+  songName: Danse Macabre
+  songBpm: 120
   beats: []

@@ -149,7 +149,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ad2dc502c7be14c4c95c5f1f86feda5b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7885b9b24f612584eaadd0513db52159, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -373,6 +373,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   songMap: {fileID: 11400000, guid: 90d5470d91274df478e20bdd87646024, type: 2}
   audioSource: {fileID: 262213321}
+  useQuantization: 1
+  noteDivision: 4
+  visualSpacing: 10
   leftKey: 97
   downKey: 115
   upKey: 119

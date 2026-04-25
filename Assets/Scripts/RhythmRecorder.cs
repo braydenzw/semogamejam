@@ -2,11 +2,19 @@ using UnityEngine;
 
 public class RhythmRecorder : MonoBehaviour
 {
-    [Header("Settings")]
+    [Header("settings")]
     public SongMap songMap;
     public AudioSource audioSource;
 
-    [Header("Controls")]
+    [Header("bpm syncing stuff")]
+    public bool useQuantization = true;
+    [Tooltip("this is just 4 = quarter notes, 8 = eighth notes, 16 = sixteenth notes, etc.")]
+    public int noteDivision = 4;
+
+    [Header("mapping visualizer")]
+    public float visualSpacing = 10f;
+
+    [Header("controls")]
     public KeyCode leftKey = KeyCode.A;
     public KeyCode downKey = KeyCode.S;
     public KeyCode upKey = KeyCode.W;
@@ -26,10 +34,9 @@ public class RhythmRecorder : MonoBehaviour
 
     void Update()
     {
-        // you can start and reset recording with spacebar
         if (Input.GetKeyDown(KeyCode.Space) && !isRecording)
         {
-            StartRecording();
+            StartMapping();
         }
 
         if (!isRecording) return;
@@ -38,23 +45,20 @@ public class RhythmRecorder : MonoBehaviour
 
         for (int i = 0; i < keyArray.Length; i++)
         {
-            // this records when WASD is pressed
             if (Input.GetKeyDown(keyArray[i]))
             {
                 startTimes[i] = currentSongTime;
                 isHolding[i] = true;
             }
 
-            // this records when WASD is released and calculates hold time
             if (Input.GetKeyUp(keyArray[i]) && isHolding[i])
             {
                 float duration = currentSongTime - startTimes[i];
-                SaveNote((NoteDirection)i, startTimes[i], duration);
+                SaveBeat((NoteDirection)i, startTimes[i], duration);
                 isHolding[i] = false;
             }
         }
 
-        // auto-stops song once finished
         if (!audioSource.isPlaying && isRecording)
         {
             isRecording = false;
@@ -62,28 +66,78 @@ public class RhythmRecorder : MonoBehaviour
         }
     }
 
-    void StartRecording()
+    void StartMapping()
     {
         songMap.beats.Clear();
         songStartDspTime = AudioSettings.dspTime;
         audioSource.Play();
         isRecording = true;
-        Debug.Log("mapping started. use WASD (you can hold for long notes)");
+        Debug.Log("mapping starting... use WASD (hold for long notes)");
     }
 
-    void SaveNote(NoteDirection direction, float startTime, float duration)
+    void SaveBeat(NoteDirection direction, float startTime, float duration)
     {
-        // i just added this safeguard so it doesnt count short taps as like nearly impossible to hit
+        if (useQuantization && songMap.songBpm > 0)
+        {
+            // this will calculate the time interval in relation to bpm -> 60 seconds in a min / (bpm * time interval)
+            // for instance, a quarter note @ 120bpm is 60 / (120 * (4/4)) = 0.5 sec
+            float beatInterval = 60f / (songMap.songBpm * (noteDivision / 4f));
+            startTime = Mathf.Round(startTime / beatInterval) * beatInterval;
+            duration = Mathf.Round(duration / beatInterval) * beatInterval;
+        }
+
+        // this just ensures that short taps are not counted as holds
         float noteDuration = (duration < 0.15f) ? 0f : duration;
 
-        BeatData newNote = new BeatData();
-        newNote.timestamp = startTime;
-        newNote.duration = noteDuration;
-        newNote.noteDirection = direction;
+        BeatData newBeat = new BeatData
+        {
+            timestamp = startTime,
+            duration = noteDuration,
+            noteDirection = direction
+        };
 
-        songMap.beats.Add(newNote);
+        songMap.beats.Add(newBeat);
 
         string noteType = noteDuration > 0 ? "hold" : "tap";
-        Debug.Log($"recorded {noteType}, direction: {direction}, time: {startTime:F2}s, length: {noteDuration:F2}s");
+        Debug.Log($"recorded {noteType}: {direction} at {startTime:F2}s");
+    }
+
+    private void OnDrawGizmos() // this will actually display the beats as colored blocks rather than just a numbered list
+    {
+        if (songMap == null || songMap.beats == null)
+        {
+            return;
+        }
+
+        foreach (var beat in songMap.beats)
+        {
+            // the positions represent note direction on x-axis and time on z-axis
+            Vector3 startPos = new Vector3((int) beat.noteDirection * 2f, 0, beat.timestamp * visualSpacing);
+
+            // color is set depending on direction
+            Gizmos.color = VisualMappingColor(beat.noteDirection);
+
+            if (beat.duration > 0)
+            {
+                // this draws a line connecting the start and end of a hold note
+                Vector3 endPos = startPos + new Vector3(0, 0, beat.duration * visualSpacing);
+                Gizmos.DrawLine(startPos, endPos);
+                Gizmos.DrawWireCube(endPos, Vector3.one * 0.5f);
+            }
+
+            Gizmos.DrawCube(startPos, Vector3.one * 0.7f);
+        }
+    }
+
+    Color VisualMappingColor(NoteDirection dir)
+    {
+        switch (dir)
+        {
+            case NoteDirection.left: return Color.red;
+            case NoteDirection.down: return Color.blue;
+            case NoteDirection.up: return Color.green;
+            case NoteDirection.right: return Color.yellow;
+            default: return Color.white;
+        }
     }
 }
