@@ -1,5 +1,5 @@
 using UnityEngine;
-
+// DEFUNCT NOW OR SMTH IDK LOL
 public class RhythmRecorder : MonoBehaviour
 {
     [Header("settings")]
