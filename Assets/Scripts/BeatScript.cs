@@ -3,11 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using static Enums;
 
 public class BeatScript : MonoBehaviour
 {
     private float timeToClick;
     private float timingWindow;
+    private NoteDirection noteDirection;
     private Vector3 targetPosition;
     private Vector3 startingPosition;
     private double timeAlive;
@@ -32,15 +34,16 @@ public class BeatScript : MonoBehaviour
 
     private void OnMiss()
     {
-        scoringHandler.GetComponent<BeatManagerScript>().BeatDeath(this.gameObject,Enums.BeatScore.Failure);
+        scoringHandler.GetComponent<BeatManagerScript>().BeatDeath(this.gameObject,BeatScore.Failure,noteDirection);
     }
 
-    public void Initialize(float timeToClick, float timingWindow, Vector3 targetPosition, GameObject scoringHandler)
+    public void Initialize(float timeToClick, float timingWindow, Vector3 targetPosition, GameObject scoringHandler, NoteDirection noteDirection)
     {
         this.timeToClick = timeToClick;
         this.timingWindow = timingWindow;
         this.targetPosition = targetPosition;
         this.scoringHandler = scoringHandler;
+        this.noteDirection = noteDirection;
 
         this.startingPosition = this.transform.position;
         this.timeAlive = 0; 
@@ -50,8 +53,7 @@ public class BeatScript : MonoBehaviour
     {
         if(Math.Abs(timeAlive-timeToClick)<=timingWindow)
         {
-            scoringHandler.GetComponent<BeatManagerScript>().BeatDeath(this.gameObject,Enums.BeatScore.Success);
-            
+            scoringHandler.GetComponent<BeatManagerScript>().BeatDeath(this.gameObject,BeatScore.Success,noteDirection);
         }
         else
         {

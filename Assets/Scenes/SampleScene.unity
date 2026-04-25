@@ -600,9 +600,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 792299270}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb94507008cb30a448b88bcc0c939362, type: 3}
+  m_Script: {fileID: 11500000, guid: 0069d6769874feb4dbea2a775d3c2bb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeInterval: 1
+  timeToClick: 0.5
+  timingWindow: 0.1
+  spawnDistanceMultiplier: 0
+  targetPositionMultiplier: 0
   beatPrefab: {fileID: 8170639857555179204, guid: d18da8aa325b546469e8a13cc10d3bd2, type: 3}
   player: {fileID: 4376483}
   scoreText: {fileID: 2001260516}
