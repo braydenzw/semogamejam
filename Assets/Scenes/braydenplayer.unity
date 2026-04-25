@@ -245,11 +245,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1175246232}
   animator: {fileID: 1175246233}
-  PlayerSprite:
-  - {fileID: 21300000, guid: 065f1facb354550458becea5d51054c8, type: 3}
-  - {fileID: 21300000, guid: 2da6434231cbbc341b19beafb3905e30, type: 3}
-  - {fileID: 21300000, guid: a46581dbd86c8d7419cce26e1a5bf242, type: 3}
-  - {fileID: 21300000, guid: 065f1facb354550458becea5d51054c8, type: 3}
+  PlayerSprite: []
 --- !u!4 &1009874753
 Transform:
   m_ObjectHideFlags: 0

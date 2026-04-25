@@ -10,14 +10,14 @@ public class Player : MonoBehaviour
     public Animator animator;
     [SerializeField] private Sprite[] PlayerSprite;
 
-    
+    private int currentDir = 1;
         
     
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -41,10 +41,14 @@ public class Player : MonoBehaviour
 
     void attack(int dir)
     {
+        currentDir = dir;
         animator.SetFloat("Direction", (float)dir);
-        spriteRenderer.flipX = (dir == 2);
-        //animator.SetTrigger("Attack");
+        animator.SetTrigger("Attack");
         //check on beat
+    }
+    void LateUpdate()
+    {
+        spriteRenderer.flipX = (currentDir == 0);
     }
 
 }
