@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
-public enum NoteDirection { Left, Down, Up, Right }
+public enum NoteDirection { left, down, up, right }
 
 [System.Serializable]
 public class BeatData
