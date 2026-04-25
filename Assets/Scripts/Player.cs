@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float maxVelocity;
 
     private Rigidbody2D rigidbody;
+    public Collider2D circleCollider;
 
     // Start is called before the first frame update
     void Start()
@@ -43,13 +44,16 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.UpArrow))
         {
            this.rigidbody.velocity = Vector3.MoveTowards(this.rigidbody.velocity,this.rigidbody.velocity+Vector2.up*maxVelocity,velocityAdder*Time.deltaTime);
-        } else if (Input.GetKey(KeyCode.DownArrow))
+        }
+        if (Input.GetKey(KeyCode.DownArrow))
         {
            this.rigidbody.velocity = Vector3.MoveTowards(this.rigidbody.velocity,this.rigidbody.velocity+Vector2.down*maxVelocity,velocityAdder*Time.deltaTime);
-        } else if (Input.GetKey(KeyCode.LeftArrow))
+        }
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
            this.rigidbody.velocity = Vector3.MoveTowards(this.rigidbody.velocity,this.rigidbody.velocity+Vector2.left*maxVelocity,velocityAdder*Time.deltaTime);
-        } else if (Input.GetKey(KeyCode.RightArrow))
+        }
+        if (Input.GetKey(KeyCode.RightArrow))
         {
            this.rigidbody.velocity = Vector3.MoveTowards(this.rigidbody.velocity,this.rigidbody.velocity+Vector2.right*maxVelocity,velocityAdder*Time.deltaTime);
         }
@@ -84,4 +88,14 @@ public class Player : MonoBehaviour
         return 0;
     }
 
+    //when entering an area, make things happen (should be used for setting up areas later)
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision == circleCollider)
+        {
+            this.rigidbody.velocity = Vector2.zero;
+            Debug.Log("COLLISION");
+            beatManager.GetComponent<BeatManagerScript>().onOrOff = true;
+        }
+    }
 }

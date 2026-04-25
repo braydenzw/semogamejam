@@ -41,6 +41,9 @@ public class BeatManagerScript : MonoBehaviour
     public GameObject player;
     public TMP_Text scoreText;
 
+    //bool so code can stop and start
+    public bool onOrOff = false;
+
 
 
 
@@ -68,15 +71,18 @@ public class BeatManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        time += Time.deltaTime;
-        if (time >= timeInterval)
+        if(onOrOff)
         {
-            if (count % 4 == 0) SpawnObject(NoteDirection.up);
-            if (count % 4 == 1) SpawnObject(NoteDirection.down);
-            if (count % 4 == 2) SpawnObject(NoteDirection.left);
-            if (count % 4 == 3) SpawnObject(NoteDirection.right);
-            time -= timeInterval;
-            count++;
+            time += Time.deltaTime;
+            if (time >= timeInterval)
+            {
+                if (count % 4 == 0) SpawnObject(NoteDirection.up);
+                if (count % 4 == 1) SpawnObject(NoteDirection.down);
+                if (count % 4 == 2) SpawnObject(NoteDirection.left);
+                if (count % 4 == 3) SpawnObject(NoteDirection.right);
+                time -= timeInterval;
+                count++;
+            }
         }
     }
 
@@ -155,12 +161,12 @@ public class BeatManagerScript : MonoBehaviour
         // Handle Scoring
         if (beatScore == BeatScore.Failure)
         {
-            Debug.Log("TEMP: FAILURE");
+           // Debug.Log("TEMP: FAILURE");
             player.GetComponent<Health>().Damage();
         }
         else if (beatScore == BeatScore.Success)
         {
-            Debug.Log("TEMP: SUCCESS");
+           // Debug.Log("TEMP: SUCCESS");
             player.GetComponent<PlayerScript>().score++;
             scoreText.text = "Score: " + player.GetComponent<PlayerScript>().score;
         }
