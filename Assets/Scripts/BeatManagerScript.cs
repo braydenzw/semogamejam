@@ -17,7 +17,7 @@ public class BeatManagerScript : MonoBehaviour
 {
     //// TEST VARIABLES
     [SerializeField] float timeInterval;
-    private float time = 0;
+    private float currentTime = -1;
     private int count = 0;
 
 
@@ -28,6 +28,8 @@ public class BeatManagerScript : MonoBehaviour
 
     [SerializeField] GameObject HorizontalLine;
     [SerializeField] GameObject VerticalLine;
+
+    [SerializeField] SongMap song;
 
     private Stack<GameObject> inactiveBeatsStack; // Handles object pooling
 
@@ -45,8 +47,8 @@ public class BeatManagerScript : MonoBehaviour
     public bool onOrOff = false;
     public float timeToPlay;
 
-
-
+    List<BeatData> beatsList;
+    int beatIndex = 0;
 
 
     // Start is called before the first frame update
@@ -67,6 +69,9 @@ public class BeatManagerScript : MonoBehaviour
             else lineToSpawn = HorizontalLine;
             Instantiate(lineToSpawn, this.transform.position + GetDirectionVector(noteDirection) * targetPositionMultiplier, this.transform.rotation, this.transform);
         }
+
+        InitiateSong(song);
+        
     }
 
     // Update is called once per frame
@@ -74,23 +79,28 @@ public class BeatManagerScript : MonoBehaviour
     {
         if(onOrOff)
         {
-            time += Time.deltaTime;
-            timeToPlay -= Time.deltaTime;
-            if (time >= timeInterval)
+            currentTime += Time.deltaTime;
+            // if (currentTime >= timeInterval)
+            // {
+            //     if (count % 4 == 0) SpawnObject(NoteDirection.up);
+            //     if (count % 4 == 1) SpawnObject(NoteDirection.down);
+            //     if (count % 4 == 2) SpawnObject(NoteDirection.left);
+            //     if (count % 4 == 3) SpawnObject(NoteDirection.right);
+            //     currentTime -= timeInterval;
+            //     count++;
+            // }
+            //keeping track of currentTime left to fix this section
+            // if(timeToPlay <= 0)
+            // {
+            //     onOrOff = false;
+            //     player.GetComponent<Player>().maxVelocity = 5;
+            //     player.GetComponent<Player>().nextSection();
+            // }
+            while(beatIndex<beatsList.Count && beatsList[beatIndex].timestamp<currentTime)
             {
-                if (count % 4 == 0) SpawnObject(NoteDirection.up);
-                if (count % 4 == 1) SpawnObject(NoteDirection.down);
-                if (count % 4 == 2) SpawnObject(NoteDirection.left);
-                if (count % 4 == 3) SpawnObject(NoteDirection.right);
-                time -= timeInterval;
-                count++;
-            }
-            //keeping track of time left to fix this section
-            if(timeToPlay <= 0)
-            {
-                onOrOff = false;
-                player.GetComponent<Player>().maxVelocity = 5;
-                player.GetComponent<Player>().nextSection();
+                BeatData currentBeat = beatsList[beatIndex];
+                SpawnObject(currentBeat.noteDirection);
+                beatIndex++;
             }
         }
     }
@@ -128,6 +138,16 @@ public class BeatManagerScript : MonoBehaviour
         {
             objectHit.GetComponent<BeatScript>().OnHit();
         }
+    }
+
+    public void InitiateSong(SongMap newSong)
+    {
+        beatsList = newSong.beats;
+        for(int i = 0; i<beatsList.Count; i++)
+        {
+            beatsList[i].timestamp=beatsList[i].timestamp-timeToClick;
+        }
+        beatsList.Sort((beat1,beat2)=>beat1.timestamp.CompareTo(beat2.timestamp));
     }
 
     private Queue<GameObject> GetQueue(NoteDirection noteDirection)
