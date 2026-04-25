@@ -12,6 +12,7 @@ public class BeatScript : MonoBehaviour
     private Vector3 startingPosition;
     private double timeAlive;
     private GameObject scoringHandler;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +30,11 @@ public class BeatScript : MonoBehaviour
         }
     }
 
+    private void OnMiss()
+    {
+        scoringHandler.GetComponent<BeatManagerScript>().BeatDeath(this.gameObject,Enums.BeatScore.Failure);
+    }
+
     public void Initialize(float timeToClick, float timingWindow, Vector3 targetPosition, GameObject scoringHandler)
     {
         this.timeToClick = timeToClick;
@@ -37,31 +43,19 @@ public class BeatScript : MonoBehaviour
         this.scoringHandler = scoringHandler;
 
         this.startingPosition = this.transform.position;
-        this.timeAlive = 0;
-        
+        this.timeAlive = 0; 
     }
 
-    private void OnMiss()
-    {
-        
-    }
-
-    private void OnHit()
+    public void OnHit()
     {
         if(Math.Abs(timeAlive-timeToClick)<=timingWindow)
         {
-            // SUCCESS
-            // Perhaps grading ?
+            scoringHandler.GetComponent<BeatManagerScript>().BeatDeath(this.gameObject,Enums.BeatScore.Success);
             
         }
         else
         {
             OnMiss();
         }
-    }
-
-    public void Clicked()
-    {
-        OnHit();
     }
 }
