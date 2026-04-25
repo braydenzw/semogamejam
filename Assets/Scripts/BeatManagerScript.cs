@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using static Enums;
+using TMPro;
 
 /*TODO GENERAL:
 
@@ -18,6 +19,7 @@ public class BeatManagerScript : MonoBehaviour
     private Queue<GameObject> upQueue; // upward object queue
     public GameObject beatPrefab;
     public GameObject player;
+    public TMP_Text scoreText;
 
     // Start is called before the first frame update
     void Start()
@@ -83,6 +85,8 @@ public class BeatManagerScript : MonoBehaviour
         else if(beatScore == BeatScore.Success)
         {
             Debug.Log("TEMP: SUCCESS");
+            player.GetComponent<PlayerScript>().score++;
+            scoreText.text = "Score: " + player.GetComponent<PlayerScript>().score;
         }
     }
 }
