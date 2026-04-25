@@ -85,9 +85,11 @@ public class BeatManagerScript : MonoBehaviour
                 time -= timeInterval;
                 count++;
             }
+            //keeping track of time left to fix this section
             if(timeToPlay <= 0)
             {
                 onOrOff = false;
+                player.GetComponent<Player>().maxVelocity = 5;
             }
         }
     }
