@@ -39,10 +39,10 @@ public class Player : MonoBehaviour
             
     }
 
-    void attack(int 方向)
+    void attack(int dir)
     {
-        animator.SetFloat("Direction", (float)方向);
-        spriteRenderer.flipX = (方向 == 2);
+        animator.SetFloat("Direction", (float)dir);
+        spriteRenderer.flipX = (dir == 2);
         //animator.SetTrigger("Attack");
         //check on beat
     }
