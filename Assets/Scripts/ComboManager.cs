@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Linq;
 using UnityEngine;
+using TMPro;
 
 // call ComboManager.instance to use these functions/variables
 public class ComboManager : MonoBehaviour
@@ -15,12 +16,14 @@ public class ComboManager : MonoBehaviour
     private int damage = 0;
     [SerializeField] AudioClip success;
     [SerializeField] AudioClip failure;
-    
+    [SerializeField] TMP_Text comboText;
+
     // on hit, extend combo
     public void ExtendCombo()
     {
         combo++;
         SoundManager.instance.PlaySound(success, transform, 1f);
+        comboText.text = "combo: " + combo;
         CalculateDamage();
     }
 
@@ -29,6 +32,7 @@ public class ComboManager : MonoBehaviour
     {
         combo = 0;
         SoundManager.instance.PlaySound(failure, transform, 1f);
+        comboText.text = "combo: " + combo;
         CalculateDamage();
     }
 
