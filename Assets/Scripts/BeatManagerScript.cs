@@ -80,6 +80,7 @@ public class BeatManagerScript : MonoBehaviour
             timeToPlay -= Time.deltaTime;
             if (time >= timeInterval)
             {
+                count = UnityEngine.Random.Range(0, 4);
                 if (count % 4 == 0) SpawnObject(NoteDirection.up);
                 if (count % 4 == 1) SpawnObject(NoteDirection.down);
                 if (count % 4 == 2) SpawnObject(NoteDirection.left);
@@ -87,6 +88,7 @@ public class BeatManagerScript : MonoBehaviour
                 time -= timeInterval;
                 count++;
             }
+            /*
             //keeping track of time left to fix this section
             if(timeToPlay <= 0)
             {
@@ -94,6 +96,7 @@ public class BeatManagerScript : MonoBehaviour
                 player.GetComponent<Player>().maxVelocity = 5;
                 player.GetComponent<Player>().nextSection();
             }
+            */
         }
     }
 
@@ -113,7 +116,7 @@ public class BeatManagerScript : MonoBehaviour
         }
         currentQueue.Enqueue(newBeat);
         newBeat.GetComponent<BeatScript>().Initialize(
-            1, 0.1f, this.transform.position + GetDirectionVector(noteDirection) * targetPositionMultiplier, this.gameObject, noteDirection);
+            timeToClick, timingWindow, this.transform.position + GetDirectionVector(noteDirection) * targetPositionMultiplier, this.gameObject, noteDirection);
         newBeat.SetActive(true);
         return newBeat;
     }
@@ -176,13 +179,13 @@ public class BeatManagerScript : MonoBehaviour
         // Handle Scoring
         if (beatScore == BeatScore.Failure)
         {
-           // Debug.Log("TEMP: FAILURE");
+            ComboManager.instance.EndCombo();
             player.GetComponent<Health>().Damage();
         }
         else if (beatScore == BeatScore.Success)
         {
-           // Debug.Log("TEMP: SUCCESS");
             player.GetComponent<Player>().score++;
+            ComboManager.instance.ExtendCombo();
             scoreText.text = "Score: " + player.GetComponent<Player>().score;
         }
     }

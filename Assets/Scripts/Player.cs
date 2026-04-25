@@ -18,9 +18,7 @@ public class Player : MonoBehaviour
     [SerializeField] public float maxVelocity;
 
     private Rigidbody2D rigidbody;
-    public int score = 0;
     public Collider2D circleCollider;
-    public GameObject player;
     private int sectionNumber;
 
 
@@ -28,13 +26,13 @@ public class Player : MonoBehaviour
     void Start()
     {
         rigidbody = this.GetComponent<Rigidbody2D>();
-        nextSection();
+        //nextSection();
     }
 
     // Update is called once per frame
     void Update()
     {
-        beatManager.transform.position = player.transform.position;
+        beatManager.transform.position = gameObject.transform.position;
         if (Input.GetKeyDown(KeyCode.W))
         {
             Attack(NoteDirection.up);
@@ -109,6 +107,7 @@ public class Player : MonoBehaviour
         }
     }
     
+    /*
     //returns a game object based on a randomly generated value
     public void nextSection()
     {
@@ -129,4 +128,5 @@ public class Player : MonoBehaviour
                 break;
         }
     }
+    */
 }
