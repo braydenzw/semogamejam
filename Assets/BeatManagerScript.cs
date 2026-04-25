@@ -17,6 +17,7 @@ public class BeatManagerScript : MonoBehaviour
     private Stack<GameObject> inactiveBeatsStack; // Handles object pooling
     private Queue<GameObject> upQueue; // upward object queue
     public GameObject beatPrefab;
+    public GameObject player;
 
     // Start is called before the first frame update
     void Start()
@@ -77,6 +78,7 @@ public class BeatManagerScript : MonoBehaviour
         if(beatScore == BeatScore.Failure)
         {
             Debug.Log("TEMP: FAILURE");
+            player.GetComponent<Health>().Damage();
         }
         else if(beatScore == BeatScore.Success)
         {
