@@ -20,7 +20,7 @@ public class BeatManagerScript : MonoBehaviour
     private float time = 0;
     private int count = 0;
 
-    
+
     [SerializeField] float timeToClick;
     [SerializeField] float timingWindow;
     [SerializeField] float spawnDistanceMultiplier;
@@ -63,9 +63,9 @@ public class BeatManagerScript : MonoBehaviour
         foreach (NoteDirection noteDirection in Enum.GetValues(typeof(NoteDirection)))
         {
             GameObject lineToSpawn;
-            if(noteDirection==NoteDirection.left || noteDirection==NoteDirection.right) lineToSpawn = VerticalLine;
+            if (noteDirection == NoteDirection.left || noteDirection == NoteDirection.right) lineToSpawn = VerticalLine;
             else lineToSpawn = HorizontalLine;
-            Instantiate(lineToSpawn,this.transform.position + GetDirectionVector(noteDirection)*targetPositionMultiplier,this.transform.rotation,this.transform);
+            Instantiate(lineToSpawn, this.transform.position + GetDirectionVector(noteDirection) * targetPositionMultiplier, this.transform.rotation, this.transform);
         }
     }
 
@@ -119,7 +119,11 @@ public class BeatManagerScript : MonoBehaviour
     public void OnTap(NoteDirection noteDirection)
     {
         Queue<GameObject> currentQueue = GetQueue(noteDirection);
-        GameObject objectHit = currentQueue.Peek();
+        GameObject objectHit = null;
+        if (currentQueue.Count > 0)
+        {
+            objectHit = currentQueue.Peek();
+        }
         if (objectHit != null)
         {
             objectHit.GetComponent<BeatScript>().OnHit();
@@ -176,8 +180,8 @@ public class BeatManagerScript : MonoBehaviour
         else if (beatScore == BeatScore.Success)
         {
            // Debug.Log("TEMP: SUCCESS");
-            player.GetComponent<PlayerScript>().score++;
-            scoreText.text = "Score: " + player.GetComponent<PlayerScript>().score;
+            player.GetComponent<Player>().score++;
+            scoreText.text = "Score: " + player.GetComponent<Player>().score;
         }
     }
 }

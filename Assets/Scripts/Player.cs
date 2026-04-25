@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class Player : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class Player : MonoBehaviour
     [SerializeField] public float maxVelocity;
 
     private Rigidbody2D rigidbody;
+    public int score = 0;
     public Collider2D circleCollider;
     public GameObject player;
     private int sectionNumber;
