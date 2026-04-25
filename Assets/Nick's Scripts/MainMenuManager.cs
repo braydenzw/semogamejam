@@ -5,13 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
-    public void LoadScene(string scenName)
+    public float fadeDuration = 5f;
+    public void LoadScene(string sceneName)
     {
-        SceneManager.LoadScene(scenName);
+        StartCoroutine(FadeOut(sceneName));
     }
 
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    IEnumerator FadeOut(string sceneName)
+    {
+        GetComponent<Animator>().SetTrigger("FadeToWhite");
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene(sceneName);
     }
 }
