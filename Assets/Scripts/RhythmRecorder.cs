@@ -8,8 +8,6 @@ public class RhythmRecorder : MonoBehaviour
 
     [Header("bpm syncing stuff")]
     public bool useQuantization = true;
-    [Tooltip("this is just 4 = quarter notes, 8 = eighth notes, 16 = sixteenth notes, etc.")]
-    public int noteDivision = 4;
 
     [Header("mapping visualizer")]
     public float visualSpacing = 10f;
@@ -81,7 +79,7 @@ public class RhythmRecorder : MonoBehaviour
         {
             // this will calculate the time interval in relation to bpm -> 60 seconds in a min / (bpm * time interval)
             // for instance, a quarter note @ 120bpm is 60 / (120 * (4/4)) = 0.5 sec
-            float beatInterval = 60f / (songMap.songBpm * (noteDivision / 4f));
+            float beatInterval = 60f / (songMap.songBpm * (songMap.notesPerMeasure / songMap.noteDivision));
             startTime = Mathf.Round(startTime / beatInterval) * beatInterval;
             duration = Mathf.Round(duration / beatInterval) * beatInterval;
         }
