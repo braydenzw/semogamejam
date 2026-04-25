@@ -2,14 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Health : MonoBehaviour
 {
     private int health = 10;
+    public TMP_Text hpText;
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -29,5 +31,6 @@ public class Health : MonoBehaviour
             //put animation here
             SceneManager.LoadScene(sceneName:"Assets/Scenes/DeathMenu.unity");
         }
+        hpText.text = "HP: " + health;
     }
 }
