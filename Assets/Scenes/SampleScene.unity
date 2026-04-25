@@ -255,6 +255,7 @@ MonoBehaviour:
   beatManager: {fileID: 792299270}
   velocityAdder: 1
   maxVelocity: 5
+  circleCollider: {fileID: 0}
 --- !u!50 &4376491
 Rigidbody2D:
   serializedVersion: 4
@@ -660,6 +661,7 @@ MonoBehaviour:
   beatPrefab: {fileID: 8170639857555179204, guid: d18da8aa325b546469e8a13cc10d3bd2, type: 3}
   player: {fileID: 4376483}
   scoreText: {fileID: 2001260516}
+  onOrOff: 0
 --- !u!4 &792299272
 Transform:
   m_ObjectHideFlags: 0

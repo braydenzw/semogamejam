@@ -18,7 +18,7 @@ public class BeatScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -34,7 +34,7 @@ public class BeatScript : MonoBehaviour
 
     private void OnMiss()
     {
-        scoringHandler.GetComponent<BeatManagerScript>().BeatDeath(this.gameObject,BeatScore.Failure,noteDirection);
+        GetComponentInParent<BeatManagerScript>().BeatDeath(this.gameObject,BeatScore.Failure,noteDirection);
     }
 
     public void Initialize(float timeToClick, float timingWindow, Vector3 targetPosition, GameObject scoringHandler, NoteDirection noteDirection)
@@ -53,7 +53,7 @@ public class BeatScript : MonoBehaviour
     {
         if(Math.Abs(timeAlive-timeToClick)<=timingWindow)
         {
-            scoringHandler.GetComponent<BeatManagerScript>().BeatDeath(this.gameObject,BeatScore.Success,noteDirection);
+            GetComponentInParent<BeatManagerScript>().BeatDeath(this.gameObject,BeatScore.Success,noteDirection);
         }
         else
         {

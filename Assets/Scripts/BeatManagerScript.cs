@@ -38,7 +38,7 @@ public class BeatManagerScript : MonoBehaviour
     private Queue<GameObject> downQueue; // down object queue
 
     public GameObject beatPrefab;
-    public GameObject player;
+    private GameObject player;
     public TMP_Text scoreText;
 
     //bool so code can stop and start
@@ -51,6 +51,8 @@ public class BeatManagerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = transform.parent.gameObject;
+
         inactiveBeatsStack = new Stack<GameObject>();
 
         leftQueue = new Queue<GameObject>();
@@ -167,8 +169,8 @@ public class BeatManagerScript : MonoBehaviour
         else if (beatScore == BeatScore.Success)
         {
            // Debug.Log("TEMP: SUCCESS");
-            player.GetComponent<PlayerScript>().score++;
-            scoreText.text = "Score: " + player.GetComponent<PlayerScript>().score;
+            player.GetComponent<Player>().score++;
+            scoreText.text = "Score: " + player.GetComponent<Player>().score;
         }
     }
 }

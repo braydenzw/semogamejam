@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     [Header("操你妈")]
     public SpriteRenderer spriteRenderer;
 
+    public int score = 0;
     public Animator animator;
     [SerializeField] private Sprite[] PlayerSprite;
     [SerializeField] private GameObject beatManager;
@@ -56,7 +57,7 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.RightArrow))
         {
            this.rigidbody.velocity = Vector3.MoveTowards(this.rigidbody.velocity,this.rigidbody.velocity+Vector2.right*maxVelocity,velocityAdder*Time.deltaTime);
-        }
+        } 
             
     }
 

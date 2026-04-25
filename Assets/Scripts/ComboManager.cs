@@ -51,6 +51,7 @@ public class ComboManager : MonoBehaviour
     private void Update()
     {
         // DEBUG; REMOVE IF NOT NEEDED
+        /*
         if (Input.GetKeyDown(KeyCode.Space))
         {
             ExtendCombo();
@@ -62,5 +63,6 @@ public class ComboManager : MonoBehaviour
             EndCombo();
             CalculateDamage();
         }
+        */
     }
 }
