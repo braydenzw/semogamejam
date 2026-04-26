@@ -34,7 +34,8 @@ public class SectionHealth : MonoBehaviour
 
     void Start()
     {
-        sectionHealth = 0;
+        sectionHealth = 100;
+        ChangeHealth(0);
         timeToDecrease = (float)0.9;
         inUse = false;
     }

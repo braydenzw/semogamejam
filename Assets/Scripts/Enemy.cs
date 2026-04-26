@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -8,6 +9,7 @@ public class Enemy : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private string neutralColor = "#FFFFFF"; // the color of the enemy at hurt (not getting hurt) 
     [SerializeField] HurtEffectSpawner hurtEffectSpawner;
+    [SerializeField] TextMeshPro healthText;
 
     private void Start()
     {
@@ -18,9 +20,6 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
-        Debug.Log("enemy health: " + health);
-
-        Debug.Log("spawned effect");
         hurtEffectSpawner.SpawnEffect();
 
         if (spriteRenderer != null)

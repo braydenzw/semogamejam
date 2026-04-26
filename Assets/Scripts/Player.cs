@@ -54,13 +54,13 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W))
         {
             Attack(NoteDirection.up);
-        } else if (Input.GetKeyDown(KeyCode.A))
+        } if (Input.GetKeyDown(KeyCode.A))
         {
             Attack(NoteDirection.left);
-        } else if (Input.GetKeyDown(KeyCode.S))
+        } if (Input.GetKeyDown(KeyCode.S))
         {
             Attack(NoteDirection.down);
-        } else if (Input.GetKeyDown(KeyCode.D))
+        } if (Input.GetKeyDown(KeyCode.D))
         {
             Attack(NoteDirection.right);
         }
