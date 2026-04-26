@@ -7,6 +7,7 @@ using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using static Enums;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 /*TODO GENERAL:
 
@@ -57,6 +58,7 @@ public class BeatManagerScript : MonoBehaviour
     void Start()
     {
         minigameOn = false;
+        exitKeyPressed = false;
         inactiveBeatsStack = new Stack<GameObject>();
 
         leftQueue = new Queue<GameObject>();
@@ -79,7 +81,7 @@ public class BeatManagerScript : MonoBehaviour
     void Update()
     {
         currentTime += Time.deltaTime;
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && SceneManager.GetActiveScene() != SceneManager.GetSceneByName("FletcherBossFight"))
         {
             exitKeyPressed = true;
         }
@@ -149,6 +151,7 @@ public class BeatManagerScript : MonoBehaviour
 
         // Interaction Handling
         exitKeyPressed = false;
+        minigameOn = true;
         player.GetComponent<Player>().maxVelocity = 0;
     }
 
@@ -195,15 +198,21 @@ public class BeatManagerScript : MonoBehaviour
         // Handle Scoring
         if (beatScore == BeatScore.Failure)
         {
+            if (section != null)
+            {
             section.GetComponent<SectionHealth>().ChangeHealth(-5);
+            }
             ComboManager.instance.EndCombo();
         }
         else if (beatScore == BeatScore.Success)
         {
-            section.GetComponent<SectionHealth>().ChangeHealth(5);
-            if (section.GetComponent<SectionHealth>().sectionHealth >= 100)
+            if (section != null)
             {
-                section.GetComponent<SectionHealth>().sectionHealth = 100;
+                section.GetComponent<SectionHealth>().ChangeHealth(5);
+                if (section.GetComponent<SectionHealth>().sectionHealth >= 100)
+                {
+                    section.GetComponent<SectionHealth>().sectionHealth = 100;
+                }
             }
             ComboManager.instance.ExtendCombo();
         }

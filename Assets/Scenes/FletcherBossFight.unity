@@ -149,7 +149,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e4998b9743a22bf438b8f28cade4dea2, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 78b036e3f45041d4eb0509efdac56c13, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -268,11 +268,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6603257925159646932, guid: e68e8a8a3904d8c49878d294cbdf795a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6603257925159646932, guid: e68e8a8a3904d8c49878d294cbdf795a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6603257925159646932, guid: e68e8a8a3904d8c49878d294cbdf795a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1448,78 +1448,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1265007579}
   m_CullTransparentMesh: 1
---- !u!1 &1276327405
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1276327408}
-  - component: {fileID: 1276327407}
-  - component: {fileID: 1276327406}
-  m_Layer: 0
-  m_Name: master fucker
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1276327406
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1276327405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab34f41459a5e724785f34ba7d197745, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sectionHealth: 100
-  inUse: 0
-  healthText: {fileID: 0}
-  sectionSong: {fileID: 0}
-  mixer: {fileID: 0}
-  pitchParam: 
-  distWetParam: 
-  flangeWetParam: 
-  health: 1
---- !u!114 &1276327407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1276327405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55048c521dda3ab4f9450cbf7126f356, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  allStems:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  conductor: {fileID: 92615217}
---- !u!4 &1276327408
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1276327405}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.9214515, y: -6.71, z: 0.01978778}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1302665124
 GameObject:
   m_ObjectHideFlags: 0
@@ -1654,75 +1582,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.6, y: -28.5}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1343647843
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1343647846}
-  - component: {fileID: 1343647845}
-  - component: {fileID: 1343647844}
-  m_Layer: 0
-  m_Name: 'fuck you '
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1343647844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1343647843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b11f894dd5075e4ea635420e7d50846, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  violinSection: {fileID: 0}
---- !u!114 &1343647845
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1343647843}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f22a77b256eea384885968f717911561, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mixer: {fileID: 24100000, guid: 83f7034d3b4825c40978b44cb7f7a603, type: 2}
-  pitchParam: ViolinPitch
-  distWetParam: ViolinDistWet
-  flangeWetParam: ViolinFlangeWet
-  brokenPitch: -2.5
-  brokenDistWet: 80
-  brokenFlangeWet: 60
-  health: 1
-  breakKey: 32
-  healKey: 104
-  changeSpeed: 1.5
---- !u!4 &1343647846
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1343647843}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.9214515, y: 0.13187484, z: 0.01978778}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1344627058
 GameObject:
   m_ObjectHideFlags: 0
@@ -2375,7 +2234,7 @@ MonoBehaviour:
   hurtEffectSpawner: {fileID: 1867731988}
   healthText: {fileID: 400613880}
   beatManager: {fileID: 773541157}
-  whippingMyLash: {fileID: 11400000, guid: f2727a4df6c67fa42ad6c6abad134881, type: 2}
+  whippingMyLash: {fileID: 11400000, guid: ef86279b7ffbd114d83258adc2251618, type: 2}
 --- !u!4 &1867731990
 Transform:
   m_ObjectHideFlags: 0
@@ -2397,7 +2256,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 92615218}
   - {fileID: 630216111}
-  - {fileID: 1343647846}
   - {fileID: 344364668}
   - {fileID: 1867731990}
   - {fileID: 1550023245}
@@ -2409,5 +2267,4 @@ SceneRoots:
   - {fileID: 1639871035}
   - {fileID: 1362734892}
   - {fileID: 1147649432}
-  - {fileID: 1276327408}
   - {fileID: 1047644361}

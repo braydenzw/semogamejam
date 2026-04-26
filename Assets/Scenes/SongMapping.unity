@@ -1012,8 +1012,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64e13fbd1f8fb4442b61f4c9a9b9a044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  songMap: {fileID: 11400000, guid: 9a8e4dc5865045d4ca45c51a6c133439, type: 2}
-  midiAsset: {fileID: 102900000, guid: 0a17617e93d6f4a45bfe6411a61358fd, type: 3}
+  songMap: {fileID: 11400000, guid: ef86279b7ffbd114d83258adc2251618, type: 2}
+  midiAsset: {fileID: 102900000, guid: aef54589c1c98484ba5e518d6e91ff69, type: 3}
   visualSpacing: 10
   selectedNoteIndex: 8
   generateKey: 32

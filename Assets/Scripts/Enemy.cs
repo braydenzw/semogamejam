@@ -23,7 +23,12 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        healthText.text = "Fletcher Health: " + health;
+        if(health>0)
+            healthText.text = "Fletcher Health: " + health;
+        else
+        {
+            healthText.text = "Fletcher has been defeated... glory to the band of us";
+        }
     }
 
     public void TakeDamage(int damage)
