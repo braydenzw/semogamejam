@@ -3,12 +3,12 @@ using UnityEngine;
 
 // i got rid of that stupid ondrawgizmos thing and added a simpler thing
 // actually allows you to edit the notes rather than just see them
-[CustomEditor(typeof(AutomaticRhythmRecorder))]
+[CustomEditor(typeof(MidiMapper))]
 public class RhythmRecorderEditor : Editor
 {
     private void OnSceneGUI()
     {
-        AutomaticRhythmRecorder recorder = (AutomaticRhythmRecorder)target;
+        MidiMapper recorder = (MidiMapper)target;
 
         if (recorder.songMap == null || recorder.songMap.beats == null) return;
 
@@ -49,8 +49,7 @@ public class RhythmRecorderEditor : Editor
     {
         DrawDefaultInspector();
 
-        // BUG FIX: Cast to AutomaticRhythmRecorder
-        AutomaticRhythmRecorder recorder = (AutomaticRhythmRecorder)target;
+        RhythmRecorder recorder = (RhythmRecorder)target;
 
         if (recorder.selectedNoteIndex >= 0 && recorder.selectedNoteIndex < recorder.songMap.beats.Count)
         {
