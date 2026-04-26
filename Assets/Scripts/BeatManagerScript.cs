@@ -17,7 +17,7 @@ public class BeatManagerScript : MonoBehaviour
 {
     //// TEST VARIABLES
     [SerializeField] float timeInterval;
-    private float time = 0;
+    private float currentTime = 0;
     private int count = 0;
 
 
@@ -29,6 +29,7 @@ public class BeatManagerScript : MonoBehaviour
     [SerializeField] GameObject HorizontalLine;
     [SerializeField] GameObject VerticalLine;
 
+    private SongMap currentSong;
     private Stack<GameObject> inactiveBeatsStack; // Handles object pooling
 
     // QUEUES
@@ -38,22 +39,24 @@ public class BeatManagerScript : MonoBehaviour
     private Queue<GameObject> downQueue; // down object queue
 
     public GameObject beatPrefab;
-    private GameObject player;
+    public GameObject player;
+    public GameObject section;
     public TMP_Text scoreText;
 
     //bool so code can stop and start
-    public bool onOrOff = false;
-    public float timeToPlay;
+    public bool minigameOn = false;
 
+    List<BeatData> beatsList;
+    private int beatIndex = 0;
+    [SerializeField] float newSongWait;
 
-
+    private bool exitKeyPressed = false;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        player = transform.parent.gameObject;
-
+        minigameOn = false;
         inactiveBeatsStack = new Stack<GameObject>();
 
         leftQueue = new Queue<GameObject>();
@@ -69,35 +72,34 @@ public class BeatManagerScript : MonoBehaviour
             else lineToSpawn = HorizontalLine;
             Instantiate(lineToSpawn, this.transform.position + GetDirectionVector(noteDirection) * targetPositionMultiplier, this.transform.rotation, this.transform);
         }
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(onOrOff)
+        currentTime += Time.deltaTime;
+        if(Input.GetKeyDown(KeyCode.Space))
         {
-            time += Time.deltaTime;
-            timeToPlay -= Time.deltaTime;
-            if (time >= timeInterval)
-            {
-                count = UnityEngine.Random.Range(0, 4);
-                if (count % 4 == 0) SpawnObject(NoteDirection.up);
-                if (count % 4 == 1) SpawnObject(NoteDirection.down);
-                if (count % 4 == 2) SpawnObject(NoteDirection.left);
-                if (count % 4 == 3) SpawnObject(NoteDirection.right);
-                time -= timeInterval;
-                count++;
-            }
-            /*
-            //keeping track of time left to fix this section
-            if(timeToPlay <= 0)
-            {
-                onOrOff = false;
-                player.GetComponent<Player>().maxVelocity = 5;
-                player.GetComponent<Player>().nextSection();
-            }
-            */
+            exitKeyPressed = true;
         }
+        if (!exitKeyPressed)
+        {
+            while(beatIndex<beatsList.Count && beatsList[beatIndex].timestamp-timeToClick<currentTime)
+            {
+                Debug.Log(currentTime);
+                BeatData currentBeat = beatsList[beatIndex];
+                SpawnObject(currentBeat.noteDirection);
+                beatIndex++;
+            }
+        }
+        if(minigameOn && CheckQueuesEmpty() && exitKeyPressed)
+        {
+            player.GetComponent<Player>().maxVelocity = 5;
+            player.GetComponent<Player>().collideMaybe = true;
+            minigameOn = false;
+        }
+
     }
 
     private GameObject SpawnObject(NoteDirection noteDirection)
@@ -135,6 +137,21 @@ public class BeatManagerScript : MonoBehaviour
         }
     }
 
+    public void InitiateSong(SongMap newSong)
+    {
+        beatsList = newSong.beats;
+        beatIndex = 0;
+        // POTENTIALLY BAD PERFORMANCE | EASY BUT INCONVENIENT FIXES AVAILABLE
+        while (beatsList[beatIndex].timestamp - timeToClick + newSongWait < currentTime)
+        {
+            beatIndex++;
+        }
+
+        // Interaction Handling
+        exitKeyPressed = false;
+        player.GetComponent<Player>().maxVelocity = 0;
+    }
+
     private Queue<GameObject> GetQueue(NoteDirection noteDirection)
     {
         switch (noteDirection)
@@ -167,6 +184,12 @@ public class BeatManagerScript : MonoBehaviour
         return Vector3.zero;
     }
 
+    private bool CheckQueuesEmpty()
+    {
+        int count = leftQueue.Count+rightQueue.Count+upQueue.Count+downQueue.Count;
+        return count==0;
+    }
+
     public void BeatDeath(GameObject toDie, BeatScore beatScore, NoteDirection noteDirection)
     {
         // Handle Death
@@ -179,14 +202,14 @@ public class BeatManagerScript : MonoBehaviour
         // Handle Scoring
         if (beatScore == BeatScore.Failure)
         {
-            ComboManager.instance.EndCombo();
-            player.GetComponent<Health>().Damage();
+           // Debug.Log("TEMP: FAILURE");
+            section.GetComponent<SectionHealth>().sectionHealth-=5;
         }
         else if (beatScore == BeatScore.Success)
         {
-            player.GetComponent<Player>().score++;
-            ComboManager.instance.ExtendCombo();
-            scoreText.text = "Score: " + player.GetComponent<Player>().score;
+           // Debug.Log("TEMP: SUCCESS");
+            section.GetComponent<SectionHealth>().sectionHealth+=5;
+            //scoreText.text = "Score: " + player.GetComponent<Player>().score;
         }
     }
 }
