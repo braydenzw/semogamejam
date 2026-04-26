@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         rigidbody = this.GetComponent<Rigidbody2D>();
-        nextSection();
+        //nextSection();
     }
 
     // Update is called once per frame
@@ -70,6 +70,11 @@ public class Player : MonoBehaviour
     private void Attack(NoteDirection noteDirection)
     {
         int dir = DirectionToDir(noteDirection);
+        
+        animator.SetFloat("Direction", (float)dir);
+        Debug.Log(dir);
+        animator.SetTrigger("Attack");
+        spriteRenderer.flipX = (dir == 0);
         // animator.SetFloat("Direction", (float)dir);
         // spriteRenderer.flipX = (dir == 2);
         //animator.SetTrigger("Attack");
@@ -109,6 +114,8 @@ public class Player : MonoBehaviour
     }
     
     //returns a game object based on a randomly generated value
+    
+    
     public void nextSection()
     {
         sectionNumber = (int)(Random.value*3);
