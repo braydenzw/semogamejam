@@ -83,7 +83,7 @@ public class BeatManagerScript : MonoBehaviour
         {
             exitKeyPressed = true;
         }
-        if (!exitKeyPressed)
+        if (!exitKeyPressed && minigameOn)
         {
             while(beatIndex<beatsList.Count && beatsList[beatIndex].timestamp-timeToClick<currentTime)
             {
@@ -215,7 +215,6 @@ public class BeatManagerScript : MonoBehaviour
             {
                 section.GetComponent<SectionHealth>().sectionHealth = 100;
             }
-            //scoreText.text = "Score: " + player.GetComponent<Player>().score;
         }
     }
 }
