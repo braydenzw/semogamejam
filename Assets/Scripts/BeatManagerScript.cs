@@ -54,6 +54,7 @@ public class BeatManagerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        onOrOff = false;
         inactiveBeatsStack = new Stack<GameObject>();
 
         leftQueue = new Queue<GameObject>();
@@ -80,28 +81,32 @@ public class BeatManagerScript : MonoBehaviour
         if(onOrOff)
         {
             currentTime += Time.deltaTime;
-            // if (currentTime >= timeInterval)
-            // {
-            //     if (count % 4 == 0) SpawnObject(NoteDirection.up);
-            //     if (count % 4 == 1) SpawnObject(NoteDirection.down);
-            //     if (count % 4 == 2) SpawnObject(NoteDirection.left);
-            //     if (count % 4 == 3) SpawnObject(NoteDirection.right);
-            //     currentTime -= timeInterval;
-            //     count++;
-            // }
+             if (currentTime >= timeInterval)
+             {
+                 if (count % 4 == 0) SpawnObject(NoteDirection.up);
+                 if (count % 4 == 1) SpawnObject(NoteDirection.down);
+                 if (count % 4 == 2) SpawnObject(NoteDirection.left);
+                 if (count % 4 == 3) SpawnObject(NoteDirection.right);
+                 currentTime -= timeInterval;
+                 count++;
+                 timeToPlay -= Time.deltaTime;
+             }
             //keeping track of currentTime left to fix this section
-            // if(timeToPlay <= 0)
-            // {
-            //     onOrOff = false;
-            //     player.GetComponent<Player>().maxVelocity = 5;
-            //     player.GetComponent<Player>().nextSection();
-            // }
+            if(timeToPlay <= 0)
+            {
+                player.GetComponent<Player>().maxVelocity = 5;
+                player.GetComponent<Player>().nextSection();
+                Debug.Log("FUck my asshole");
+                player.GetComponent<Player>().collideMaybe = true;
+                onOrOff = false;
+            }
             while(beatIndex<beatsList.Count && beatsList[beatIndex].timestamp-timeToClick<currentTime)
             {
                 BeatData currentBeat = beatsList[beatIndex];
                 SpawnObject(currentBeat.noteDirection);
                 beatIndex++;
             }
+            timeToPlay -= Time.deltaTime;
         }
     }
 

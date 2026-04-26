@@ -21,13 +21,15 @@ public class Player : MonoBehaviour
     public Collider2D circleCollider;
     public GameObject player;
     private int sectionNumber;
+    public bool collideMaybe = true;
 
 
     // Start is called before the first frame update
     void Start()
     {
         rigidbody = this.GetComponent<Rigidbody2D>();
-        //nextSection();
+        collideMaybe = true;
+        nextSection();
     }
 
     // Update is called once per frame
@@ -103,13 +105,14 @@ public class Player : MonoBehaviour
     //when entering an area, make things happen (should be used for setting up areas later)
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision == circleCollider)
+        if((collision == circleCollider) && collideMaybe)
         {
             this.rigidbody.velocity = Vector2.zero;
             Debug.Log("COLLISION");
             beatManager.GetComponent<BeatManagerScript>().onOrOff = true;
             beatManager.GetComponent<BeatManagerScript>().timeToPlay = Random.value + 10;
             maxVelocity = 0;
+            collideMaybe = false;
         }
     }
     
@@ -118,7 +121,7 @@ public class Player : MonoBehaviour
     
     public void nextSection()
     {
-        sectionNumber = (int)(Random.value*3);
+        sectionNumber = (Random.Range(0,4));
         switch(sectionNumber)
         {
             case 0:
@@ -126,12 +129,16 @@ public class Player : MonoBehaviour
                 Debug.Log("BRASS SELECTED!!!");
                 break;
             case 1:
-                circleCollider =  GameObject.Find("Woodwind Section").GetComponent<CircleCollider2D>();
+                circleCollider =  GameObject.Find("Woodwinds Section").GetComponent<CircleCollider2D>();
                 Debug.Log("WOOD SELECTED!!!");
                 break;
             case 2:
                 circleCollider =  GameObject.Find("Strings Section").GetComponent<CircleCollider2D>();
                 Debug.Log("STRINGS SELECTED!!!");
+                break;
+            case 3:
+                circleCollider =  GameObject.Find("Percussion Section").GetComponent<CircleCollider2D>();
+                Debug.Log("PERCUSSION SELECTED!!!");
                 break;
         }
     }
