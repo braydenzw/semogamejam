@@ -9,12 +9,26 @@ public class Enemy : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private string neutralColor = "#FFFFFF"; // the color of the enemy at hurt (not getting hurt) 
     [SerializeField] HurtEffectSpawner hurtEffectSpawner;
-    [SerializeField] TextMeshPro healthText;
+    [SerializeField] TMP_Text healthText;
+    [SerializeField] BeatManagerScript beatManager;
+    [SerializeField] SongMap whippingMyLash;
 
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        beatManager.InitiateSong(whippingMyLash);
+        
         //hurtEffectSpawner = GetComponent<HurtEffectSpawner>();
+    }
+
+    private void Update()
+    {
+        if(health>0)
+            healthText.text = "Fletcher Health: " + health;
+        else
+        {
+            healthText.text = "Fletcher has been defeated... glory to the band of us";
+        }
     }
 
     public void TakeDamage(int damage)

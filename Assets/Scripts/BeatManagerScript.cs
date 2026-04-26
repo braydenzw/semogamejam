@@ -5,6 +5,7 @@ using Unity.Mathematics;
 using UnityEngine;
 using static Enums;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class SectionSpawnSettings
@@ -67,6 +68,7 @@ public class BeatManagerScript : MonoBehaviour
     void Start()
     {
         minigameOn = false;
+        exitKeyPressed = false;
         inactiveBeatsStack = new Stack<GameObject>();
         leftQueue  = new Queue<GameObject>();
         rightQueue = new Queue<GameObject>();
@@ -84,8 +86,8 @@ public class BeatManagerScript : MonoBehaviour
     void Update()
     {
         currentTime += Time.deltaTime;
-
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && SceneManager.GetActiveScene() != SceneManager.GetSceneByName("FletcherBossFight"))
+        {
             exitKeyPressed = true;
 
         if (!exitKeyPressed && minigameOn)
@@ -222,6 +224,7 @@ public class BeatManagerScript : MonoBehaviour
             beatIndex++;
 
         exitKeyPressed = false;
+        minigameOn = true;
         player.GetComponent<Player>().maxVelocity = 0;
     }
 
@@ -229,11 +232,23 @@ public class BeatManagerScript : MonoBehaviour
     {
         Debug.Log($"BeatDeath called | Score: {beatScore} | Dir: {noteDirection} | Section: {(section != null ? section.name : "NULL")}");        if (beatScore == BeatScore.Failure)
         {
+            if (section != null)
+            {
+            section.GetComponent<SectionHealth>().ChangeHealth(-5);
+            }
             section.GetComponent<SectionHealth>().ChangeHealth((int)(-5 * missHealthMultiplier));
             ComboManager.instance.EndCombo();
         }
         else if (beatScore == BeatScore.Success)
         {
+            if (section != null)
+            {
+                section.GetComponent<SectionHealth>().ChangeHealth(5);
+                if (section.GetComponent<SectionHealth>().sectionHealth >= 100)
+                {
+                    section.GetComponent<SectionHealth>().sectionHealth = 100;
+                }
+            }
             section.GetComponent<SectionHealth>().ChangeHealth(5);
             if (section.GetComponent<SectionHealth>().sectionHealth >= 100)
                 section.GetComponent<SectionHealth>().sectionHealth = 100;

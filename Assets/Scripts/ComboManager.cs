@@ -42,6 +42,7 @@ public class ComboManager : MonoBehaviour
     public void ExtendCombo()
     {
         combo++;
+        Debug.Log("Extendcombo");
         SoundManager.instance.PlaySound(success, transform, 0.5f);
         comboText.text = "Combo: " + combo;
         CalculateDamage();

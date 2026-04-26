@@ -61,6 +61,20 @@ public class BeatScript : MonoBehaviour
             if (multiHitTimer >= multiHitWindowDuration)
                 OnMiss();
         }
+        if(timeAlive>timeToClick+0.02)
+        {
+            GetComponent<SpriteRenderer>().enabled = false;
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().enabled = true;
+        }
+    }
+
+    private void OnMiss()
+    {
+        GetComponentInParent<BeatManagerScript>().BeatDeath(this.gameObject,BeatScore.Failure,noteDirection);
+    }
 
         // Standard timeout — miss if past window and not in hold or multi-hit phase
         if (!isBeingHeld && !multiHitStarted && timeAlive >= timeToClick + timingWindow)
