@@ -79,13 +79,13 @@ public class BeatManagerScript : MonoBehaviour
     void Update()
     {
         currentTime += Time.deltaTime;
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             exitKeyPressed = true;
         }
         if (!exitKeyPressed && minigameOn)
         {
-            while(beatIndex<beatsList.Count && beatsList[beatIndex].timestamp-timeToClick<currentTime)
+            while (beatIndex < beatsList.Count && beatsList[beatIndex].timestamp - timeToClick < currentTime)
             {
                 //Debug.Log(currentTime);
                 BeatData currentBeat = beatsList[beatIndex];
@@ -93,7 +93,7 @@ public class BeatManagerScript : MonoBehaviour
                 beatIndex++;
             }
         }
-        if(minigameOn && CheckQueuesEmpty() && exitKeyPressed)
+        if (minigameOn && CheckQueuesEmpty() && exitKeyPressed)
         {
             player.GetComponent<Player>().maxVelocity = 5;
             player.GetComponent<Player>().collideMaybe = true;
@@ -186,8 +186,8 @@ public class BeatManagerScript : MonoBehaviour
 
     private bool CheckQueuesEmpty()
     {
-        int count = leftQueue.Count+rightQueue.Count+upQueue.Count+downQueue.Count;
-        return count==0;
+        int count = leftQueue.Count + rightQueue.Count + upQueue.Count + downQueue.Count;
+        return count == 0;
     }
 
     public void BeatDeath(GameObject toDie, BeatScore beatScore, NoteDirection noteDirection)

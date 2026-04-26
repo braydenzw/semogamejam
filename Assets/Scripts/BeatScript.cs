@@ -24,6 +24,14 @@ public class BeatScript : MonoBehaviour
         {
             OnMiss();
         }
+        if(timeAlive>timeToClick+0.02)
+        {
+            GetComponent<SpriteRenderer>().enabled = false;
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().enabled = true;
+        }
     }
 
     private void OnMiss()
