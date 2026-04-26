@@ -10,11 +10,12 @@ public class AutomaticRhythmRecorder : MonoBehaviour
 
     [Header("mapping visualizer")]
     public float visualSpacing = 10f;
+    [HideInInspector] public int selectedNoteIndex = -1; // -1 means nothing is selected
 
     [Header("detection stuff")]
     [Tooltip("beat sensitivity: lower = more detection, higher = less detection")]
     [Range(0.1f, 100f)]
-    public float threshold = 0.1f; // i found that generally 0.1 works the best
+    public float threshold = 0.1f; // change this based on how much you want to pick up
 
     [Tooltip("minimum seconds between notes. this is just to prevent two duplicate notes")]
     public float minTimeBetweenNotes = 0.15f;
@@ -84,7 +85,7 @@ public class AutomaticRhythmRecorder : MonoBehaviour
     void RecordBeat(float time)
     {
         // basically just 0-3 random integer to determine a random direction for mapping
-        NoteDirection randomDirection = (NoteDirection)Random.Range(0, 4);
+        NoteDirection randomDirection = (NoteDirection) Random.Range(0, 4);
 
         BeatData newBeat = new BeatData
         {
@@ -101,34 +102,6 @@ public class AutomaticRhythmRecorder : MonoBehaviour
         isRecording = false;
         Debug.Log($"recording stopped: mapped {songMap.beats.Count} notes");
     }
-
-    private void OnDrawGizmos() // this will actually display the beats as colored blocks rather than just a numbered list
-    {
-        if (songMap == null || songMap.beats == null)
-        {
-            return;
-        }
-
-        foreach (var beat in songMap.beats)
-        {
-            // the positions represent note direction on x-axis and time on z-axis
-            Vector3 startPos = new Vector3((int)beat.noteDirection * 2f, 0, beat.timestamp * visualSpacing);
-
-            // color is set depending on direction
-            Gizmos.color = VisualMappingColor(beat.noteDirection);
-
-            if (beat.duration > 0)
-            {
-                // this draws a line connecting the start and end of a hold note
-                Vector3 endPos = startPos + new Vector3(0, 0, beat.duration * visualSpacing);
-                Gizmos.DrawLine(startPos, endPos);
-                Gizmos.DrawWireCube(endPos, Vector3.one * 0.5f);
-            }
-
-            Gizmos.DrawCube(startPos, Vector3.one * 0.7f);
-        }
-    }
-
     Color VisualMappingColor(NoteDirection dir)
     {
         switch (dir)
