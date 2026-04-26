@@ -40,15 +40,17 @@ public class BeatManagerScript : MonoBehaviour
 
     public GameObject beatPrefab;
     public GameObject player;
+    public GameObject section;
     public TMP_Text scoreText;
 
     //bool so code can stop and start
     public bool minigameOn = false;
-    public float timeToPlay;
 
     List<BeatData> beatsList;
     private int beatIndex = 0;
     [SerializeField] float newSongWait;
+
+    private bool exitKeyPressed = false;
 
 
     // Start is called before the first frame update
@@ -77,22 +79,23 @@ public class BeatManagerScript : MonoBehaviour
     void Update()
     {
         currentTime += Time.deltaTime;
-        if (timeToPlay > 0)
+        if(Input.GetKeyDown(KeyCode.Space))
         {
-            while (beatIndex < beatsList.Count && (beatsList[beatIndex].timestamp - timeToClick < currentTime))
+            exitKeyPressed = true;
+        }
+        if (!exitKeyPressed)
+        {
+            while(beatIndex<beatsList.Count && beatsList[beatIndex].timestamp-timeToClick<currentTime)
             {
                 Debug.Log(currentTime);
                 BeatData currentBeat = beatsList[beatIndex];
                 SpawnObject(currentBeat.noteDirection);
                 beatIndex++;
             }
-            timeToPlay -= Time.deltaTime;
-            
         }
-        if(minigameOn && timeToPlay<=0 && CheckQueuesEmpty())
+        if(minigameOn && CheckQueuesEmpty() && exitKeyPressed)
         {
             player.GetComponent<Player>().maxVelocity = 5;
-            player.GetComponent<Player>().nextSection();
             player.GetComponent<Player>().collideMaybe = true;
             minigameOn = false;
         }
@@ -143,6 +146,10 @@ public class BeatManagerScript : MonoBehaviour
         {
             beatIndex++;
         }
+
+        // Interaction Handling
+        exitKeyPressed = false;
+        player.GetComponent<Player>().maxVelocity = 0;
     }
 
     private Queue<GameObject> GetQueue(NoteDirection noteDirection)
@@ -195,14 +202,14 @@ public class BeatManagerScript : MonoBehaviour
         // Handle Scoring
         if (beatScore == BeatScore.Failure)
         {
-            // Debug.Log("TEMP: FAILURE");
-            player.GetComponent<Health>().Damage();
+           // Debug.Log("TEMP: FAILURE");
+            section.GetComponent<SectionHealth>().sectionHealth-=5;
         }
         else if (beatScore == BeatScore.Success)
         {
-            // Debug.Log("TEMP: SUCCESS");
-            player.GetComponent<Player>().score++;
-            scoreText.text = "Score: " + player.GetComponent<Player>().score;
+           // Debug.Log("TEMP: SUCCESS");
+            section.GetComponent<SectionHealth>().sectionHealth+=5;
+            //scoreText.text = "Score: " + player.GetComponent<Player>().score;
         }
     }
 }

@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D rigidbody;
     public int score = 0;
     public Collider2D circleCollider;
+    public GameObject collided;
     public GameObject player;
     private int sectionNumber;
     public bool collideMaybe = true;
@@ -38,7 +39,6 @@ public class Player : MonoBehaviour
     {
         rigidbody = this.GetComponent<Rigidbody2D>();
         collideMaybe = true;
-        nextSection();
         StringsSong.beats.Sort((beat1, beat2) => beat1.timestamp.CompareTo(beat2.timestamp));
         BrassSong.beats.Sort((beat1, beat2) => beat1.timestamp.CompareTo(beat2.timestamp));
         PercussionSong.beats.Sort((beat1, beat2) => beat1.timestamp.CompareTo(beat2.timestamp));
@@ -80,7 +80,6 @@ public class Player : MonoBehaviour
         {
            this.rigidbody.velocity = Vector3.MoveTowards(this.rigidbody.velocity,this.rigidbody.velocity+Vector2.right*maxVelocity,velocityAdder*Time.deltaTime);
         }
-            
     }
 
     private void Attack(NoteDirection noteDirection)
@@ -119,14 +118,26 @@ public class Player : MonoBehaviour
     //when entering an area, make things happen (should be used for setting up areas later)
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if((collision == circleCollider) && collideMaybe)
+        if(collision.GameObject().tag == "Orchestra")
         {
             this.rigidbody.velocity = Vector2.zero;
             Debug.Log("COLLISION");
             beatManager.GetComponent<BeatManagerScript>().minigameOn = true;
-            beatManager.GetComponent<BeatManagerScript>().timeToPlay = Random.value + 10;
-            beatManager.GetComponent<BeatManagerScript>().InitiateSong(currentSong);
-            maxVelocity = 0;
+            collided = collision.GameObject();
+            beatManager.GetComponent<BeatManagerScript>().section = collided;
+            beatManager.GetComponent<BeatManagerScript>().InitiateSong(collided.GetComponent<SectionHealth>().GetSong());
+            collided.GetComponent<SectionHealth>().inUse = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Debug.Log("Cream of the cream crop");
+        if((collided != null) && (collision.tag == "Orchestra"))
+        {
+            Debug.Log("Welcome to the cum zone");
+            collided.GetComponent<SectionHealth>().inUse = false;
+            beatManager.GetComponent<BeatManagerScript>().minigameOn = false;
             collideMaybe = false;
         }
     }
@@ -134,7 +145,7 @@ public class Player : MonoBehaviour
     //returns a game object based on a randomly generated value
     
     
-    public void nextSection()
+    public void getSection()
     {
         sectionNumber = (Random.Range(0,4));
         switch(sectionNumber)
