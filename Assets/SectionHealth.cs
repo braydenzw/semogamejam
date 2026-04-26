@@ -7,14 +7,14 @@ public class SectionHealth : MonoBehaviour
     public AudioMixer mixer; // drag OrchestraMixer here
 
     // These strings MUST match your exposed parameter names exactly
-    private const string pitchParam   = "ViolinPitch";
-    private const string distWetParam = "ViolinDistWet";
-    private const string flangeWetParam = "ViolinFlangeWet";
+    [SerializeField] private string pitchParam;
+    [SerializeField] private string distWetParam;
+    [SerializeField] private string flangeWetParam;
 
     [Header("Broken Effect Amounts (Health = 0)")]
-    [SerializeField] private float brokenPitch = -2.5f;    // semitones
-    [SerializeField] private float brokenDistortionWet = 40f;
-    [SerializeField] private float brokenFlangeWet = 40f;
+    private float brokenPitch = 8f;    // semitones
+    private float brokenDistortionWet = 1f;
+    private float brokenFlangeWet = 1f;
 
     [Header("Current Health")]
     [Range(0f, 1f)]
@@ -32,10 +32,9 @@ public class SectionHealth : MonoBehaviour
 
     void Update()
     {
-        // Calculate effect blend (1 at health=0, 0 at health=1)
-        float effectAmount = 1f - health;
+        float effectAmount = 1f - Mathf.Pow(health, 3f);
 
-        // Apply to mixer – using hard‑coded names to avoid typos
+        
         mixer.SetFloat(pitchParam, Mathf.Lerp(0f, brokenPitch, effectAmount));
         mixer.SetFloat(distWetParam, Mathf.Lerp(0f, brokenDistortionWet, effectAmount));
         mixer.SetFloat(flangeWetParam, Mathf.Lerp(0f, brokenFlangeWet, effectAmount));

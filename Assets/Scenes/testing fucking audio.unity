@@ -2073,6 +2073,7 @@ GameObject:
   m_Component:
   - component: {fileID: 249757514}
   - component: {fileID: 249757513}
+  - component: {fileID: 249757515}
   m_Layer: 0
   m_Name: brassfucker
   m_TagString: Untagged
@@ -2091,7 +2092,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -281991593785734835, guid: 83f7034d3b4825c40978b44cb7f7a603, type: 2}
   m_audioClip: {fileID: 8300000, guid: c23b97e2169295447bdbf98a1bc8a008, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -2191,6 +2192,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &249757515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249757512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5edf5a09ab299db4db4c058067164ae7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixer: {fileID: 24100000, guid: 83f7034d3b4825c40978b44cb7f7a603, type: 2}
+  pitchParam: BrassPitch
+  distWetParam: BrassDistWet
+  flangeWetParam: BrassFlangeWet
+  health: 1
 --- !u!1 &262213320
 GameObject:
   m_ObjectHideFlags: 0
@@ -3713,6 +3731,7 @@ GameObject:
   m_Component:
   - component: {fileID: 645282568}
   - component: {fileID: 645282567}
+  - component: {fileID: 645282569}
   m_Layer: 0
   m_Name: woodwindsfucker
   m_TagString: Untagged
@@ -3731,7 +3750,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -5660947016365333021, guid: 83f7034d3b4825c40978b44cb7f7a603, type: 2}
   m_audioClip: {fileID: 8300000, guid: 70ba160d41053aa46aa8e37e6c8c8e1e, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -3831,6 +3850,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &645282569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645282566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5edf5a09ab299db4db4c058067164ae7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixer: {fileID: 24100000, guid: 83f7034d3b4825c40978b44cb7f7a603, type: 2}
+  pitchParam: WoodwindsPitch
+  distWetParam: WoodwindsDistWet
+  flangeWetParam: WoodwindsFlangeWet
+  health: 1
 --- !u!1 &648065548
 GameObject:
   m_ObjectHideFlags: 0
@@ -3878,6 +3914,7 @@ GameObject:
   m_Component:
   - component: {fileID: 650654225}
   - component: {fileID: 650654224}
+  - component: {fileID: 650654226}
   m_Layer: 0
   m_Name: percussionfucker
   m_TagString: Untagged
@@ -3896,7 +3933,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -5322301013675892890, guid: 83f7034d3b4825c40978b44cb7f7a603, type: 2}
   m_audioClip: {fileID: 8300000, guid: e19489661be946149806084cbdb7d977, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -3996,6 +4033,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &650654226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 650654223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5edf5a09ab299db4db4c058067164ae7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixer: {fileID: 24100000, guid: 83f7034d3b4825c40978b44cb7f7a603, type: 2}
+  pitchParam: PercussionPitch
+  distWetParam: PercussionDistWet
+  flangeWetParam: PercussionFlangeWet
+  health: 1
 --- !u!1 &661002523
 GameObject:
   m_ObjectHideFlags: 0
@@ -8129,6 +8183,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1723080994}
   - component: {fileID: 1723080993}
+  - component: {fileID: 1723080995}
   m_Layer: 0
   m_Name: 'fuck you '
   m_TagString: Untagged
@@ -8174,6 +8229,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1723080995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1723080992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b11f894dd5075e4ea635420e7d50846, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  violinSection: {fileID: 2109901468}
 --- !u!1 &1728909405
 GameObject:
   m_ObjectHideFlags: 0
@@ -9900,9 +9968,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mixer: {fileID: 24100000, guid: 83f7034d3b4825c40978b44cb7f7a603, type: 2}
-  brokenPitch: -2
-  brokenDistortionWet: 40
-  brokenFlangeWet: 40
+  pitchParam: ViolinPitch
+  distWetParam: ViolinDistWet
+  flangeWetParam: ViolinFlangeWet
   health: 1
 --- !u!114 &2109901469
 MonoBehaviour:
@@ -9911,7 +9979,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2109901465}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3deccdf26084a35438ed74778a4ce47b, type: 3}
   m_Name: 
