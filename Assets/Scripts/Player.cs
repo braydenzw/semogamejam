@@ -16,6 +16,14 @@ public class Player : MonoBehaviour
     [SerializeField] private float velocityAdder;
     [SerializeField] public float maxVelocity;
 
+
+    [SerializeField] private SongMap StringsSong; 
+    [SerializeField] private SongMap BrassSong; 
+    [SerializeField] private SongMap PercussionSong; 
+    [SerializeField] private SongMap WoodwindSong; 
+
+
+
     private Rigidbody2D rigidbody;
     public int score = 0;
     public Collider2D circleCollider;
@@ -23,6 +31,7 @@ public class Player : MonoBehaviour
     private int sectionNumber;
     public bool collideMaybe = true;
 
+    private SongMap currentSong;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +39,11 @@ public class Player : MonoBehaviour
         rigidbody = this.GetComponent<Rigidbody2D>();
         collideMaybe = true;
         nextSection();
+        StringsSong.beats.Sort((beat1, beat2) => beat1.timestamp.CompareTo(beat2.timestamp));
+        BrassSong.beats.Sort((beat1, beat2) => beat1.timestamp.CompareTo(beat2.timestamp));
+        PercussionSong.beats.Sort((beat1, beat2) => beat1.timestamp.CompareTo(beat2.timestamp));
+        WoodwindSong.beats.Sort((beat1, beat2) => beat1.timestamp.CompareTo(beat2.timestamp));
+
     }
 
     // Update is called once per frame
@@ -109,8 +123,9 @@ public class Player : MonoBehaviour
         {
             this.rigidbody.velocity = Vector2.zero;
             Debug.Log("COLLISION");
-            beatManager.GetComponent<BeatManagerScript>().onOrOff = true;
+            beatManager.GetComponent<BeatManagerScript>().minigameOn = true;
             beatManager.GetComponent<BeatManagerScript>().timeToPlay = Random.value + 10;
+            beatManager.GetComponent<BeatManagerScript>().InitiateSong(currentSong);
             maxVelocity = 0;
             collideMaybe = false;
         }
@@ -127,18 +142,22 @@ public class Player : MonoBehaviour
             case 0:
                 circleCollider = GameObject.Find("Brass Section").GetComponent<CircleCollider2D>();
                 Debug.Log("BRASS SELECTED!!!");
+                currentSong = BrassSong;
                 break;
             case 1:
                 circleCollider =  GameObject.Find("Woodwinds Section").GetComponent<CircleCollider2D>();
                 Debug.Log("WOOD SELECTED!!!");
+                currentSong = WoodwindSong;
                 break;
             case 2:
                 circleCollider =  GameObject.Find("Strings Section").GetComponent<CircleCollider2D>();
                 Debug.Log("STRINGS SELECTED!!!");
+                currentSong = StringsSong;
                 break;
             case 3:
                 circleCollider =  GameObject.Find("Percussion Section").GetComponent<CircleCollider2D>();
                 Debug.Log("PERCUSSION SELECTED!!!");
+                currentSong = PercussionSong;
                 break;
         }
     }
