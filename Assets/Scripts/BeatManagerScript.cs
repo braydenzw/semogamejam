@@ -83,11 +83,11 @@ public class BeatManagerScript : MonoBehaviour
         {
             exitKeyPressed = true;
         }
-        if (!exitKeyPressed)
+        if (!exitKeyPressed && minigameOn)
         {
             while(beatIndex<beatsList.Count && beatsList[beatIndex].timestamp-timeToClick<currentTime)
             {
-                Debug.Log(currentTime);
+                //Debug.Log(currentTime);
                 BeatData currentBeat = beatsList[beatIndex];
                 SpawnObject(currentBeat.noteDirection);
                 beatIndex++;
@@ -192,28 +192,27 @@ public class BeatManagerScript : MonoBehaviour
 
     public void BeatDeath(GameObject toDie, BeatScore beatScore, NoteDirection noteDirection)
     {
+        // Handle Scoring
+        if (beatScore == BeatScore.Failure)
+        {
+            section.GetComponent<SectionHealth>().ChangeHealth(-5);
+            ComboManager.instance.EndCombo();
+        }
+        else if (beatScore == BeatScore.Success)
+        {
+            section.GetComponent<SectionHealth>().ChangeHealth(5);
+            if (section.GetComponent<SectionHealth>().sectionHealth >= 100)
+            {
+                section.GetComponent<SectionHealth>().sectionHealth = 100;
+            }
+            ComboManager.instance.ExtendCombo();
+        }
+
         // Handle Death
         toDie.SetActive(false);
         inactiveBeatsStack.Push(toDie);
 
         Queue<GameObject> currentQueue = GetQueue(noteDirection);
         currentQueue.Dequeue();
-
-        // Handle Scoring
-        if (beatScore == BeatScore.Failure)
-        {
-           // Debug.Log("TEMP: FAILURE");
-            section.GetComponent<SectionHealth>().sectionHealth-=5;
-        }
-        else if (beatScore == BeatScore.Success)
-        {
-           // Debug.Log("TEMP: SUCCESS");
-            section.GetComponent<SectionHealth>().sectionHealth+=5;
-            if(section.GetComponent<SectionHealth>().sectionHealth >= 100)
-            {
-                section.GetComponent<SectionHealth>().sectionHealth = 100;
-            }
-            //scoreText.text = "Score: " + player.GetComponent<Player>().score;
-        }
     }
 }

@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/trying to unfuck shit.unity
+    guid: 2fe00ec84f3c6b34ea1eef145cfad635
+  - enabled: 1
+    path: Assets/Scenes/FletcherBossFight.unity
+    guid: ffd5cf591bdcea84aa10c1a17baa2a65
   m_configObjects: {}

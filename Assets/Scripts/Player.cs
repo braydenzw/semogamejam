@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
     public GameObject player;
     private int sectionNumber;
     public bool collideMaybe = true;
+    
 
     private SongMap currentSong;
 
@@ -53,13 +54,13 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W))
         {
             Attack(NoteDirection.up);
-        } else if (Input.GetKeyDown(KeyCode.A))
+        } if (Input.GetKeyDown(KeyCode.A))
         {
             Attack(NoteDirection.left);
-        } else if (Input.GetKeyDown(KeyCode.S))
+        } if (Input.GetKeyDown(KeyCode.S))
         {
             Attack(NoteDirection.down);
-        } else if (Input.GetKeyDown(KeyCode.D))
+        } if (Input.GetKeyDown(KeyCode.D))
         {
             Attack(NoteDirection.right);
         }
@@ -87,13 +88,9 @@ public class Player : MonoBehaviour
         int dir = DirectionToDir(noteDirection);
         
         animator.SetFloat("Direction", (float)dir);
-        Debug.Log(dir);
+        //Debug.Log(dir);
         animator.SetTrigger("Attack");
         spriteRenderer.flipX = (dir == 0);
-        // animator.SetFloat("Direction", (float)dir);
-        // spriteRenderer.flipX = (dir == 2);
-        //animator.SetTrigger("Attack");
-        //check on beat
 
         beatManager.GetComponent<BeatManagerScript>().OnTap(noteDirection);
         
