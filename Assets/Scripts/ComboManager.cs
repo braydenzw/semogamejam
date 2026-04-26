@@ -16,6 +16,7 @@ public class ComboManager : MonoBehaviour
     // the player's damage value for each note hit,
     // which increases as they grow their combo
     private int damage = 0;
+    public int multiplier = 1;
     [SerializeField] AudioClip success;
     [SerializeField] AudioClip failure;
     [SerializeField] TMP_Text comboText;
@@ -86,7 +87,7 @@ public class ComboManager : MonoBehaviour
     {
         if (currentEnemyScript != null)
         {
-            currentEnemyScript.TakeDamage(damage);
+            currentEnemyScript.TakeDamage(damage * multiplier);
         } else
         {
             Debug.Log("CURRENT ENEMY UNASSIGNED IN COMBOMANAGER");
