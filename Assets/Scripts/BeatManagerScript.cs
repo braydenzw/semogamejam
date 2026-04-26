@@ -209,6 +209,10 @@ public class BeatManagerScript : MonoBehaviour
         {
            // Debug.Log("TEMP: SUCCESS");
             section.GetComponent<SectionHealth>().sectionHealth+=5;
+            if(section.GetComponent<SectionHealth>().sectionHealth >= 100)
+            {
+                section.GetComponent<SectionHealth>().sectionHealth = 100;
+            }
             //scoreText.text = "Score: " + player.GetComponent<Player>().score;
         }
     }
