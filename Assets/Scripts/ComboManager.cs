@@ -43,6 +43,7 @@ public class ComboManager : MonoBehaviour
         combo++;
         SoundManager.instance.PlaySound(success, transform, 1f);
         comboText.text = "Combo: " + combo;
+        CalculateDamage();
         DoDamage();
     }
 
@@ -52,7 +53,7 @@ public class ComboManager : MonoBehaviour
         combo = 0;
         SoundManager.instance.PlaySound(failure, transform, 1f);
         comboText.text = "Combo: " + combo;
-        DoDamage();
+        CalculateDamage();
     }
 
     private void CalculateDamage()
@@ -83,7 +84,6 @@ public class ComboManager : MonoBehaviour
 
     private void DoDamage()
     {
-        CalculateDamage();
         if (currentEnemyScript != null)
         {
             currentEnemyScript.TakeDamage(damage);
