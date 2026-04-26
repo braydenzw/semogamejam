@@ -49,7 +49,7 @@ public class RhythmRecorderEditor : Editor
     {
         DrawDefaultInspector();
 
-        RhythmRecorder recorder = (RhythmRecorder)target;
+        MidiMapper recorder = (MidiMapper)target;
 
         if (recorder.selectedNoteIndex >= 0 && recorder.selectedNoteIndex < recorder.songMap.beats.Count)
         {
