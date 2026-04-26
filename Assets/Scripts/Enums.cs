@@ -11,16 +11,15 @@ public class Enums : MonoBehaviour
         Failure, 
     }
 
-    public enum NoteDirection { Left, Down, Up, Right }
-
-    void Start()
-    {
-
+    public enum NoteDirection { 
+        Left, 
+        Down, 
+        Up, 
+        Right 
     }
 
-    // Update is called once per frame
-    void Update()
+    public enum PowerupType
     {
-
+        DoubleDamage
     }
 }
