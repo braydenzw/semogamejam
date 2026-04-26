@@ -1,5 +1,27 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!244 &-7057684143308669686
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 19b985b3b827dc14db1c19ea8fce1de5
+  m_EffectName: Flange
+  m_MixLevel: 083385771befd294fb46c7fb9938e5e0
+  m_Parameters:
+  - m_ParameterName: Drymix
+    m_GUID: 4caf5ad986b0fb74e925844449aa9be5
+  - m_ParameterName: Wetmix
+    m_GUID: f132fa60327e6d34f9262bd58856ddaf
+  - m_ParameterName: Depth
+    m_GUID: 77c688befe2d54b458cb397d934198c1
+  - m_ParameterName: Rate
+    m_GUID: 2b37d9b0f3ba9cb42b2c94bad259941e
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!243 &-5660947016365333021
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -81,10 +103,29 @@ AudioMixerGroupController:
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: -5263731683184150769}
+  - {fileID: 1544200403486447575}
+  - {fileID: -1248085160310452208}
+  - {fileID: -7057684143308669686}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!244 &-1248085160310452208
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: c25cbd80d7c5ec84faf370eda5afd028
+  m_EffectName: Distortion
+  m_MixLevel: d2d6db58adea7d64cbf1a335e431027b
+  m_Parameters:
+  - m_ParameterName: Level
+    m_GUID: 5b262aaec70a745489b405bc9ef6c4dc
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!243 &-281991593785734835
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -119,7 +160,13 @@ AudioMixerController:
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
   m_UpdateMode: 0
-  m_ExposedParameters: []
+  m_ExposedParameters:
+  - guid: 5b262aaec70a745489b405bc9ef6c4dc
+    name: ViolinFlangeWet
+  - guid: f132fa60327e6d34f9262bd58856ddaf
+    name: ViolinDistWet
+  - guid: 93f5a6d565a9cc94196c6758ebfa9dfa
+    name: ViolinPitch
   m_AudioMixerGroupViews:
   - guids:
     - 9db2eb102d92b3e47ae651f6580bfef0
@@ -178,7 +225,11 @@ AudioMixerSnapshotController:
   m_Name: Snapshot
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: db481ea99b404eb448a32ad880f86986
-  m_FloatValues: {}
+  m_FloatValues:
+    93f5a6d565a9cc94196c6758ebfa9dfa: 2
+    486702f8c366e064192663a652e08ce6: 20
+    4caf5ad986b0fb74e925844449aa9be5: 1
+    5b262aaec70a745489b405bc9ef6c4dc: 0.429
   m_TransitionOverrides: {}
 --- !u!244 &1080559427892293890
 AudioMixerEffectController:
@@ -191,6 +242,28 @@ AudioMixerEffectController:
   m_EffectName: Attenuation
   m_MixLevel: a8851f0d39165384a9b290d792db7512
   m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!244 &1544200403486447575
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 5a000322d7a38d346ba0d914d9fef101
+  m_EffectName: Pitch Shifter
+  m_MixLevel: e642f52672723aa4889dc9d29f0c081c
+  m_Parameters:
+  - m_ParameterName: Pitch
+    m_GUID: 93f5a6d565a9cc94196c6758ebfa9dfa
+  - m_ParameterName: FFT size
+    m_GUID: 8383755fc0e4f6b45b67e29806dce1fd
+  - m_ParameterName: Overlap
+    m_GUID: 35a41e781efb37542b344ec08c3df4cd
+  - m_ParameterName: Max channels
+    m_GUID: 545ed1800a423384c8cf21fe90ae1d3a
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0

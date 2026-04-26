@@ -1,18 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class OrchestraConductor : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [Header("All stems that need to stay in perfect sync")]
+    public AudioSource[] allStems;   // drag every section's AudioSource here
+
+    [Header("Conductor track (optional but recommended)")]
+    public AudioSource conductor;    // a dedicated beat/pulse track
+
     void Start()
     {
-        
-    }
+        double startTime = AudioSettings.dspTime + 0.5; // small pre-delay
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (conductor != null)
+            conductor.PlayScheduled(startTime);
+
+        foreach (var source in allStems)
+        {
+            if (source != null)
+                source.PlayScheduled(startTime);
+        }
     }
 }
