@@ -10,7 +10,7 @@ public class OrchestraConductor : MonoBehaviour
 
     void Start()
     {
-        double startTime = AudioSettings.dspTime + 0.5; // small pre-delay
+        double startTime = AudioSettings.dspTime + 0; // small pre-delay
 
         if (conductor != null)
             conductor.PlayScheduled(startTime);

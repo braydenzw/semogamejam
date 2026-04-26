@@ -7,22 +7,26 @@ using UnityEngine.SceneManagement;
 public class FletcherPortalScript : MonoBehaviour
 {
     // Start is called before the first frame update
+    private float time;
     void Start()
     {
-        
+        time = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        time += Time.deltaTime;
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Player")
+        if (time >= 3 * 60 + 42)
         {
-            SceneManager.LoadScene("FletcherBossFight");
+            if (collision.tag == "Player")
+            {
+                SceneManager.LoadScene("FletcherBossFight");
+            }
         }
     }
 }

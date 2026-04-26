@@ -71,7 +71,7 @@ public class SectionHealth : MonoBehaviour
             sectionHealth = 100;
             isActive = false;
             healthText.color = Color.yellow;
-        } 
+        }
 
         if (sectionHealth < 0)
         {
