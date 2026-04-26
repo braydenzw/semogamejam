@@ -14,7 +14,7 @@ public class SectionHealth : MonoBehaviour
     void Start()
     {
         sectionHealth = 100;
-        timeToDecrease = (float)0.5;
+        timeToDecrease = (float)0.6;
         inUse = false;
     }
 
@@ -26,8 +26,8 @@ public class SectionHealth : MonoBehaviour
             timeToDecrease -= Time.deltaTime;
             if(timeToDecrease <= 0)
             {
-                sectionHealth -= Random.Range(0,11);
-                timeToDecrease = (float)0.5;
+                sectionHealth -= Random.Range(0,5);
+                timeToDecrease = (float)0.6;
             }
         }
         healthText.text = "Health: " + sectionHealth;
