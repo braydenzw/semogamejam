@@ -39,7 +39,6 @@ public class Player : MonoBehaviour
     {
         rigidbody = this.GetComponent<Rigidbody2D>();
         collideMaybe = true;
-        nextSection();
         StringsSong.beats.Sort((beat1, beat2) => beat1.timestamp.CompareTo(beat2.timestamp));
         BrassSong.beats.Sort((beat1, beat2) => beat1.timestamp.CompareTo(beat2.timestamp));
         PercussionSong.beats.Sort((beat1, beat2) => beat1.timestamp.CompareTo(beat2.timestamp));
@@ -123,9 +122,10 @@ public class Player : MonoBehaviour
         {
             this.rigidbody.velocity = Vector2.zero;
             Debug.Log("COLLISION");
-            beatManager.GetComponent<BeatManagerScript>().onOrOff = true;
+            beatManager.GetComponent<BeatManagerScript>().minigameOn = true;
             collided = collision.GameObject();
             beatManager.GetComponent<BeatManagerScript>().section = collided;
+            beatManager.GetComponent<BeatManagerScript>().InitiateSong(collided.GetComponent<SectionHealth>().GetSong());
             collided.GetComponent<SectionHealth>().inUse = true;
         }
     }
@@ -138,9 +138,6 @@ public class Player : MonoBehaviour
             Debug.Log("Welcome to the cum zone");
             collided.GetComponent<SectionHealth>().inUse = false;
             beatManager.GetComponent<BeatManagerScript>().minigameOn = false;
-            beatManager.GetComponent<BeatManagerScript>().timeToPlay = Random.value + 10;
-            beatManager.GetComponent<BeatManagerScript>().InitiateSong(currentSong);
-            maxVelocity = 0;
             collideMaybe = false;
         }
     }

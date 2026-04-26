@@ -10,6 +10,7 @@ public class SectionHealth : MonoBehaviour
     private float timeToDecrease;
     public bool inUse;
     public TMP_Text healthText;
+    [SerializeField] SongMap sectionSong;
     void Start()
     {
         sectionHealth = 100;
@@ -30,5 +31,10 @@ public class SectionHealth : MonoBehaviour
             }
         }
         healthText.text = "Health: " + sectionHealth;
+    }
+
+    public SongMap GetSong()
+    {
+        return sectionSong;
     }
 }

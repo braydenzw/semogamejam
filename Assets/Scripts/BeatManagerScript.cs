@@ -45,11 +45,12 @@ public class BeatManagerScript : MonoBehaviour
 
     //bool so code can stop and start
     public bool minigameOn = false;
-    public float timeToPlay;
 
     List<BeatData> beatsList;
     private int beatIndex = 0;
     [SerializeField] float newSongWait;
+
+    private bool exitKeyPressed = false;
 
 
     // Start is called before the first frame update
@@ -78,37 +79,23 @@ public class BeatManagerScript : MonoBehaviour
     void Update()
     {
         currentTime += Time.deltaTime;
-        if (timeToPlay > 0)
+        if(Input.GetKeyDown(KeyCode.Space))
         {
-<<<<<<< Updated upstream
-            while (beatIndex < beatsList.Count && (beatsList[beatIndex].timestamp - timeToClick < currentTime))
-=======
-            currentTime += Time.deltaTime;
-             if (currentTime >= timeInterval)
-             {
-                 if (count % 4 == 0) SpawnObject(NoteDirection.up);
-                 if (count % 4 == 1) SpawnObject(NoteDirection.down);
-                 if (count % 4 == 2) SpawnObject(NoteDirection.left);
-                 if (count % 4 == 3) SpawnObject(NoteDirection.right);
-                 currentTime -= timeInterval;
-                 count++;
-                 timeToPlay -= Time.deltaTime;
-             }
+            exitKeyPressed = true;
+        }
+        if (!exitKeyPressed)
+        {
             while(beatIndex<beatsList.Count && beatsList[beatIndex].timestamp-timeToClick<currentTime)
->>>>>>> Stashed changes
             {
                 Debug.Log(currentTime);
                 BeatData currentBeat = beatsList[beatIndex];
                 SpawnObject(currentBeat.noteDirection);
                 beatIndex++;
             }
-            timeToPlay -= Time.deltaTime;
-            
         }
-        if(minigameOn && timeToPlay<=0 && CheckQueuesEmpty())
+        if(minigameOn && CheckQueuesEmpty() && exitKeyPressed)
         {
             player.GetComponent<Player>().maxVelocity = 5;
-            player.GetComponent<Player>().nextSection();
             player.GetComponent<Player>().collideMaybe = true;
             minigameOn = false;
         }
@@ -159,6 +146,10 @@ public class BeatManagerScript : MonoBehaviour
         {
             beatIndex++;
         }
+
+        // Interaction Handling
+        exitKeyPressed = false;
+        player.GetComponent<Player>().maxVelocity = 0;
     }
 
     private Queue<GameObject> GetQueue(NoteDirection noteDirection)
@@ -211,16 +202,6 @@ public class BeatManagerScript : MonoBehaviour
         // Handle Scoring
         if (beatScore == BeatScore.Failure)
         {
-<<<<<<< Updated upstream
-            // Debug.Log("TEMP: FAILURE");
-            player.GetComponent<Health>().Damage();
-        }
-        else if (beatScore == BeatScore.Success)
-        {
-            // Debug.Log("TEMP: SUCCESS");
-            player.GetComponent<Player>().score++;
-            scoreText.text = "Score: " + player.GetComponent<Player>().score;
-=======
            // Debug.Log("TEMP: FAILURE");
             section.GetComponent<SectionHealth>().sectionHealth-=5;
         }
@@ -229,7 +210,6 @@ public class BeatManagerScript : MonoBehaviour
            // Debug.Log("TEMP: SUCCESS");
             section.GetComponent<SectionHealth>().sectionHealth+=5;
             //scoreText.text = "Score: " + player.GetComponent<Player>().score;
->>>>>>> Stashed changes
         }
     }
 }
