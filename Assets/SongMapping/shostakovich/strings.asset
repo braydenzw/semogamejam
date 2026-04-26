@@ -17,1623 +17,2697 @@ MonoBehaviour:
   notesPerMeasure: 3
   noteDivision: 4
   beats:
-  - timestamp: 0.8106667
-    duration: 0
-    noteDirection: 2
-  - timestamp: 1.28
-    duration: 0
-    noteDirection: 1
-  - timestamp: 1.3653333
-    duration: 0
-    noteDirection: 1
-  - timestamp: 2.1973333
-    duration: 0
+  - timestamp: 0
+    duration: 0.999305
     noteDirection: 2
-  - timestamp: 2.3466666
-    duration: 0
+  - timestamp: 0.333333
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 3.3493333
-    duration: 0
-    noteDirection: 1
-  - timestamp: 4.544
-    duration: 0
+  - timestamp: 0.666666
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 0.999999
+    duration: 0.999305
     noteDirection: 2
-  - timestamp: 4.864
-    duration: 0
-    noteDirection: 3
-  - timestamp: 5.866667
-    duration: 0
+  - timestamp: 1.333332
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 1.666665
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 6.016
-    duration: 0
+  - timestamp: 1.999998
+    duration: 0.999305
     noteDirection: 0
-  - timestamp: 6.592
-    duration: 0
+  - timestamp: 2.333331
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 2.666664
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 2.999997
+    duration: 0.999305
+    noteDirection: 0
+  - timestamp: 3.33333
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 3.666663
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 3.999996
+    duration: 0.999305
+    noteDirection: 2
+  - timestamp: 4.333329
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 7.296
-    duration: 0
+  - timestamp: 4.666662
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 8.256
-    duration: 0
+  - timestamp: 4.999995
+    duration: 0.665972
+    noteDirection: 1
+  - timestamp: 5.333328
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 5.666661
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 5.999994
+    duration: 1.332638
     noteDirection: 2
-  - timestamp: 8.576
-    duration: 0
+  - timestamp: 6.333327
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 6.66666
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 6.999993
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 9.642667
-    duration: 0
+  - timestamp: 7.333326
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 7.666659
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 9.856
-    duration: 0
+  - timestamp: 7.999992
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 8.333325
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 8.666658
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 9.984
-    duration: 0
-    noteDirection: 3
-  - timestamp: 10.261333
-    duration: 0
-    noteDirection: 1
-  - timestamp: 11.008
-    duration: 0
+  - timestamp: 8.999991
+    duration: 0.665972
     noteDirection: 3
-  - timestamp: 11.392
-    duration: 0
-    noteDirection: 1
-  - timestamp: 12.501333
-    duration: 0
+  - timestamp: 9.333324
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 14.912
-    duration: 0
+  - timestamp: 9.666657
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 9.99999
+    duration: 0.999305
+    noteDirection: 0
+  - timestamp: 10.333323
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 15.274667
-    duration: 0
+  - timestamp: 10.666656
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 16.512
-    duration: 0
+  - timestamp: 10.999989
+    duration: 0.999305
+    noteDirection: 3
+  - timestamp: 11.333322
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 17.088
-    duration: 0
+  - timestamp: 11.666655
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 11.999988
+    duration: 0.999305
     noteDirection: 3
-  - timestamp: 17.344
-    duration: 0
+  - timestamp: 12.333321
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 17.536
-    duration: 0
+  - timestamp: 12.666654
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 12.999987
+    duration: 0.665972
     noteDirection: 2
-  - timestamp: 18.517334
-    duration: 0
+  - timestamp: 13.33332
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 18.922667
-    duration: 0
-    noteDirection: 3
-  - timestamp: 19.989334
-    duration: 0
+  - timestamp: 13.666653
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 20.288
-    duration: 0
+  - timestamp: 13.999986
+    duration: 1.332638
+    noteDirection: 1
+  - timestamp: 14.333319
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 14.666652
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 20.565332
-    duration: 0
-    noteDirection: 3
-  - timestamp: 20.714666
-    duration: 0
+  - timestamp: 14.999985
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 15.333318
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 15.666651
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 21.418667
-    duration: 0
+  - timestamp: 15.999984
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 16.333317
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 21.930666
-    duration: 0
-    noteDirection: 3
-  - timestamp: 22.037333
-    duration: 0
+  - timestamp: 16.66665
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 22.4
-    duration: 0
+  - timestamp: 16.999983
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 17.333317
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 17.666649
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 24.384
-    duration: 0
+  - timestamp: 17.999983
+    duration: 0.999305
     noteDirection: 0
-  - timestamp: 24.448
-    duration: 0
+  - timestamp: 18.333315
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 24.512
-    duration: 0
+  - timestamp: 18.666649
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 24.661333
-    duration: 0
+  - timestamp: 18.99998
+    duration: 0.999305
     noteDirection: 3
-  - timestamp: 25.386667
-    duration: 0
+  - timestamp: 19.333315
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 19.666647
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 19.99998
+    duration: 0.999305
     noteDirection: 2
-  - timestamp: 25.493334
-    duration: 0
+  - timestamp: 20.333313
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 26.005333
-    duration: 0
+  - timestamp: 20.666645
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 26.709333
-    duration: 0
-    noteDirection: 1
-  - timestamp: 26.858667
-    duration: 0
+  - timestamp: 20.999979
+    duration: 0.665972
     noteDirection: 0
-  - timestamp: 27.114666
-    duration: 0
+  - timestamp: 21.333311
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 21.666645
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 27.264
-    duration: 0
+  - timestamp: 21.999977
+    duration: 0.665972
+    noteDirection: 0
+  - timestamp: 22.333311
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 22.666643
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 22.999977
+    duration: 0.999305
     noteDirection: 1
-  - timestamp: 27.498667
-    duration: 0
+  - timestamp: 23.33331
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 23.666643
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 23.999975
+    duration: 0.999305
     noteDirection: 2
-  - timestamp: 28.181334
-    duration: 0
+  - timestamp: 24.33331
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 28.693333
-    duration: 0
+  - timestamp: 24.666641
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 28.778667
-    duration: 0
+  - timestamp: 24.999975
+    duration: 0.665972
     noteDirection: 3
-  - timestamp: 29.290667
-    duration: 0
+  - timestamp: 25.333307
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 25.666641
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 25.999973
+    duration: 0.665972
     noteDirection: 2
-  - timestamp: 29.610666
-    duration: 0
+  - timestamp: 26.333307
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 26.66664
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 29.866667
-    duration: 0
+  - timestamp: 26.999973
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 30.677334
-    duration: 0
-    noteDirection: 2
-  - timestamp: 30.976
-    duration: 0
-    noteDirection: 3
-  - timestamp: 31.210667
-    duration: 0
+  - timestamp: 27.333305
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 31.530666
-    duration: 0
+  - timestamp: 27.66664
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 31.808
-    duration: 0
-    noteDirection: 0
-  - timestamp: 31.872
-    duration: 0
+  - timestamp: 27.999971
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 28.333305
+    duration: 0.165972
     noteDirection: 2
-  - timestamp: 32.55467
-    duration: 0
+  - timestamp: 28.499971
+    duration: 0.165972
+    noteDirection: 0
+  - timestamp: 28.666637
+    duration: 0.165972
+    noteDirection: 1
+  - timestamp: 28.833305
+    duration: 0.165972
+    noteDirection: 1
+  - timestamp: 28.999971
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 29.333303
+    duration: 0.165972
     noteDirection: 3
-  - timestamp: 32.618668
-    duration: 0
+  - timestamp: 29.499971
+    duration: 0.165972
     noteDirection: 1
-  - timestamp: 33.365334
-    duration: 0
+  - timestamp: 29.666637
+    duration: 0.165972
+    noteDirection: 0
+  - timestamp: 29.833303
+    duration: 0.165972
+    noteDirection: 0
+  - timestamp: 29.99997
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 30.666636
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 30.99997
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 33.514668
-    duration: 0
+  - timestamp: 31.333302
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 33.6
-    duration: 0
+  - timestamp: 31.666636
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 31.999968
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 33.962666
-    duration: 0
+  - timestamp: 32.3333
+    duration: 0.165972
     noteDirection: 3
-  - timestamp: 34.304
-    duration: 0
+  - timestamp: 32.49997
+    duration: 0.165972
+    noteDirection: 1
+  - timestamp: 32.666634
+    duration: 0.165972
+    noteDirection: 3
+  - timestamp: 32.8333
+    duration: 0.165972
+    noteDirection: 1
+  - timestamp: 32.999966
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 34.986668
-    duration: 0
+  - timestamp: 33.3333
+    duration: 0.165972
+    noteDirection: 0
+  - timestamp: 33.499966
+    duration: 0.165972
     noteDirection: 3
-  - timestamp: 35.562668
-    duration: 0
-    noteDirection: 2
-  - timestamp: 35.989334
-    duration: 0
+  - timestamp: 33.666634
+    duration: 0.165972
     noteDirection: 0
-  - timestamp: 36.458668
-    duration: 0
+  - timestamp: 33.8333
+    duration: 0.165972
     noteDirection: 0
-  - timestamp: 36.650665
-    duration: 0
+  - timestamp: 33.999966
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 34.666634
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 34.999966
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 35.333298
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 35.66663
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 35.999966
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 36.8
-    duration: 0
+  - timestamp: 36.333298
+    duration: 0.165972
     noteDirection: 0
-  - timestamp: 36.885334
-    duration: 0
+  - timestamp: 36.499966
+    duration: 0.165972
     noteDirection: 0
-  - timestamp: 37.034668
-    duration: 0
+  - timestamp: 36.66663
+    duration: 0.165972
     noteDirection: 1
-  - timestamp: 37.589333
-    duration: 0
+  - timestamp: 36.833298
+    duration: 0.165972
     noteDirection: 1
-  - timestamp: 37.696
-    duration: 0
+  - timestamp: 36.99996
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 37.333298
+    duration: 0.165972
+    noteDirection: 1
+  - timestamp: 37.49996
+    duration: 0.165972
     noteDirection: 3
-  - timestamp: 37.76
-    duration: 0
+  - timestamp: 37.66663
+    duration: 0.165972
+    noteDirection: 0
+  - timestamp: 37.833298
+    duration: 0.165972
     noteDirection: 3
-  - timestamp: 38.016
-    duration: 0
+  - timestamp: 37.99996
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 38.333294
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 38.66663
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 38.99996
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 38.698666
+  - timestamp: 39.333294
     duration: 0
     noteDirection: 1
-  - timestamp: 38.933334
+  - timestamp: 39.49996
     duration: 0
-    noteDirection: 1
-  - timestamp: 39.296
+    noteDirection: 2
+  - timestamp: 39.666626
     duration: 0
     noteDirection: 0
-  - timestamp: 39.36
+  - timestamp: 39.833294
     duration: 0
+    noteDirection: 1
+  - timestamp: 39.99996
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 40.333294
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 40.666626
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 40.999958
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 40.362667
+  - timestamp: 41.33329
     duration: 0
     noteDirection: 1
-  - timestamp: 41.856
+  - timestamp: 41.499958
+    duration: 0
+    noteDirection: 0
+  - timestamp: 41.666626
     duration: 0
     noteDirection: 1
-  - timestamp: 42.858665
+  - timestamp: 41.83329
     duration: 0
+    noteDirection: 0
+  - timestamp: 41.999958
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 42.33329
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 42.666622
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 43.029335
-    duration: 0
+  - timestamp: 42.999958
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 43.648
-    duration: 0
+  - timestamp: 43.33329
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 43.904
-    duration: 0
+  - timestamp: 43.666622
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 43.999954
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 44.33329
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 44.666622
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 44.999954
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 44.053333
-    duration: 0
+  - timestamp: 45.333286
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 45.666622
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 44.16
-    duration: 0
+  - timestamp: 45.999954
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 46.333286
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 44.544
-    duration: 0
+  - timestamp: 46.66662
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 46.999954
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 47.333286
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 47.66662
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 44.693333
-    duration: 0
+  - timestamp: 47.99995
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 44.864
-    duration: 0
+  - timestamp: 48.333286
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 48.66662
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 48.99995
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 45.418667
-    duration: 0
+  - timestamp: 49.333282
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 45.525333
-    duration: 0
-    noteDirection: 2
-  - timestamp: 46.101334
-    duration: 0
+  - timestamp: 49.66662
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 46.272
-    duration: 0
+  - timestamp: 49.99995
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 46.762665
-    duration: 0
+  - timestamp: 50.333282
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 50.666615
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 50.99995
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 51.333282
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 46.976
-    duration: 0
+  - timestamp: 51.666615
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 47.253334
-    duration: 0
+  - timestamp: 51.999947
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 47.957333
-    duration: 0
-    noteDirection: 3
-  - timestamp: 48.085335
-    duration: 0
+  - timestamp: 52.333282
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 52.666615
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 52.999947
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 53.33328
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 48.32
-    duration: 0
+  - timestamp: 53.666615
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 49.109333
-    duration: 0
-    noteDirection: 3
-  - timestamp: 50.965332
-    duration: 0
-    noteDirection: 3
-  - timestamp: 51.157333
-    duration: 0
+  - timestamp: 53.999947
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 51.861332
-    duration: 0
+  - timestamp: 54.33328
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 54.66661
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 52.48
-    duration: 0
+  - timestamp: 54.999947
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 53.098667
-    duration: 0
+  - timestamp: 55.33328
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 53.205334
-    duration: 0
-    noteDirection: 0
-  - timestamp: 55.018665
-    duration: 0
+  - timestamp: 55.66661
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 55.999943
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 56.33328
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 56.87467
-    duration: 0
+  - timestamp: 56.66661
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 57.514668
-    duration: 0
+  - timestamp: 56.999943
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 57.333275
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 57.66661
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 57.999943
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 58.154667
-    duration: 0
+  - timestamp: 58.333275
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 58.666607
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 58.999943
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 58.453335
-    duration: 0
+  - timestamp: 59.333275
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 58.645332
-    duration: 0
+  - timestamp: 59.666607
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 59.99994
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 60.333275
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 60.666607
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 60.99994
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 58.986668
-    duration: 0
+  - timestamp: 61.33327
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 61.666607
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 59.2
-    duration: 0
+  - timestamp: 61.99994
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 62.33327
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 62.666603
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 59.28533
-    duration: 0
+  - timestamp: 62.999935
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 59.413334
-    duration: 0
+  - timestamp: 63.33327
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 60.074665
-    duration: 0
+  - timestamp: 63.666603
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 60.16
-    duration: 0
+  - timestamp: 63.999935
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 64.33327
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 60.394665
-    duration: 0
-    noteDirection: 0
-  - timestamp: 61.248
-    duration: 0
+  - timestamp: 64.6666
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 64.99993
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 61.568
-    duration: 0
+  - timestamp: 65.33327
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 62.08
-    duration: 0
-    noteDirection: 0
-  - timestamp: 62.18667
-    duration: 0
+  - timestamp: 65.6666
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 65.99993
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 62.293335
-    duration: 0
+  - timestamp: 66.33327
+    duration: 0.165972
+    noteDirection: 0
+  - timestamp: 66.49993
+    duration: 0.165972
     noteDirection: 3
-  - timestamp: 62.464
-    duration: 0
+  - timestamp: 66.6666
+    duration: 0.165972
     noteDirection: 2
-  - timestamp: 63.08267
-    duration: 0
-    noteDirection: 0
-  - timestamp: 63.466667
-    duration: 0
+  - timestamp: 66.83327
+    duration: 0.165972
     noteDirection: 0
-  - timestamp: 63.914665
-    duration: 0
+  - timestamp: 66.99993
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 64.64
-    duration: 0
-    noteDirection: 3
-  - timestamp: 64.832
-    duration: 0
+  - timestamp: 67.33327
+    duration: 0.165972
+    noteDirection: 1
+  - timestamp: 67.49993
+    duration: 0.165972
+    noteDirection: 1
+  - timestamp: 67.666595
+    duration: 0.165972
+    noteDirection: 2
+  - timestamp: 67.83327
+    duration: 0.165972
+    noteDirection: 1
+  - timestamp: 67.99993
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 68.666595
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 65.30133
-    duration: 0
+  - timestamp: 68.99993
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 65.51466
-    duration: 0
+  - timestamp: 69.33327
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 65.57867
-    duration: 0
+  - timestamp: 69.666595
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 65.77067
-    duration: 0
+  - timestamp: 69.99993
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 66.538666
-    duration: 0
+  - timestamp: 70.33326
+    duration: 0.165972
+    noteDirection: 1
+  - timestamp: 70.49993
+    duration: 0.165972
+    noteDirection: 0
+  - timestamp: 70.666595
+    duration: 0.165972
     noteDirection: 2
-  - timestamp: 67.328
-    duration: 0
+  - timestamp: 70.83326
+    duration: 0.165972
     noteDirection: 3
-  - timestamp: 67.62666
-    duration: 0
+  - timestamp: 70.99993
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 71.33326
+    duration: 0.165972
     noteDirection: 3
-  - timestamp: 67.73333
-    duration: 0
-    noteDirection: 2
-  - timestamp: 67.79733
-    duration: 0
+  - timestamp: 71.49993
+    duration: 0.165972
+    noteDirection: 1
+  - timestamp: 71.666595
+    duration: 0.165972
     noteDirection: 0
-  - timestamp: 68.30933
-    duration: 0
+  - timestamp: 71.83326
+    duration: 0.165972
+    noteDirection: 1
+  - timestamp: 71.99993
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 72.666595
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 68.69334
-    duration: 0
-    noteDirection: 0
-  - timestamp: 69.333336
-    duration: 0
+  - timestamp: 72.99992
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 69.54667
-    duration: 0
+  - timestamp: 73.33326
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 73.666595
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 69.653336
-    duration: 0
+  - timestamp: 73.99992
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 69.824
-    duration: 0
-    noteDirection: 3
-  - timestamp: 70.18667
-    duration: 0
+  - timestamp: 74.33326
+    duration: 0.165972
     noteDirection: 0
-  - timestamp: 70.528
-    duration: 0
+  - timestamp: 74.49992
+    duration: 0.165972
     noteDirection: 1
-  - timestamp: 70.63467
-    duration: 0
+  - timestamp: 74.666595
+    duration: 0.165972
+    noteDirection: 1
+  - timestamp: 74.83326
+    duration: 0.165972
+    noteDirection: 0
+  - timestamp: 74.99992
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 75.33326
+    duration: 0.165972
+    noteDirection: 2
+  - timestamp: 75.49992
+    duration: 0.165972
+    noteDirection: 0
+  - timestamp: 75.66659
+    duration: 0.165972
+    noteDirection: 0
+  - timestamp: 75.83326
+    duration: 0.165972
+    noteDirection: 1
+  - timestamp: 75.99992
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 70.86933
-    duration: 0
+  - timestamp: 76.33326
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 76.66659
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 76.99992
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 71.06133
+  - timestamp: 77.16659
     duration: 0
     noteDirection: 0
-  - timestamp: 71.253334
-    duration: 0
-    noteDirection: 3
-  - timestamp: 71.402664
+  - timestamp: 77.33326
     duration: 0
-    noteDirection: 2
-  - timestamp: 71.765335
+    noteDirection: 0
+  - timestamp: 77.49992
     duration: 0
     noteDirection: 3
-  - timestamp: 72.21333
+  - timestamp: 77.66659
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 77.83326
     duration: 0
+    noteDirection: 2
+  - timestamp: 77.99992
+    duration: 0.999305
     noteDirection: 0
-  - timestamp: 72.64
-    duration: 0
+  - timestamp: 78.16659
+    duration: 0.180555
+    noteDirection: 1
+  - timestamp: 78.33325
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 78.49992
+    duration: 0.180555
     noteDirection: 3
-  - timestamp: 73.57867
-    duration: 0
+  - timestamp: 78.66659
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 78.99992
+    duration: 0.999305
     noteDirection: 3
-  - timestamp: 73.706665
-    duration: 0
+  - timestamp: 79.16659
+    duration: 0.180555
     noteDirection: 1
-  - timestamp: 73.77067
-    duration: 0
+  - timestamp: 79.33325
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 79.49992
+    duration: 0.180555
     noteDirection: 1
-  - timestamp: 74.176
-    duration: 0
+  - timestamp: 79.66659
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 79.99992
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 74.346664
-    duration: 0
+  - timestamp: 80.16659
+    duration: 0.180555
+    noteDirection: 3
+  - timestamp: 80.33325
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 80.49992
+    duration: 0.180555
     noteDirection: 1
-  - timestamp: 74.496
-    duration: 0
+  - timestamp: 80.66659
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 80.83325
+    duration: 0.165972
+    noteDirection: 0
+  - timestamp: 80.999916
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 81.16659
+    duration: 0.180555
     noteDirection: 3
-  - timestamp: 74.666664
-    duration: 0
+  - timestamp: 81.33325
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 81.499916
+    duration: 0.180555
+    noteDirection: 2
+  - timestamp: 81.66659
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 81.83325
+    duration: 0.165972
+    noteDirection: 2
+  - timestamp: 81.999916
+    duration: 0.999305
+    noteDirection: 0
+  - timestamp: 82.16659
+    duration: 0.180555
+    noteDirection: 0
+  - timestamp: 82.33325
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 82.499916
+    duration: 0.180555
+    noteDirection: 0
+  - timestamp: 82.66658
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 82.999916
+    duration: 0.999305
     noteDirection: 1
-  - timestamp: 74.816
-    duration: 0
+  - timestamp: 83.16658
+    duration: 0.180555
+    noteDirection: 3
+  - timestamp: 83.33325
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 83.499916
+    duration: 0.180555
+    noteDirection: 2
+  - timestamp: 83.66658
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 75.41333
-    duration: 0
+  - timestamp: 83.999916
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 84.16658
+    duration: 0.180555
+    noteDirection: 0
+  - timestamp: 84.33325
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 84.499916
+    duration: 0.180555
     noteDirection: 3
-  - timestamp: 75.73333
-    duration: 0
+  - timestamp: 84.66658
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 76.05334
-    duration: 0
+  - timestamp: 84.83325
+    duration: 0.165972
+    noteDirection: 0
+  - timestamp: 84.999916
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 85.16658
+    duration: 0.180555
+    noteDirection: 0
+  - timestamp: 85.333244
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 85.499916
+    duration: 0.180555
     noteDirection: 2
-  - timestamp: 76.138664
-    duration: 0
+  - timestamp: 85.66658
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 85.833244
+    duration: 0.165972
+    noteDirection: 2
+  - timestamp: 85.999916
+    duration: 0.999305
     noteDirection: 3
-  - timestamp: 76.84267
-    duration: 0
+  - timestamp: 86.16658
+    duration: 0.180555
+    noteDirection: 1
+  - timestamp: 86.333244
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 86.499916
+    duration: 0.180555
     noteDirection: 2
-  - timestamp: 77.248
-    duration: 0
+  - timestamp: 86.66658
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 86.999916
+    duration: 0.999305
     noteDirection: 1
-  - timestamp: 77.71733
-    duration: 0
+  - timestamp: 87.16658
+    duration: 0.180555
     noteDirection: 3
-  - timestamp: 77.952
-    duration: 0
+  - timestamp: 87.333244
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 78.42133
-    duration: 0
+  - timestamp: 87.499916
+    duration: 0.180555
     noteDirection: 2
-  - timestamp: 78.99733
-    duration: 0
+  - timestamp: 87.66658
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 87.99991
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 79.168
-    duration: 0
+  - timestamp: 88.16658
+    duration: 0.180555
+    noteDirection: 2
+  - timestamp: 88.333244
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 79.68
-    duration: 0
+  - timestamp: 88.49991
+    duration: 0.180555
     noteDirection: 1
-  - timestamp: 80.085335
-    duration: 0
+  - timestamp: 88.66658
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 80.93867
-    duration: 0
-    noteDirection: 2
-  - timestamp: 81.088
-    duration: 0
+  - timestamp: 88.833244
+    duration: 0.165972
+    noteDirection: 1
+  - timestamp: 88.99991
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 89.16658
+    duration: 0.180555
     noteDirection: 0
-  - timestamp: 82.28267
-    duration: 0
+  - timestamp: 89.333244
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 89.49991
+    duration: 0.180555
+    noteDirection: 1
+  - timestamp: 89.66658
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 89.833244
+    duration: 0.165972
+    noteDirection: 3
+  - timestamp: 89.99991
+    duration: 0.665972
+    noteDirection: 1
+  - timestamp: 90.16658
+    duration: 0.180555
+    noteDirection: 3
+  - timestamp: 90.333244
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 90.49991
+    duration: 0.180555
+    noteDirection: 0
+  - timestamp: 90.66657
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 90.99991
+    duration: 0.665972
+    noteDirection: 0
+  - timestamp: 91.16657
+    duration: 0.180555
+    noteDirection: 1
+  - timestamp: 91.333244
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 82.624
-    duration: 0
+  - timestamp: 91.49991
+    duration: 0.180555
     noteDirection: 2
-  - timestamp: 82.709335
-    duration: 0
+  - timestamp: 91.66657
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 91.99991
+    duration: 0.665972
     noteDirection: 1
-  - timestamp: 82.92267
-    duration: 0
+  - timestamp: 92.16657
+    duration: 0.180555
     noteDirection: 1
-  - timestamp: 83.584
-    duration: 0
+  - timestamp: 92.333244
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 92.49991
+    duration: 0.180555
+    noteDirection: 2
+  - timestamp: 92.66657
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 83.75467
-    duration: 0
+  - timestamp: 92.99991
+    duration: 0.665972
     noteDirection: 3
-  - timestamp: 84.864
-    duration: 0
+  - timestamp: 93.16657
+    duration: 0.180555
+    noteDirection: 3
+  - timestamp: 93.33324
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 93.49991
+    duration: 0.180555
+    noteDirection: 2
+  - timestamp: 93.66657
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 93.99991
+    duration: 0.999305
+    noteDirection: 1
+  - timestamp: 94.16657
+    duration: 0.180555
+    noteDirection: 3
+  - timestamp: 94.33324
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 94.49991
+    duration: 0.180555
+    noteDirection: 2
+  - timestamp: 94.66657
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 94.99991
+    duration: 0.999305
+    noteDirection: 2
+  - timestamp: 95.16657
+    duration: 0.180555
+    noteDirection: 2
+  - timestamp: 95.33324
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 95.49991
+    duration: 0.180555
+    noteDirection: 3
+  - timestamp: 95.66657
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 95.9999
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 84.928
-    duration: 0
+  - timestamp: 96.16657
+    duration: 0.180555
+    noteDirection: 0
+  - timestamp: 96.33324
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 96.4999
+    duration: 0.180555
+    noteDirection: 0
+  - timestamp: 96.66657
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 85.184
-    duration: 0
+  - timestamp: 96.83324
+    duration: 0.165972
     noteDirection: 3
-  - timestamp: 85.44
-    duration: 0
+  - timestamp: 96.9999
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 86.22933
-    duration: 0
+  - timestamp: 97.16657
+    duration: 0.180555
     noteDirection: 0
-  - timestamp: 86.848
-    duration: 0
+  - timestamp: 97.33324
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 97.4999
+    duration: 0.180555
+    noteDirection: 3
+  - timestamp: 97.66657
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 97.83324
+    duration: 0.165972
     noteDirection: 0
-  - timestamp: 86.954666
-    duration: 0
+  - timestamp: 97.9999
+    duration: 0.999305
+    noteDirection: 0
+  - timestamp: 98.16657
+    duration: 0.180555
+    noteDirection: 0
+  - timestamp: 98.33324
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 87.552
-    duration: 0
+  - timestamp: 98.4999
+    duration: 0.180555
+    noteDirection: 2
+  - timestamp: 98.666565
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 98.9999
+    duration: 0.999305
+    noteDirection: 3
+  - timestamp: 99.166565
+    duration: 0.180555
     noteDirection: 1
-  - timestamp: 87.85067
-    duration: 0
+  - timestamp: 99.33324
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 89.6
-    duration: 0
+  - timestamp: 99.4999
+    duration: 0.180555
+    noteDirection: 3
+  - timestamp: 99.666565
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 89.83466
-    duration: 0
+  - timestamp: 99.9999
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 100.166565
+    duration: 0.180555
     noteDirection: 0
-  - timestamp: 89.94133
-    duration: 0
+  - timestamp: 100.33324
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 100.4999
+    duration: 0.180555
+    noteDirection: 2
+  - timestamp: 100.666565
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 90.368
-    duration: 0
+  - timestamp: 100.83324
+    duration: 0.165972
+    noteDirection: 1
+  - timestamp: 100.9999
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 101.166565
+    duration: 0.180555
     noteDirection: 3
-  - timestamp: 90.496
-    duration: 0
+  - timestamp: 101.33323
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 101.4999
+    duration: 0.180555
+    noteDirection: 1
+  - timestamp: 101.666565
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 101.83323
+    duration: 0.165972
+    noteDirection: 3
+  - timestamp: 101.9999
+    duration: 0.999305
+    noteDirection: 3
+  - timestamp: 102.166565
+    duration: 0.180555
     noteDirection: 0
-  - timestamp: 90.88
-    duration: 0
+  - timestamp: 102.33323
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 102.4999
+    duration: 0.180555
+    noteDirection: 0
+  - timestamp: 102.666565
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 102.99989
+    duration: 0.999305
+    noteDirection: 3
+  - timestamp: 103.166565
+    duration: 0.180555
     noteDirection: 2
-  - timestamp: 91.776
-    duration: 0
+  - timestamp: 103.33323
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 92.032
-    duration: 0
+  - timestamp: 103.49989
+    duration: 0.180555
     noteDirection: 0
-  - timestamp: 92.138664
-    duration: 0
-    noteDirection: 2
-  - timestamp: 92.224
-    duration: 0
+  - timestamp: 103.666565
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 103.99989
+    duration: 0.999305
+    noteDirection: 1
+  - timestamp: 104.166565
+    duration: 0.180555
     noteDirection: 0
-  - timestamp: 92.736
-    duration: 0
-    noteDirection: 3
-  - timestamp: 93.16267
-    duration: 0
+  - timestamp: 104.33323
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 104.49989
+    duration: 0.180555
+    noteDirection: 1
+  - timestamp: 104.666565
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 93.888
-    duration: 0
+  - timestamp: 104.99989
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 94.35733
-    duration: 0
+  - timestamp: 105.166565
+    duration: 0.180555
     noteDirection: 1
-  - timestamp: 94.762665
-    duration: 0
+  - timestamp: 105.33323
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 95.125336
-    duration: 0
+  - timestamp: 105.49989
+    duration: 0.180555
+    noteDirection: 2
+  - timestamp: 105.66656
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 95.36
-    duration: 0
+  - timestamp: 105.83323
+    duration: 0.165972
+    noteDirection: 3
+  - timestamp: 105.99989
+    duration: 0.665972
     noteDirection: 2
-  - timestamp: 95.722664
-    duration: 0
+  - timestamp: 106.16656
+    duration: 0.180555
+    noteDirection: 2
+  - timestamp: 106.33323
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 95.95734
-    duration: 0
+  - timestamp: 106.49989
+    duration: 0.180555
     noteDirection: 1
-  - timestamp: 96.128
-    duration: 0
+  - timestamp: 106.66656
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 96.21333
-    duration: 0
+  - timestamp: 106.99989
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 107.16656
+    duration: 0.180555
+    noteDirection: 3
+  - timestamp: 107.33323
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 107.49989
+    duration: 0.180555
+    noteDirection: 3
+  - timestamp: 107.66656
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 107.83323
+    duration: 0.180555
+    noteDirection: 3
+  - timestamp: 107.99989
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 96.36266
-    duration: 0
+  - timestamp: 108.16656
+    duration: 0.165972
     noteDirection: 0
-  - timestamp: 96.49067
-    duration: 0
+  - timestamp: 108.33322
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 108.49989
+    duration: 0.165972
+    noteDirection: 0
+  - timestamp: 108.66656
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 108.83322
+    duration: 0.165972
+    noteDirection: 2
+  - timestamp: 108.99989
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 109.16656
+    duration: 0.165972
     noteDirection: 1
-  - timestamp: 96.85333
-    duration: 0
+  - timestamp: 109.33322
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 109.49989
+    duration: 0.165972
+    noteDirection: 0
+  - timestamp: 109.66656
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 109.83322
+    duration: 0.165972
+    noteDirection: 1
+  - timestamp: 109.99989
+    duration: 0.665972
     noteDirection: 3
-  - timestamp: 97.17333
-    duration: 0
+  - timestamp: 110.33322
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 110.66656
+    duration: 0.665972
+    noteDirection: 0
+  - timestamp: 110.999886
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 111.33322
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 97.30133
-    duration: 0
+  - timestamp: 111.66656
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 111.999886
+    duration: 0.665972
     noteDirection: 1
-  - timestamp: 97.57867
-    duration: 0
+  - timestamp: 112.33322
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 97.706665
-    duration: 0
+  - timestamp: 112.66656
+    duration: 0.665972
     noteDirection: 0
-  - timestamp: 97.89867
-    duration: 0
+  - timestamp: 112.999886
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 98.517334
-    duration: 0
+  - timestamp: 113.33322
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 98.688
-    duration: 0
+  - timestamp: 113.66655
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 113.999886
+    duration: 0.665972
+    noteDirection: 3
+  - timestamp: 114.33322
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 98.96533
-    duration: 0
+  - timestamp: 114.66655
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 99.30666
-    duration: 0
+  - timestamp: 114.999886
+    duration: 0.665972
+    noteDirection: 0
+  - timestamp: 115.33322
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 99.37067
-    duration: 0
+  - timestamp: 115.66655
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 99.62666
-    duration: 0
+  - timestamp: 115.999886
+    duration: 0.665972
+    noteDirection: 3
+  - timestamp: 116.33321
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 116.66655
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 116.999886
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 99.92533
-    duration: 0
+  - timestamp: 117.33321
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 117.66655
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 117.999886
+    duration: 0.665972
+    noteDirection: 1
+  - timestamp: 118.33321
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 100.20267
-    duration: 0
-    noteDirection: 2
-  - timestamp: 101.568
-    duration: 0
-    noteDirection: 2
-  - timestamp: 101.930664
-    duration: 0
+  - timestamp: 118.66655
+    duration: 0.665972
     noteDirection: 3
-  - timestamp: 102.10133
-    duration: 0
+  - timestamp: 118.99988
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 119.33321
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 102.4
-    duration: 0
+  - timestamp: 119.66655
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 102.63467
-    duration: 0
+  - timestamp: 119.99988
+    duration: 0.665972
+    noteDirection: 1
+  - timestamp: 120.33321
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 102.82667
-    duration: 0
+  - timestamp: 120.66655
+    duration: 0.665972
     noteDirection: 1
-  - timestamp: 103.125336
-    duration: 0
+  - timestamp: 120.99988
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 121.33321
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 103.38133
-    duration: 0
+  - timestamp: 121.66654
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 103.70133
-    duration: 0
+  - timestamp: 121.99988
+    duration: 0.665972
+    noteDirection: 3
+  - timestamp: 122.16654
+    duration: 0.180555
+    noteDirection: 3
+  - timestamp: 122.34779
+    duration: 0.152084
+    noteDirection: 3
+  - timestamp: 122.49988
+    duration: 0.180555
+    noteDirection: 3
+  - timestamp: 122.66654
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 104.256
-    duration: 0
+  - timestamp: 122.99988
+    duration: 0.665972
+    noteDirection: 1
+  - timestamp: 123.16654
+    duration: 0.180555
+    noteDirection: 1
+  - timestamp: 123.34779
+    duration: 0.152084
     noteDirection: 2
-  - timestamp: 104.42667
-    duration: 0
-    noteDirection: 0
-  - timestamp: 104.53333
-    duration: 0
+  - timestamp: 123.49988
+    duration: 0.180555
+    noteDirection: 2
+  - timestamp: 123.66654
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 104.832
-    duration: 0
+  - timestamp: 123.99988
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 105.088
-    duration: 0
+  - timestamp: 124.16654
+    duration: 0.180555
+    noteDirection: 0
+  - timestamp: 124.333206
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 105.152
-    duration: 0
+  - timestamp: 124.49988
+    duration: 0.180555
     noteDirection: 2
-  - timestamp: 105.386665
-    duration: 0
-    noteDirection: 1
-  - timestamp: 105.57867
-    duration: 0
+  - timestamp: 124.66654
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 124.99988
+    duration: 0.665972
     noteDirection: 0
-  - timestamp: 105.94133
-    duration: 0
+  - timestamp: 125.16654
+    duration: 0.180555
+    noteDirection: 3
+  - timestamp: 125.34779
+    duration: 0.152084
     noteDirection: 0
-  - timestamp: 106.26133
-    duration: 0
-    noteDirection: 1
-  - timestamp: 106.538666
-    duration: 0
+  - timestamp: 125.49988
+    duration: 0.180555
     noteDirection: 0
-  - timestamp: 106.986664
-    duration: 0
+  - timestamp: 125.66654
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 125.99987
+    duration: 0.165972
+    noteDirection: 2
+  - timestamp: 126.16654
+    duration: 0.165972
+    noteDirection: 3
+  - timestamp: 126.333206
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 126.49987
+    duration: 0.165972
+    noteDirection: 2
+  - timestamp: 126.66654
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 126.833206
+    duration: 0.165972
+    noteDirection: 0
+  - timestamp: 126.99987
+    duration: 0.165972
+    noteDirection: 1
+  - timestamp: 127.16654
+    duration: 0.165972
+    noteDirection: 3
+  - timestamp: 127.333206
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 127.49987
+    duration: 0.165972
+    noteDirection: 3
+  - timestamp: 127.66654
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 127.833206
+    duration: 0.165972
     noteDirection: 2
-  - timestamp: 107.136
-    duration: 0
+  - timestamp: 127.99987
+    duration: 0.165972
+    noteDirection: 1
+  - timestamp: 128.16653
+    duration: 0.165972
+    noteDirection: 3
+  - timestamp: 128.3332
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 128.49988
+    duration: 0.165972
+    noteDirection: 3
+  - timestamp: 128.66653
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 107.30666
-    duration: 0
+  - timestamp: 128.8332
+    duration: 0.165972
+    noteDirection: 1
+  - timestamp: 128.99988
+    duration: 0.165972
+    noteDirection: 3
+  - timestamp: 129.16653
+    duration: 0.165972
+    noteDirection: 3
+  - timestamp: 129.3332
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 129.49988
+    duration: 0.165972
     noteDirection: 2
-  - timestamp: 107.776
-    duration: 0
+  - timestamp: 129.66653
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 129.8332
+    duration: 0.165972
     noteDirection: 1
-  - timestamp: 107.861336
-    duration: 0
+  - timestamp: 129.99986
+    duration: 0.165972
     noteDirection: 3
-  - timestamp: 108.90667
-    duration: 0
+  - timestamp: 130.16653
+    duration: 0.165972
+    noteDirection: 3
+  - timestamp: 130.3332
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 109.09866
-    duration: 0
+  - timestamp: 130.49986
+    duration: 0.165972
+    noteDirection: 2
+  - timestamp: 130.66653
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 109.90933
-    duration: 0
+  - timestamp: 130.8332
+    duration: 0.165972
+    noteDirection: 1
+  - timestamp: 130.99986
+    duration: 0.165972
+    noteDirection: 2
+  - timestamp: 131.16653
+    duration: 0.165972
     noteDirection: 3
-  - timestamp: 110.03733
-    duration: 0
+  - timestamp: 131.3332
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 110.954666
-    duration: 0
-    noteDirection: 0
-  - timestamp: 111.402664
-    duration: 0
+  - timestamp: 131.49986
+    duration: 0.165972
     noteDirection: 2
-  - timestamp: 111.616
-    duration: 0
-    noteDirection: 0
-  - timestamp: 112
-    duration: 0
+  - timestamp: 131.66653
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 112.17067
-    duration: 0
+  - timestamp: 131.8332
+    duration: 0.165972
     noteDirection: 1
-  - timestamp: 112.234665
-    duration: 0
+  - timestamp: 131.99986
+    duration: 0.165972
+    noteDirection: 2
+  - timestamp: 132.16653
+    duration: 0.165972
+    noteDirection: 3
+  - timestamp: 132.3332
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 113.45067
-    duration: 0
+  - timestamp: 132.49986
+    duration: 0.165972
+    noteDirection: 2
+  - timestamp: 132.66653
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 132.8332
+    duration: 0.165972
+    noteDirection: 0
+  - timestamp: 132.99986
+    duration: 0.165972
     noteDirection: 3
-  - timestamp: 114.069336
-    duration: 0
+  - timestamp: 133.16653
+    duration: 0.165972
+    noteDirection: 2
+  - timestamp: 133.3332
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 133.49986
+    duration: 0.165972
     noteDirection: 0
-  - timestamp: 114.60267
-    duration: 0
+  - timestamp: 133.66653
+    duration: 0.165972
+    noteDirection: 0
+  - timestamp: 133.8332
+    duration: 0.165972
     noteDirection: 1
-  - timestamp: 114.666664
-    duration: 0
-    noteDirection: 2
-  - timestamp: 114.79467
-    duration: 0
+  - timestamp: 133.99986
+    duration: 0.165972
     noteDirection: 2
-  - timestamp: 115.072
-    duration: 0
+  - timestamp: 134.16653
+    duration: 0.165972
+    noteDirection: 3
+  - timestamp: 134.3332
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 134.49986
+    duration: 0.165972
     noteDirection: 1
-  - timestamp: 115.328
-    duration: 0
+  - timestamp: 134.66653
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 134.8332
+    duration: 0.165972
     noteDirection: 2
-  - timestamp: 115.56267
-    duration: 0
+  - timestamp: 134.99986
+    duration: 0.165972
     noteDirection: 2
-  - timestamp: 115.669334
-    duration: 0
+  - timestamp: 135.16653
+    duration: 0.165972
     noteDirection: 0
-  - timestamp: 116.05334
-    duration: 0
-    noteDirection: 3
-  - timestamp: 116.26667
-    duration: 0
-    noteDirection: 1
-  - timestamp: 116.330666
-    duration: 0
-    noteDirection: 1
-  - timestamp: 116.48
-    duration: 0
-    noteDirection: 1
-  - timestamp: 116.928
-    duration: 0
+  - timestamp: 135.33319
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 117.52533
-    duration: 0
+  - timestamp: 135.49986
+    duration: 0.165972
     noteDirection: 3
-  - timestamp: 117.696
-    duration: 0
+  - timestamp: 135.66653
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 117.84534
-    duration: 0
+  - timestamp: 135.83319
+    duration: 0.165972
     noteDirection: 2
-  - timestamp: 118.336
-    duration: 0
+  - timestamp: 135.99986
+    duration: 0.165972
     noteDirection: 0
-  - timestamp: 118.69867
-    duration: 0
+  - timestamp: 136.16653
+    duration: 0.165972
+    noteDirection: 0
+  - timestamp: 136.33319
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 118.784
-    duration: 0
+  - timestamp: 136.49986
+    duration: 0.165972
+    noteDirection: 3
+  - timestamp: 136.66653
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 118.954666
-    duration: 0
+  - timestamp: 136.83319
+    duration: 0.165972
+    noteDirection: 3
+  - timestamp: 136.99986
+    duration: 0.165972
     noteDirection: 1
-  - timestamp: 119.01867
-    duration: 0
+  - timestamp: 137.16653
+    duration: 0.165972
     noteDirection: 1
-  - timestamp: 119.33867
-    duration: 0
+  - timestamp: 137.33319
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 137.49986
+    duration: 0.165972
     noteDirection: 3
-  - timestamp: 119.50933
-    duration: 0
-    noteDirection: 1
-  - timestamp: 120.21333
-    duration: 0
+  - timestamp: 137.66653
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 137.83319
+    duration: 0.165972
+    noteDirection: 0
+  - timestamp: 137.99986
+    duration: 0.165972
     noteDirection: 3
-  - timestamp: 120.42667
-    duration: 0
+  - timestamp: 138.16653
+    duration: 0.165972
+    noteDirection: 0
+  - timestamp: 138.33319
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 138.49986
+    duration: 0.165972
     noteDirection: 3
-  - timestamp: 120.49067
-    duration: 0
+  - timestamp: 138.66653
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 121.045334
-    duration: 0
+  - timestamp: 138.83319
+    duration: 0.165972
+    noteDirection: 0
+  - timestamp: 138.99986
+    duration: 0.165972
     noteDirection: 3
-  - timestamp: 121.17333
-    duration: 0
-    noteDirection: 2
-  - timestamp: 121.49333
-    duration: 0
+  - timestamp: 139.16653
+    duration: 0.165972
+    noteDirection: 3
+  - timestamp: 139.33319
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 121.706665
-    duration: 0
+  - timestamp: 139.49986
+    duration: 0.165972
     noteDirection: 1
-  - timestamp: 121.94133
-    duration: 0
+  - timestamp: 139.66653
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 139.83319
+    duration: 0.165972
     noteDirection: 0
-  - timestamp: 122.112
-    duration: 0
+  - timestamp: 139.99986
+    duration: 0.165972
+    noteDirection: 3
+  - timestamp: 140.16653
+    duration: 0.165972
     noteDirection: 0
-  - timestamp: 122.368
-    duration: 0
-    noteDirection: 1
-  - timestamp: 122.64533
-    duration: 0
+  - timestamp: 140.33319
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 122.709335
-    duration: 0
-    noteDirection: 2
-  - timestamp: 123.11467
-    duration: 0
+  - timestamp: 140.49986
+    duration: 0.165972
     noteDirection: 0
-  - timestamp: 123.22134
-    duration: 0
+  - timestamp: 140.66652
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 123.69067
-    duration: 0
+  - timestamp: 140.83319
+    duration: 0.165972
     noteDirection: 2
-  - timestamp: 123.776
-    duration: 0
-    noteDirection: 3
-  - timestamp: 123.861336
-    duration: 0
+  - timestamp: 140.99986
+    duration: 0.165972
+    noteDirection: 2
+  - timestamp: 141.16652
+    duration: 0.165972
+    noteDirection: 2
+  - timestamp: 141.33319
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 141.49986
+    duration: 0.165972
     noteDirection: 3
-  - timestamp: 124.71467
-    duration: 0
+  - timestamp: 141.66652
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 125.056
-    duration: 0
+  - timestamp: 141.83319
+    duration: 0.165972
     noteDirection: 3
-  - timestamp: 125.610664
-    duration: 0
-    noteDirection: 2
-  - timestamp: 126.4
-    duration: 0
-    noteDirection: 0
-  - timestamp: 126.592
-    duration: 0
+  - timestamp: 141.99986
+    duration: 0.999305
     noteDirection: 1
-  - timestamp: 127.70133
+  - timestamp: 142.16583
     duration: 0
     noteDirection: 0
-  - timestamp: 128.064
+  - timestamp: 142.3318
     duration: 0
     noteDirection: 0
-  - timestamp: 128.40533
+  - timestamp: 142.49777
     duration: 0
-    noteDirection: 1
-  - timestamp: 128.512
+    noteDirection: 3
+  - timestamp: 142.66374
     duration: 0
     noteDirection: 0
-  - timestamp: 128.78934
-    duration: 0
-    noteDirection: 2
-  - timestamp: 130.47467
+  - timestamp: 142.82971
     duration: 0
     noteDirection: 2
-  - timestamp: 130.56
-    duration: 0
+  - timestamp: 142.99986
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 130.77333
-    duration: 0
+  - timestamp: 143.33319
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 130.90134
-    duration: 0
+  - timestamp: 143.66652
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 132.24533
+  - timestamp: 143.99986
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 144.16583
     duration: 0
     noteDirection: 2
-  - timestamp: 133.14133
+  - timestamp: 144.3318
     duration: 0
     noteDirection: 3
-  - timestamp: 133.29066
+  - timestamp: 144.49777
     duration: 0
-    noteDirection: 1
-  - timestamp: 133.35466
+    noteDirection: 0
+  - timestamp: 144.66374
     duration: 0
     noteDirection: 0
-  - timestamp: 133.86667
+  - timestamp: 144.82971
     duration: 0
     noteDirection: 2
-  - timestamp: 134.29333
-    duration: 0
+  - timestamp: 144.99985
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 134.63467
-    duration: 0
-    noteDirection: 1
-  - timestamp: 135.552
-    duration: 0
-    noteDirection: 0
-  - timestamp: 135.82933
-    duration: 0
-    noteDirection: 0
-  - timestamp: 137.024
-    duration: 0
+  - timestamp: 145.33319
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 145.66652
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 137.68533
-    duration: 0
-    noteDirection: 0
-  - timestamp: 138.00534
-    duration: 0
+  - timestamp: 145.99985
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 138.09067
-    duration: 0
-    noteDirection: 1
-  - timestamp: 138.368
-    duration: 0
-    noteDirection: 1
-  - timestamp: 138.77333
+  - timestamp: 146.16583
     duration: 0
     noteDirection: 3
-  - timestamp: 138.98666
-    duration: 0
-    noteDirection: 2
-  - timestamp: 139.52
+  - timestamp: 146.3318
     duration: 0
     noteDirection: 3
-  - timestamp: 139.75467
-    duration: 0
-    noteDirection: 1
-  - timestamp: 141.312
+  - timestamp: 146.49777
     duration: 0
     noteDirection: 3
-  - timestamp: 141.568
-    duration: 0
-    noteDirection: 1
-  - timestamp: 142.03734
+  - timestamp: 146.66374
     duration: 0
     noteDirection: 1
-  - timestamp: 142.4
-    duration: 0
-    noteDirection: 2
-  - timestamp: 142.48534
+  - timestamp: 146.82971
     duration: 0
     noteDirection: 0
-  - timestamp: 143.25333
-    duration: 0
+  - timestamp: 146.99985
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 143.50934
-    duration: 0
+  - timestamp: 147.33319
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 144.42667
-    duration: 0
-    noteDirection: 0
-  - timestamp: 146.00534
-    duration: 0
+  - timestamp: 147.66652
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 146.26134
-    duration: 0
-    noteDirection: 3
-  - timestamp: 146.79466
-    duration: 0
+  - timestamp: 147.99985
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 147.584
-    duration: 0
-    noteDirection: 1
-  - timestamp: 147.66933
-    duration: 0
+  - timestamp: 148.33319
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 148.66652
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 148.99985
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 147.84
-    duration: 0
-    noteDirection: 0
-  - timestamp: 148.56534
-    duration: 0
+  - timestamp: 149.33319
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 149.20534
-    duration: 0
-    noteDirection: 0
-  - timestamp: 149.71733
-    duration: 0
+  - timestamp: 149.66652
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 150.89067
-    duration: 0
+  - timestamp: 149.99985
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 151.53067
-    duration: 0
+  - timestamp: 150.33318
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 151.72267
-    duration: 0
+  - timestamp: 150.66652
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 150.99985
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 151.33318
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 151.66652
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 151.99985
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 152.33318
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 152.66652
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 152.99985
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 153.33318
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 151.78667
-    duration: 0
+  - timestamp: 153.66652
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 153.99985
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 154.33318
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 154.66652
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 154.99985
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 153.536
-    duration: 0
+  - timestamp: 155.33318
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 155.6665
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 155.99985
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 154.58133
-    duration: 0
+  - timestamp: 156.33318
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 154.88
-    duration: 0
+  - timestamp: 156.6665
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 155.22133
-    duration: 0
-    noteDirection: 1
-  - timestamp: 156.58667
-    duration: 0
+  - timestamp: 156.99985
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 157.33318
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 156.94934
-    duration: 0
-    noteDirection: 1
-  - timestamp: 158.03734
-    duration: 0
+  - timestamp: 157.6665
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 157.99985
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 158.33318
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 158.12267
-    duration: 0
+  - timestamp: 158.6665
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 158.61333
-    duration: 0
+  - timestamp: 158.99985
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 159.33318
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 159.6665
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 158.912
-    duration: 0
+  - timestamp: 159.99985
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 159.424
-    duration: 0
+  - timestamp: 160.33318
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 160.6665
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 160.99983
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 160.02133
-    duration: 0
-    noteDirection: 3
-  - timestamp: 160.17067
-    duration: 0
-    noteDirection: 3
-  - timestamp: 160.61867
-    duration: 0
+  - timestamp: 161.33318
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 160.91733
-    duration: 0
+  - timestamp: 161.6665
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 161.99983
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 162.33318
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 161.728
-    duration: 0
+  - timestamp: 162.6665
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 162.99983
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 162.73067
-    duration: 0
+  - timestamp: 163.33318
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 163.11467
-    duration: 0
+  - timestamp: 163.6665
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 163.17867
-    duration: 0
+  - timestamp: 163.99983
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 164.33318
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 163.73334
-    duration: 0
-    noteDirection: 0
-  - timestamp: 164.736
-    duration: 0
+  - timestamp: 164.6665
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 164.99983
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 165.73866
-    duration: 0
-    noteDirection: 2
-  - timestamp: 166.10133
-    duration: 0
+  - timestamp: 165.33316
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 165.6665
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 166.93333
-    duration: 0
+  - timestamp: 165.99983
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 167.18933
-    duration: 0
+  - timestamp: 166.33316
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 166.6665
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 166.99983
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 167.59467
-    duration: 0
+  - timestamp: 167.33316
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 167.70134
-    duration: 0
+  - timestamp: 167.6665
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 167.99983
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 168.66133
-    duration: 0
+  - timestamp: 168.33316
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 168.74667
-    duration: 0
-    noteDirection: 0
-  - timestamp: 168.93866
-    duration: 0
-    noteDirection: 2
-  - timestamp: 169.23734
-    duration: 0
+  - timestamp: 168.6665
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 168.99983
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 169.64267
-    duration: 0
+  - timestamp: 169.33316
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 169.6665
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 169.77066
-    duration: 0
+  - timestamp: 169.99983
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 170.33316
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 170.112
-    duration: 0
+  - timestamp: 170.66649
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 170.624
-    duration: 0
+  - timestamp: 170.99983
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 171.33316
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 170.96533
-    duration: 0
+  - timestamp: 171.49983
+    duration: 0.165972
+    noteDirection: 1
+  - timestamp: 171.66649
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 171.83316
+    duration: 0.165972
+    noteDirection: 2
+  - timestamp: 171.99983
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 172.33316
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 172.49983
+    duration: 0.165972
+    noteDirection: 0
+  - timestamp: 172.66649
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 172.83316
+    duration: 0.165972
+    noteDirection: 3
+  - timestamp: 172.99983
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 173.33316
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 171.24266
-    duration: 0
+  - timestamp: 173.66649
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 171.49867
-    duration: 0
+  - timestamp: 173.99983
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 171.56267
-    duration: 0
+  - timestamp: 174.33316
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 171.968
-    duration: 0
-    noteDirection: 2
-  - timestamp: 172.18134
-    duration: 0
-    noteDirection: 2
-  - timestamp: 172.75734
-    duration: 0
+  - timestamp: 174.66649
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 172.97067
-    duration: 0
-    noteDirection: 2
-  - timestamp: 173.056
-    duration: 0
+  - timestamp: 174.99983
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 173.26933
-    duration: 0
+  - timestamp: 175.33316
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 173.67467
-    duration: 0
+  - timestamp: 175.49983
+    duration: 0.165972
     noteDirection: 1
-  - timestamp: 173.824
-    duration: 0
+  - timestamp: 175.66649
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 175.83316
+    duration: 0.165972
+    noteDirection: 3
+  - timestamp: 175.99982
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 176.33316
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 174.48534
-    duration: 0
+  - timestamp: 176.49982
+    duration: 0.165972
     noteDirection: 2
-  - timestamp: 174.67734
-    duration: 0
-    noteDirection: 1
-  - timestamp: 174.80533
-    duration: 0
-    noteDirection: 0
-  - timestamp: 175.21066
-    duration: 0
+  - timestamp: 176.66649
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 175.36
-    duration: 0
+  - timestamp: 176.83316
+    duration: 0.165972
     noteDirection: 3
-  - timestamp: 175.53067
-    duration: 0
+  - timestamp: 176.99982
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 175.89333
-    duration: 0
+  - timestamp: 177.33316
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 176.192
-    duration: 0
-    noteDirection: 1
-  - timestamp: 176.42667
-    duration: 0
+  - timestamp: 177.66649
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 177.99982
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 176.85333
-    duration: 0
+  - timestamp: 178.33316
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 177.25867
-    duration: 0
-    noteDirection: 1
-  - timestamp: 177.664
-    duration: 0
+  - timestamp: 178.66649
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 177.83467
-    duration: 0
-    noteDirection: 1
-  - timestamp: 178.048
-    duration: 0
+  - timestamp: 178.99982
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 179.33316
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 179.49982
+    duration: 0.165972
     noteDirection: 0
-  - timestamp: 178.26134
-    duration: 0
+  - timestamp: 179.66649
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 179.83316
+    duration: 0.165972
+    noteDirection: 3
+  - timestamp: 179.99982
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 178.51733
-    duration: 0
+  - timestamp: 180.33316
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 179.2
-    duration: 0
+  - timestamp: 180.49982
+    duration: 0.165972
     noteDirection: 0
-  - timestamp: 179.47734
-    duration: 0
+  - timestamp: 180.66649
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 179.69067
-    duration: 0
-    noteDirection: 2
-  - timestamp: 180.18134
-    duration: 0
+  - timestamp: 180.83316
+    duration: 0.165972
     noteDirection: 3
-  - timestamp: 180.69333
-    duration: 0
+  - timestamp: 180.99982
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 181.056
-    duration: 0
+  - timestamp: 181.33315
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 181.66649
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 181.12
-    duration: 0
+  - timestamp: 181.99982
+    duration: 0.999305
     noteDirection: 2
-  - timestamp: 181.248
+  - timestamp: 182.16579
     duration: 0
     noteDirection: 3
-  - timestamp: 181.67467
+  - timestamp: 182.33176
     duration: 0
-    noteDirection: 0
-  - timestamp: 181.952
+    noteDirection: 1
+  - timestamp: 182.49773
     duration: 0
     noteDirection: 3
-  - timestamp: 182.25067
+  - timestamp: 182.66371
     duration: 0
     noteDirection: 3
-  - timestamp: 182.592
-    duration: 0
-    noteDirection: 2
-  - timestamp: 182.72
+  - timestamp: 182.82968
     duration: 0
     noteDirection: 0
-  - timestamp: 182.93333
-    duration: 0
+  - timestamp: 182.99982
+    duration: 0.999305
+    noteDirection: 3
+  - timestamp: 183.16649
+    duration: 0.180555
+    noteDirection: 3
+  - timestamp: 183.34773
+    duration: 0.152084
     noteDirection: 0
-  - timestamp: 183.85066
-    duration: 0
+  - timestamp: 183.49982
+    duration: 0.180555
+    noteDirection: 0
+  - timestamp: 183.68106
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 184.02133
-    duration: 0
+  - timestamp: 183.99982
+    duration: 0.665972
+    noteDirection: 3
+  - timestamp: 184.16649
+    duration: 0.180555
     noteDirection: 0
-  - timestamp: 184.17067
-    duration: 0
+  - timestamp: 184.34773
+    duration: 0.152084
+    noteDirection: 1
+  - timestamp: 184.49982
+    duration: 0.180555
+    noteDirection: 1
+  - timestamp: 184.66649
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 184.99982
+    duration: 1.332638
     noteDirection: 0
-  - timestamp: 184.384
-    duration: 0
+  - timestamp: 185.16649
+    duration: 0.180555
+    noteDirection: 1
+  - timestamp: 185.34773
+    duration: 0.152084
     noteDirection: 2
-  - timestamp: 184.55467
-    duration: 0
+  - timestamp: 185.49982
+    duration: 0.180555
+    noteDirection: 1
+  - timestamp: 185.68106
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 184.64
-    duration: 0
+  - timestamp: 185.99982
+    duration: 0.999305
     noteDirection: 0
-  - timestamp: 184.91733
-    duration: 0
+  - timestamp: 186.16647
+    duration: 0.180555
     noteDirection: 3
-  - timestamp: 185.472
-    duration: 0
+  - timestamp: 186.33315
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 186.048
-    duration: 0
+  - timestamp: 186.49982
+    duration: 0.180555
+    noteDirection: 1
+  - timestamp: 186.66647
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 186.432
-    duration: 0
+  - timestamp: 186.99982
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 186.752
-    duration: 0
-    noteDirection: 1
-  - timestamp: 186.96533
-    duration: 0
+  - timestamp: 187.16647
+    duration: 0.180555
     noteDirection: 3
-  - timestamp: 187.648
-    duration: 0
-    noteDirection: 2
-  - timestamp: 187.92534
-    duration: 0
+  - timestamp: 187.33315
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 187.98933
-    duration: 0
+  - timestamp: 187.49982
+    duration: 0.180555
+    noteDirection: 1
+  - timestamp: 187.66647
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 187.99982
+    duration: 0.665972
+    noteDirection: 0
+  - timestamp: 188.16647
+    duration: 0.180555
+    noteDirection: 1
+  - timestamp: 188.34773
+    duration: 0.152084
+    noteDirection: 0
+  - timestamp: 188.49982
+    duration: 0.180555
     noteDirection: 3
-  - timestamp: 188.05333
-    duration: 0
+  - timestamp: 188.66647
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 188.99982
+    duration: 0.999305
+    noteDirection: 2
+  - timestamp: 189.16647
+    duration: 0.180555
     noteDirection: 3
-  - timestamp: 188.224
-    duration: 0
+  - timestamp: 189.34773
+    duration: 0.152084
+    noteDirection: 0
+  - timestamp: 189.49982
+    duration: 0.180555
+    noteDirection: 0
+  - timestamp: 189.68106
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 188.94934
-    duration: 0
+  - timestamp: 189.99982
+    duration: 0.999305
     noteDirection: 1
-  - timestamp: 189.09866
-    duration: 0
+  - timestamp: 190.16647
+    duration: 0.180555
+    noteDirection: 0
+  - timestamp: 190.34773
+    duration: 0.152084
+    noteDirection: 2
+  - timestamp: 190.49982
+    duration: 0.180555
+    noteDirection: 0
+  - timestamp: 190.68106
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 189.248
-    duration: 0
+  - timestamp: 190.9998
+    duration: 0.999305
     noteDirection: 1
-  - timestamp: 189.84534
-    duration: 0
+  - timestamp: 191.16647
+    duration: 0.180555
+    noteDirection: 1
+  - timestamp: 191.34773
+    duration: 0.152084
     noteDirection: 2
-  - timestamp: 190.08
-    duration: 0
+  - timestamp: 191.4998
+    duration: 0.180555
     noteDirection: 2
-  - timestamp: 191.104
-    duration: 0
+  - timestamp: 191.68106
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 191.18933
-    duration: 0
+  - timestamp: 191.9998
+    duration: 0.665972
+    noteDirection: 0
+  - timestamp: 192.16647
+    duration: 0.180555
+    noteDirection: 1
+  - timestamp: 192.34772
+    duration: 0.152084
+    noteDirection: 3
+  - timestamp: 192.4998
+    duration: 0.180555
+    noteDirection: 0
+  - timestamp: 192.66647
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 192.9998
+    duration: 1.332638
+    noteDirection: 1
+  - timestamp: 193.16647
+    duration: 0.180555
+    noteDirection: 0
+  - timestamp: 193.34772
+    duration: 0.152084
     noteDirection: 2
-  - timestamp: 191.552
-    duration: 0
+  - timestamp: 193.4998
+    duration: 0.180555
+    noteDirection: 1
+  - timestamp: 193.68106
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 193.9998
+    duration: 0.999305
     noteDirection: 3
-  - timestamp: 191.744
-    duration: 0
+  - timestamp: 194.16647
+    duration: 0.180555
+    noteDirection: 3
+  - timestamp: 194.33315
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 194.4998
+    duration: 0.180555
     noteDirection: 2
-  - timestamp: 193.57866
-    duration: 0
+  - timestamp: 194.66647
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 193.94133
-    duration: 0
-    noteDirection: 0
-  - timestamp: 194.048
-    duration: 0
+  - timestamp: 194.9998
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 194.66667
-    duration: 0
+  - timestamp: 195.16647
+    duration: 0.180555
     noteDirection: 3
-  - timestamp: 194.944
-    duration: 0
+  - timestamp: 195.33315
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 195.4998
+    duration: 0.180555
+    noteDirection: 3
+  - timestamp: 195.66647
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 195.11467
-    duration: 0
+  - timestamp: 195.9998
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 196.16647
+    duration: 0.180555
+    noteDirection: 0
+  - timestamp: 196.33313
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 196.4998
+    duration: 0.180555
+    noteDirection: 1
+  - timestamp: 196.66647
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 196.9998
+    duration: 0.999305
     noteDirection: 2
-  - timestamp: 195.712
-    duration: 0
+  - timestamp: 197.16647
+    duration: 0.180555
+    noteDirection: 3
+  - timestamp: 197.34772
+    duration: 0.152084
+    noteDirection: 1
+  - timestamp: 197.4998
+    duration: 0.180555
+    noteDirection: 3
+  - timestamp: 197.68105
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 197.9998
+    duration: 0.999305
+    noteDirection: 3
+  - timestamp: 198.16647
+    duration: 0.180555
     noteDirection: 2
-  - timestamp: 195.968
-    duration: 0
+  - timestamp: 198.34772
+    duration: 0.152084
+    noteDirection: 3
+  - timestamp: 198.4998
+    duration: 0.180555
+    noteDirection: 0
+  - timestamp: 198.68105
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 196.69333
-    duration: 0
+  - timestamp: 198.9998
+    duration: 0.999305
     noteDirection: 0
-  - timestamp: 196.88533
-    duration: 0
+  - timestamp: 199.16647
+    duration: 0.180555
+    noteDirection: 1
+  - timestamp: 199.34772
+    duration: 0.152084
     noteDirection: 0
-  - timestamp: 197.696
-    duration: 0
+  - timestamp: 199.4998
+    duration: 0.180555
+    noteDirection: 2
+  - timestamp: 199.68105
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 198.25067
-    duration: 0
+  - timestamp: 199.9998
+    duration: 0.665972
     noteDirection: 0
-  - timestamp: 198.44267
-    duration: 0
+  - timestamp: 200.16647
+    duration: 0.180555
+    noteDirection: 2
+  - timestamp: 200.34772
+    duration: 0.152084
+    noteDirection: 3
+  - timestamp: 200.4998
+    duration: 0.180555
+    noteDirection: 1
+  - timestamp: 200.66647
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 200.9998
+    duration: 0.665972
+    noteDirection: 3
+  - timestamp: 201.16647
+    duration: 0.180555
+    noteDirection: 3
+  - timestamp: 201.34772
+    duration: 0.152084
+    noteDirection: 3
+  - timestamp: 201.4998
+    duration: 0.180555
+    noteDirection: 3
+  - timestamp: 201.66646
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 201.9998
+    duration: 0.999305
+    noteDirection: 3
+  - timestamp: 202.16646
+    duration: 0.180555
+    noteDirection: 3
+  - timestamp: 202.34772
+    duration: 0.152084
     noteDirection: 0
-  - timestamp: 198.912
-    duration: 0
+  - timestamp: 202.4998
+    duration: 0.180555
+    noteDirection: 2
+  - timestamp: 202.68105
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 200.256
-    duration: 0
+  - timestamp: 202.9998
+    duration: 0.999305
     noteDirection: 0
-  - timestamp: 200.448
-    duration: 0
+  - timestamp: 203.16646
+    duration: 0.180555
     noteDirection: 0
-  - timestamp: 200.68266
-    duration: 0
+  - timestamp: 203.34772
+    duration: 0.152084
+    noteDirection: 3
+  - timestamp: 203.4998
+    duration: 0.180555
     noteDirection: 0
-  - timestamp: 201.51466
-    duration: 0
+  - timestamp: 203.68105
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 201.856
-    duration: 0
+  - timestamp: 203.9998
+    duration: 0.665972
     noteDirection: 3
-  - timestamp: 202.19733
-    duration: 0
+  - timestamp: 204.16646
+    duration: 0.180555
     noteDirection: 0
-  - timestamp: 202.45334
-    duration: 0
+  - timestamp: 204.34772
+    duration: 0.152084
     noteDirection: 0
-  - timestamp: 202.53867
-    duration: 0
+  - timestamp: 204.4998
+    duration: 0.180555
+    noteDirection: 0
+  - timestamp: 204.66646
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 202.92267
-    duration: 0
+  - timestamp: 204.9998
+    duration: 0.665972
     noteDirection: 3
-  - timestamp: 204.26666
-    duration: 0
+  - timestamp: 205.16646
+    duration: 0.180555
     noteDirection: 1
-  - timestamp: 204.37334
-    duration: 0
+  - timestamp: 205.34772
+    duration: 0.152084
     noteDirection: 0
-  - timestamp: 205.01334
-    duration: 0
+  - timestamp: 205.4998
+    duration: 0.180555
+    noteDirection: 3
+  - timestamp: 205.66646
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 205.76
-    duration: 0
+  - timestamp: 205.99979
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 206.42134
-    duration: 0
+  - timestamp: 206.16646
+    duration: 0.180555
     noteDirection: 3
-  - timestamp: 207.68
-    duration: 0
+  - timestamp: 206.33313
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 207.936
-    duration: 0
-    noteDirection: 1
-  - timestamp: 208.064
-    duration: 0
-    noteDirection: 0
-  - timestamp: 208.29866
-    duration: 0
+  - timestamp: 206.49979
+    duration: 0.180555
+    noteDirection: 2
+  - timestamp: 206.66646
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 206.99979
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 208.53334
-    duration: 0
+  - timestamp: 207.33313
+    duration: 0.165972
+    noteDirection: 2
+  - timestamp: 207.49979
+    duration: 0.165972
+    noteDirection: 0
+  - timestamp: 207.66646
+    duration: 0.165972
     noteDirection: 3
-  - timestamp: 208.68266
-    duration: 0
+  - timestamp: 207.83313
+    duration: 0.165972
     noteDirection: 2
-  - timestamp: 209.664
-    duration: 0
+  - timestamp: 207.99979
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 209.83467
-    duration: 0
-    noteDirection: 1
-  - timestamp: 210.66667
-    duration: 0
+  - timestamp: 208.33313
+    duration: 0.165972
     noteDirection: 0
-  - timestamp: 210.79466
-    duration: 0
+  - timestamp: 208.49979
+    duration: 0.165972
     noteDirection: 2
-  - timestamp: 211.328
-    duration: 0
+  - timestamp: 208.66646
+    duration: 0.165972
+    noteDirection: 0
+  - timestamp: 208.83313
+    duration: 0.165972
     noteDirection: 1
-  - timestamp: 211.52
-    duration: 0
+  - timestamp: 208.99979
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 209.66646
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 211.776
-    duration: 0
+  - timestamp: 209.99979
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 210.33313
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 210.66646
+    duration: 0.332639
     noteDirection: 1
-  - timestamp: 212.39467
-    duration: 0
+  - timestamp: 210.99979
+    duration: 0.332639
+    noteDirection: 0
+  - timestamp: 211.33311
+    duration: 0.165972
+    noteDirection: 2
+  - timestamp: 211.49979
+    duration: 0.165972
     noteDirection: 3
-  - timestamp: 213.14133
-    duration: 0
+  - timestamp: 211.66646
+    duration: 0.165972
+    noteDirection: 2
+  - timestamp: 211.83311
+    duration: 0.165972
     noteDirection: 3
-  - timestamp: 213.52533
-    duration: 0
+  - timestamp: 211.99979
+    duration: 0.332639
+    noteDirection: 2
+  - timestamp: 212.33311
+    duration: 0.165972
+    noteDirection: 1
+  - timestamp: 212.49979
+    duration: 0.165972
+    noteDirection: 3
+  - timestamp: 212.66646
+    duration: 0.165972
     noteDirection: 0
-  - timestamp: 213.696
-    duration: 0
+  - timestamp: 212.83311
+    duration: 0.165972
+    noteDirection: 1
+  - timestamp: 212.99979
+    duration: 0.332639
+    noteDirection: 1
+  - timestamp: 213.66646
+    duration: 0.332639
     noteDirection: 2
-  - timestamp: 213.84534
-    duration: 0
+  - timestamp: 213.99979
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 214.33311
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 213.93066
-    duration: 0
+  - timestamp: 214.66646
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 214.08
-    duration: 0
+  - timestamp: 214.99979
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 214.50667
-    duration: 0
-    noteDirection: 0
-  - timestamp: 214.67734
-    duration: 0
+  - timestamp: 215.33311
+    duration: 0.165972
     noteDirection: 3
-  - timestamp: 215.53067
-    duration: 0
-    noteDirection: 0
-  - timestamp: 215.89333
-    duration: 0
-    noteDirection: 2
-  - timestamp: 216.17067
-    duration: 0
-    noteDirection: 2
-  - timestamp: 216.576
-    duration: 0
+  - timestamp: 215.49979
+    duration: 0.165972
+    noteDirection: 3
+  - timestamp: 215.66646
+    duration: 0.165972
     noteDirection: 0
-  - timestamp: 217.17334
-    duration: 0
+  - timestamp: 215.83311
+    duration: 0.165972
     noteDirection: 0
-  - timestamp: 217.984
-    duration: 0
+  - timestamp: 215.99979
+    duration: 0.332639
     noteDirection: 3
-  - timestamp: 218.26134
-    duration: 0
+  - timestamp: 216.33311
+    duration: 0.165972
     noteDirection: 3
-  - timestamp: 219.328
-    duration: 0
-    noteDirection: 2
-  - timestamp: 219.69067
-    duration: 0
+  - timestamp: 216.49979
+    duration: 0.165972
     noteDirection: 1
-  - timestamp: 219.968
-    duration: 0
-    noteDirection: 2
-  - timestamp: 220.16
-    duration: 0
+  - timestamp: 216.66644
+    duration: 0.165972
     noteDirection: 2
-  - timestamp: 220.30933
-    duration: 0
+  - timestamp: 216.83311
+    duration: 0.165972
     noteDirection: 2
-  - timestamp: 220.48
-    duration: 0
+  - timestamp: 216.99979
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 220.75734
-    duration: 0
-    noteDirection: 2
-  - timestamp: 220.82133
+  - timestamp: 217.66644
+    duration: 0.332639
+    noteDirection: 3
+  - timestamp: 217.83311
     duration: 0
     noteDirection: 0
-  - timestamp: 220.97067
-    duration: 0
-    noteDirection: 1
-  - timestamp: 221.056
-    duration: 0
-    noteDirection: 2
-  - timestamp: 221.41867
-    duration: 0
+  - timestamp: 217.99979
+    duration: 0.332639
     noteDirection: 0
-  - timestamp: 221.504
-    duration: 0
-    noteDirection: 1
-  - timestamp: 221.58934
-    duration: 0
-    noteDirection: 3
-  - timestamp: 221.696
-    duration: 0
-    noteDirection: 3
-  - timestamp: 221.78133
-    duration: 0
-    noteDirection: 2
