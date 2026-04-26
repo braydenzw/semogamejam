@@ -96,7 +96,7 @@ public class BeatManagerScript : MonoBehaviour
             //     player.GetComponent<Player>().maxVelocity = 5;
             //     player.GetComponent<Player>().nextSection();
             // }
-            while(beatIndex<beatsList.Count && beatsList[beatIndex].timestamp<currentTime)
+            while(beatIndex<beatsList.Count && beatsList[beatIndex].timestamp-timeToClick<currentTime)
             {
                 BeatData currentBeat = beatsList[beatIndex];
                 SpawnObject(currentBeat.noteDirection);
@@ -121,7 +121,7 @@ public class BeatManagerScript : MonoBehaviour
         }
         currentQueue.Enqueue(newBeat);
         newBeat.GetComponent<BeatScript>().Initialize(
-            1, 0.1f, this.transform.position + GetDirectionVector(noteDirection) * targetPositionMultiplier, this.gameObject, noteDirection);
+            timeToClick, timingWindow, this.transform.position + GetDirectionVector(noteDirection) * targetPositionMultiplier, this.gameObject, noteDirection);
         newBeat.SetActive(true);
         return newBeat;
     }
@@ -143,10 +143,6 @@ public class BeatManagerScript : MonoBehaviour
     public void InitiateSong(SongMap newSong)
     {
         beatsList = newSong.beats;
-        for(int i = 0; i<beatsList.Count; i++)
-        {
-            beatsList[i].timestamp=beatsList[i].timestamp-timeToClick;
-        }
         beatsList.Sort((beat1,beat2)=>beat1.timestamp.CompareTo(beat2.timestamp));
     }
 

@@ -7764,10 +7764,11 @@ MonoBehaviour:
   targetPositionMultiplier: 1
   HorizontalLine: {fileID: 6999076754036511898, guid: 6b7c5139db90e2e499e7bce78768fc60, type: 3}
   VerticalLine: {fileID: 3644432699344485201, guid: 91e016006016fcb44a237bf3f66d8e2b, type: 3}
+  song: {fileID: 11400000, guid: 90d5470d91274df478e20bdd87646024, type: 2}
   beatPrefab: {fileID: 8170639857555179204, guid: d18da8aa325b546469e8a13cc10d3bd2, type: 3}
   player: {fileID: 661002523}
   scoreText: {fileID: 0}
-  onOrOff: 0
+  onOrOff: 1
   timeToPlay: 0
 --- !u!4 &1788880446
 Transform:
