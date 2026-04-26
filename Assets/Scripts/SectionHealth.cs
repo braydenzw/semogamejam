@@ -10,6 +10,7 @@ public class SectionHealth : MonoBehaviour
     public int sectionHealth;
     private float timeToDecrease;
     public bool inUse;
+    private bool isActive; // is the decrementer currently running, can we change the sectionHealth
     public TMP_Text healthText;
     [SerializeField] SongMap sectionSong;
 
@@ -33,30 +34,48 @@ public class SectionHealth : MonoBehaviour
 
     void Start()
     {
-        sectionHealth = 100;
-        timeToDecrease = (float)0.6;
+        sectionHealth = 0;
+        timeToDecrease = (float)0.9;
         inUse = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(!inUse)
+        if (isActive)
         {
             timeToDecrease -= Time.deltaTime;
-            if(timeToDecrease <= 0)
+            if (timeToDecrease <= 0)
             {
-                sectionHealth -= Random.Range(0,5);
-                timeToDecrease = (float)0.6;
+                ChangeHealth(Random.Range(0, 3));
+                timeToDecrease = (float)0.9;
             }
+
+            healthText.text = "Health: " + sectionHealth;
+
+            float effectAmount = 1f - Mathf.Pow(health, 3f);
+
+            mixer.SetFloat(pitchParam, Mathf.Lerp(0f, brokenPitch, effectAmount));
+            mixer.SetFloat(distWetParam, Mathf.Lerp(0f, brokenDistortionWet, effectAmount));
+            mixer.SetFloat(flangeWetParam, Mathf.Lerp(0f, brokenFlangeWet, effectAmount));
         }
+    }
+
+    public void ChangeHealth(int delta)
+    {
+        sectionHealth += delta;
         healthText.text = "Health: " + sectionHealth;
+        if (sectionHealth > 100)
+        {
+            sectionHealth = 100;
+            isActive = false;
+            healthText.color = Color.yellow;
+        } 
 
-        float effectAmount = 1f - Mathf.Pow(health, 3f);
-
-        mixer.SetFloat(pitchParam, Mathf.Lerp(0f, brokenPitch, effectAmount));
-        mixer.SetFloat(distWetParam, Mathf.Lerp(0f, brokenDistortionWet, effectAmount));
-        mixer.SetFloat(flangeWetParam, Mathf.Lerp(0f, brokenFlangeWet, effectAmount));
+        if (sectionHealth < 0)
+        {
+            sectionHealth = 0;
+        }
     }
 
     public SongMap GetSong()

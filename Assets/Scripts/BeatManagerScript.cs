@@ -192,29 +192,27 @@ public class BeatManagerScript : MonoBehaviour
 
     public void BeatDeath(GameObject toDie, BeatScore beatScore, NoteDirection noteDirection)
     {
+        // Handle Scoring
+        if (beatScore == BeatScore.Failure)
+        {
+            section.GetComponent<SectionHealth>().ChangeHealth(-5);
+            ComboManager.instance.EndCombo();
+        }
+        else if (beatScore == BeatScore.Success)
+        {
+            section.GetComponent<SectionHealth>().ChangeHealth(5);
+            if (section.GetComponent<SectionHealth>().sectionHealth >= 100)
+            {
+                section.GetComponent<SectionHealth>().sectionHealth = 100;
+            }
+            ComboManager.instance.ExtendCombo();
+        }
+
         // Handle Death
         toDie.SetActive(false);
         inactiveBeatsStack.Push(toDie);
 
         Queue<GameObject> currentQueue = GetQueue(noteDirection);
         currentQueue.Dequeue();
-
-        // Handle Scoring
-        if (beatScore == BeatScore.Failure)
-        {
-            // Debug.Log("TEMP: FAILURE");
-            ComboManager.instance.EndCombo();
-            section.GetComponent<SectionHealth>().sectionHealth-=5;
-        }
-        else if (beatScore == BeatScore.Success)
-        {
-            // Debug.Log("TEMP: SUCCESS");
-            ComboManager.instance.ExtendCombo();
-            section.GetComponent<SectionHealth>().sectionHealth+=5;
-            if(section.GetComponent<SectionHealth>().sectionHealth >= 100)
-            {
-                section.GetComponent<SectionHealth>().sectionHealth = 100;
-            }
-        }
     }
 }
