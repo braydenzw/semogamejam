@@ -2,24 +2,33 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
-using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using static Enums;
 using TMPro;
 
-/*TODO GENERAL:
+[System.Serializable]
+public class SectionSpawnSettings
+{
+    [Tooltip("Which section this applies to")]
+    public SectionType sectionType;
 
-REMEMBER DIRECTIONAL QUEUE
+    [Tooltip("Minimum time between any note spawn for this section")]
+    public float minSpawnInterval = 0.4f;
 
-*/
+    [Tooltip("Max notes allowed per direction lane at once")]
+    public int maxNotesPerDirection = 3;
+
+    // You can add more overrides later – e.g. a speed multiplier, a damage modifier, etc.
+}
+
 public class BeatManagerScript : MonoBehaviour
 {
-    //// TEST VARIABLES
+    [Header("Per‑Section Spawn Settings")]
+    [SerializeField] private List<SectionSpawnSettings> sectionSettings = new List<SectionSpawnSettings>();
+    private float lastSpawnTime = -999f;
+    
     [SerializeField] float timeInterval;
     private float currentTime = 0;
-    private int count = 0;
-
 
     [SerializeField] float timeToClick;
     [SerializeField] float timingWindow;
@@ -30,20 +39,18 @@ public class BeatManagerScript : MonoBehaviour
     [SerializeField] GameObject VerticalLine;
 
     private SongMap currentSong;
-    private Stack<GameObject> inactiveBeatsStack; // Handles object pooling
+    private Stack<GameObject> inactiveBeatsStack;
 
-    // QUEUES
-    private Queue<GameObject> leftQueue; // left object queue
-    private Queue<GameObject> rightQueue; // right object queue
-    private Queue<GameObject> upQueue; // upward object queue
-    private Queue<GameObject> downQueue; // down object queue
+    private Queue<GameObject> leftQueue;
+    private Queue<GameObject> rightQueue;
+    private Queue<GameObject> upQueue;
+    private Queue<GameObject> downQueue;
 
     public GameObject beatPrefab;
     public GameObject player;
     public GameObject section;
     public TMP_Text scoreText;
 
-    //bool so code can stop and start
     public bool minigameOn = false;
 
     List<BeatData> beatsList;
@@ -52,73 +59,135 @@ public class BeatManagerScript : MonoBehaviour
 
     private bool exitKeyPressed = false;
 
+    // what section type
+    private SectionType currentSectionType = SectionType.Brass;
+    // brass hurts more; multiplier is 2x for brass, 1x otherwise
+    private float missHealthMultiplier = 1f;
 
-    // Start is called before the first frame update
     void Start()
     {
         minigameOn = false;
         inactiveBeatsStack = new Stack<GameObject>();
-
-        leftQueue = new Queue<GameObject>();
+        leftQueue  = new Queue<GameObject>();
         rightQueue = new Queue<GameObject>();
-        upQueue = new Queue<GameObject>();
-        downQueue = new Queue<GameObject>();
+        upQueue    = new Queue<GameObject>();
+        downQueue  = new Queue<GameObject>();
 
-        // Evil 3AM Code
         foreach (NoteDirection noteDirection in Enum.GetValues(typeof(NoteDirection)))
         {
-            GameObject lineToSpawn;
-            if (noteDirection == NoteDirection.left || noteDirection == NoteDirection.right) lineToSpawn = VerticalLine;
-            else lineToSpawn = HorizontalLine;
-            Instantiate(lineToSpawn, this.transform.position + GetDirectionVector(noteDirection) * targetPositionMultiplier, this.transform.rotation, this.transform);
+            GameObject lineToSpawn = (noteDirection == NoteDirection.left || noteDirection == NoteDirection.right)
+                ? VerticalLine : HorizontalLine;
+            Instantiate(lineToSpawn, transform.position + GetDirectionVector(noteDirection) * targetPositionMultiplier, transform.rotation, transform);
         }
-
     }
 
-    // Update is called once per frame
     void Update()
     {
         currentTime += Time.deltaTime;
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
+
+        if (Input.GetKeyDown(KeyCode.Space))
             exitKeyPressed = true;
-        }
+
         if (!exitKeyPressed && minigameOn)
         {
-            while(beatIndex<beatsList.Count && beatsList[beatIndex].timestamp-timeToClick<currentTime)
+            // Fetch the spawn rules for the section we're currently in
+            SectionSpawnSettings spawnSettings = GetCurrentSectionSettings();
+
+            while (beatIndex < beatsList.Count && beatsList[beatIndex].timestamp - timeToClick < currentTime)
             {
-                //Debug.Log(currentTime);
-                BeatData currentBeat = beatsList[beatIndex];
-                SpawnObject(currentBeat.noteDirection);
+                // respect the per‑section spawn cooldown
+                if (currentTime - lastSpawnTime < spawnSettings.minSpawnInterval)
+                    break;
+
+                //  lne‑cap is handled inside SpawnNoteForSection so we can just call it. 他妈的
+                SpawnNoteForSection(beatsList[beatIndex]);
                 beatIndex++;
             }
         }
-        if(minigameOn && CheckQueuesEmpty() && exitKeyPressed)
+
+        if (minigameOn && CheckQueuesEmpty() && exitKeyPressed)
         {
             player.GetComponent<Player>().maxVelocity = 5;
             player.GetComponent<Player>().collideMaybe = true;
             minigameOn = false;
         }
-
+        
     }
 
-    private GameObject SpawnObject(NoteDirection noteDirection)
+    private void SpawnNoteForSection(BeatData beatData)
+    {
+        NoteDirection dir = beatData.noteDirection;
+        Queue<GameObject> queue;
+        int hits = 1;
+        float holdDur = 0f;
+        NoteType type = NoteType.Standard;
+
+        // Get the current section's spawn rules
+        SectionSpawnSettings settings = GetCurrentSectionSettings();
+        int maxPerLane = settings.maxNotesPerDirection;
+
+        switch (currentSectionType)
+        {
+            case SectionType.Percussion:
+                dir = (UnityEngine.Random.value > 0.5f) ? NoteDirection.left : NoteDirection.right;
+                hits = UnityEngine.Random.Range(2, 4);
+                type = NoteType.MultiHit;
+                break;
+
+            case SectionType.Strings:
+                holdDur = Mathf.Max(beatData.duration, 0.3f);
+                type = NoteType.Hold;
+                break;
+
+            case SectionType.Woodwinds:
+                // Two notes simultaneously, different directions
+                NoteDirection secondDir = GetDifferentDirection(dir);
+                // Check lane cap for BOTH directions before spawning
+                if (GetQueue(dir).Count >= maxPerLane || GetQueue(secondDir).Count >= maxPerLane)
+                    return;
+
+                SpawnObject(dir, NoteType.Standard, 1, 0f);
+                SpawnObject(secondDir, NoteType.Standard, 1, 0f);
+                lastSpawnTime = currentTime;
+                return;
+
+            default: // Brass
+                type = NoteType.Standard;
+                break;
+        }
+
+        // For Brass, Percussion, Strings
+        queue = GetQueue(dir);
+        if (queue.Count >= maxPerLane)
+            return;   // lane full, skip this note
+
+        SpawnObject(dir, type, hits, holdDur);
+        lastSpawnTime = currentTime;
+    }
+
+    private GameObject SpawnObject(NoteDirection noteDirection, NoteType noteType = NoteType.Standard,
+        int hitsRequired = 1, float holdDuration = 0.5f)
     {
         GameObject newBeat;
         Queue<GameObject> currentQueue = GetQueue(noteDirection);
+
         if (inactiveBeatsStack.Count > 0)
         {
             newBeat = inactiveBeatsStack.Pop();
-            newBeat.transform.position = this.transform.position + GetDirectionVector(noteDirection) * spawnDistanceMultiplier;
+            newBeat.transform.position = transform.position + GetDirectionVector(noteDirection) * spawnDistanceMultiplier;
         }
         else
         {
-            newBeat = Instantiate(beatPrefab, this.transform.position + GetDirectionVector(noteDirection) * spawnDistanceMultiplier, this.transform.rotation, this.transform);
-
+            newBeat = Instantiate(beatPrefab,
+                transform.position + GetDirectionVector(noteDirection) * spawnDistanceMultiplier,
+                transform.rotation, transform);
         }
+
         currentQueue.Enqueue(newBeat);
         newBeat.GetComponent<BeatScript>().Initialize(
-            timeToClick, timingWindow, this.transform.position + GetDirectionVector(noteDirection) * targetPositionMultiplier, this.gameObject, noteDirection);
+            timeToClick, timingWindow,
+            transform.position + GetDirectionVector(noteDirection) * targetPositionMultiplier,
+            gameObject, noteDirection, noteType, hitsRequired, holdDuration);
         newBeat.SetActive(true);
         return newBeat;
     }
@@ -126,44 +195,75 @@ public class BeatManagerScript : MonoBehaviour
     public void OnTap(NoteDirection noteDirection)
     {
         Queue<GameObject> currentQueue = GetQueue(noteDirection);
-        GameObject objectHit = null;
+        Debug.Log($"Tap {noteDirection}, queue count: {currentQueue.Count}");
         if (currentQueue.Count > 0)
-        {
-            objectHit = currentQueue.Peek();
-        }
-        if (objectHit != null)
-        {
-            objectHit.GetComponent<BeatScript>().OnHit();
-        }
+            currentQueue.Peek().GetComponent<BeatScript>().OnHit();
+    }
+
+    // Called by Player when a direction key is released (for hold notes)
+    public void OnRelease(NoteDirection noteDirection)
+    {
+        Queue<GameObject> currentQueue = GetQueue(noteDirection);
+        if (currentQueue.Count > 0)
+            currentQueue.Peek().GetComponent<BeatScript>().OnRelease();
     }
 
     public void InitiateSong(SongMap newSong)
     {
         beatsList = newSong.beats;
         beatIndex = 0;
-        // POTENTIALLY BAD PERFORMANCE | EASY BUT INCONVENIENT FIXES AVAILABLE
-        while (beatsList[beatIndex].timestamp - timeToClick + newSongWait < currentTime)
-        {
-            beatIndex++;
-        }
 
-        // Interaction Handling
+        //should be section type from the section we just entered
+        currentSectionType = section.GetComponent<SectionHealth>().sectionType;
+        Debug.Log($"Entered section: {section.name}, type: {currentSectionType}");
+        missHealthMultiplier  = (currentSectionType == SectionType.Brass) ? 2f : 1f;
+
+        while (beatsList[beatIndex].timestamp - timeToClick + newSongWait < currentTime)
+            beatIndex++;
+
         exitKeyPressed = false;
         player.GetComponent<Player>().maxVelocity = 0;
+    }
+
+    public void BeatDeath(GameObject toDie, BeatScore beatScore, NoteDirection noteDirection)
+    {
+        Debug.Log($"BeatDeath called | Score: {beatScore} | Dir: {noteDirection} | Section: {(section != null ? section.name : "NULL")}");        if (beatScore == BeatScore.Failure)
+        {
+            section.GetComponent<SectionHealth>().ChangeHealth((int)(-5 * missHealthMultiplier));
+            ComboManager.instance.EndCombo();
+        }
+        else if (beatScore == BeatScore.Success)
+        {
+            section.GetComponent<SectionHealth>().ChangeHealth(5);
+            if (section.GetComponent<SectionHealth>().sectionHealth >= 100)
+                section.GetComponent<SectionHealth>().sectionHealth = 100;
+            ComboManager.instance.ExtendCombo();
+        }
+
+        toDie.SetActive(false);
+        inactiveBeatsStack.Push(toDie);
+        GetQueue(noteDirection).Dequeue();
+    }
+
+    // --- Helpers ---
+
+    private NoteDirection GetDifferentDirection(NoteDirection original)
+    {
+        NoteDirection[] all = { NoteDirection.left, NoteDirection.right, NoteDirection.up, NoteDirection.down };
+        NoteDirection picked;
+        do { picked = all[UnityEngine.Random.Range(0, 4)]; }
+        while (picked == original);
+        return picked;
     }
 
     private Queue<GameObject> GetQueue(NoteDirection noteDirection)
     {
         switch (noteDirection)
         {
-            case NoteDirection.left:
-                return leftQueue;
-            case NoteDirection.right:
-                return rightQueue;
-            case NoteDirection.up:
-                return downQueue;
-            case NoteDirection.down:
-                return upQueue;
+            case NoteDirection.left:  return leftQueue;
+            case NoteDirection.right: return rightQueue;
+            case NoteDirection.up:    return downQueue;
+            case NoteDirection.down:  return upQueue;
         }
         return null;
     }
@@ -172,47 +272,27 @@ public class BeatManagerScript : MonoBehaviour
     {
         switch (noteDirection)
         {
-            case NoteDirection.left:
-                return Vector3.left;
-            case NoteDirection.right:
-                return Vector3.right;
-            case NoteDirection.up:
-                return Vector3.up;
-            case NoteDirection.down:
-                return Vector3.down;
+            case NoteDirection.left:  return Vector3.left;
+            case NoteDirection.right: return Vector3.right;
+            case NoteDirection.up:    return Vector3.up;
+            case NoteDirection.down:  return Vector3.down;
         }
         return Vector3.zero;
     }
 
     private bool CheckQueuesEmpty()
     {
-        int count = leftQueue.Count+rightQueue.Count+upQueue.Count+downQueue.Count;
-        return count==0;
+        return leftQueue.Count + rightQueue.Count + upQueue.Count + downQueue.Count == 0;
     }
-
-    public void BeatDeath(GameObject toDie, BeatScore beatScore, NoteDirection noteDirection)
+    private SectionSpawnSettings GetCurrentSectionSettings()
     {
-        // Handle Scoring
-        if (beatScore == BeatScore.Failure)
+        foreach (var s in sectionSettings)
         {
-            section.GetComponent<SectionHealth>().ChangeHealth(-5);
-            ComboManager.instance.EndCombo();
+            if (s.sectionType == currentSectionType)
+                return s;
         }
-        else if (beatScore == BeatScore.Success)
-        {
-            section.GetComponent<SectionHealth>().ChangeHealth(5);
-            if (section.GetComponent<SectionHealth>().sectionHealth >= 100)
-            {
-                section.GetComponent<SectionHealth>().sectionHealth = 100;
-            }
-            ComboManager.instance.ExtendCombo();
-        }
-
-        // Handle Death
-        toDie.SetActive(false);
-        inactiveBeatsStack.Push(toDie);
-
-        Queue<GameObject> currentQueue = GetQueue(noteDirection);
-        currentQueue.Dequeue();
+        // use defaults if nothing fonid
+        Debug.LogWarning($"No spawn settings found for {currentSectionType}, using defaults.");
+        return new SectionSpawnSettings { minSpawnInterval = 0.4f, maxNotesPerDirection = 2 };
     }
 }

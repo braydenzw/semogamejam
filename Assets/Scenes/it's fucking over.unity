@@ -822,6 +822,7 @@ MonoBehaviour:
   inUse: 0
   healthText: {fileID: 1002242524}
   sectionSong: {fileID: 11400000, guid: 8b66c8ea75f4d4a4298f0e1e58afa96e, type: 2}
+  sectionType: 3
   mixer: {fileID: 24100000, guid: 83f7034d3b4825c40978b44cb7f7a603, type: 2}
   pitchParam: ViolinPitch
   distWetParam: ViolinDistWet
@@ -4216,6 +4217,7 @@ MonoBehaviour:
   inUse: 0
   healthText: {fileID: 951780697}
   sectionSong: {fileID: 11400000, guid: f2727a4df6c67fa42ad6c6abad134881, type: 2}
+  sectionType: 0
   mixer: {fileID: 0}
   pitchParam: 
   distWetParam: 
@@ -5447,6 +5449,7 @@ MonoBehaviour:
   inUse: 0
   healthText: {fileID: 317720707}
   sectionSong: {fileID: 11400000, guid: 19452b919aec8dc4ca6af82f65cbfc79, type: 2}
+  sectionType: 0
   mixer: {fileID: 0}
   pitchParam: 
   distWetParam: 
@@ -6278,6 +6281,7 @@ MonoBehaviour:
   inUse: 0
   healthText: {fileID: 1000426205}
   sectionSong: {fileID: 11400000, guid: 9a8e4dc5865045d4ca45c51a6c133439, type: 2}
+  sectionType: 0
   mixer: {fileID: 0}
   pitchParam: 
   distWetParam: 
@@ -7029,7 +7033,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 958081168}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5edf5a09ab299db4db4c058067164ae7, type: 3}
   m_Name: 
@@ -7166,6 +7170,7 @@ MonoBehaviour:
   inUse: 0
   healthText: {fileID: 1000426205}
   sectionSong: {fileID: 11400000, guid: 9a8e4dc5865045d4ca45c51a6c133439, type: 2}
+  sectionType: 2
   mixer: {fileID: 24100000, guid: 83f7034d3b4825c40978b44cb7f7a603, type: 2}
   pitchParam: WoodwindsPitch
   distWetParam: WoodwindsDistWet
@@ -8133,7 +8138,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1011573252}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5edf5a09ab299db4db4c058067164ae7, type: 3}
   m_Name: 
@@ -8270,6 +8275,7 @@ MonoBehaviour:
   inUse: 0
   healthText: {fileID: 317720707}
   sectionSong: {fileID: 11400000, guid: 19452b919aec8dc4ca6af82f65cbfc79, type: 2}
+  sectionType: 0
   mixer: {fileID: 24100000, guid: 83f7034d3b4825c40978b44cb7f7a603, type: 2}
   pitchParam: BrassPitch
   distWetParam: BrassDistWet
@@ -9400,6 +9406,7 @@ MonoBehaviour:
   inUse: 0
   healthText: {fileID: 1002242524}
   sectionSong: {fileID: 11400000, guid: 8b66c8ea75f4d4a4298f0e1e58afa96e, type: 2}
+  sectionType: 0
   mixer: {fileID: 24100000, guid: 83f7034d3b4825c40978b44cb7f7a603, type: 2}
   pitchParam: Violin
   distWetParam: 
@@ -9660,7 +9667,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1338412011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11700,6 +11707,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0069d6769874feb4dbea2a775d3c2bb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sectionSettings:
+  - sectionType: 0
+    minSpawnInterval: 0.7
+    maxNotesPerDirection: 2
+  - sectionType: 1
+    minSpawnInterval: 0.8
+    maxNotesPerDirection: 3
+  - sectionType: 2
+    minSpawnInterval: 0.9
+    maxNotesPerDirection: 2
+  - sectionType: 3
+    minSpawnInterval: 2
+    maxNotesPerDirection: 1
   timeInterval: 1
   timeToClick: 0.75
   timingWindow: 0.3
@@ -12772,7 +12792,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1937581772}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5edf5a09ab299db4db4c058067164ae7, type: 3}
   m_Name: 
@@ -12909,6 +12929,7 @@ MonoBehaviour:
   inUse: 0
   healthText: {fileID: 951780697}
   sectionSong: {fileID: 11400000, guid: f2727a4df6c67fa42ad6c6abad134881, type: 2}
+  sectionType: 1
   mixer: {fileID: 24100000, guid: 83f7034d3b4825c40978b44cb7f7a603, type: 2}
   pitchParam: PercussionPitch
   distWetParam: PercussionDistWet

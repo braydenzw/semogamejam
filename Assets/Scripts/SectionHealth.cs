@@ -13,6 +13,9 @@ public class SectionHealth : MonoBehaviour
     public TMP_Text healthText;
     [SerializeField] SongMap sectionSong;
 
+    [Header("Section Identity")]
+    public SectionType sectionType;  // set this in the Inspector for each section GameObject
+
     [Header("Mixer & Parameters")]
     public AudioMixer mixer;
     [SerializeField] private string pitchParam;
@@ -37,7 +40,7 @@ public class SectionHealth : MonoBehaviour
     [Header("Effect Curve")]
     [Tooltip("Higher = effects stay subtle longer, only peaking at very low health. Try 5-10.")]
     [SerializeField] private float effectCurveExponent = 6f;
-    [Tooltip("How slowly the audio effects blend in/out. Lower = slower/smoother. 0.02 = very gradual, 0.5 = fast.")]
+    [Tooltip("How slowly the audio effects blend in/out. Lower = slower/smoother. 0.02 = very gradual.")]
     [SerializeField] private float effectSmoothSpeed = 0.02f;
 
     private float smoothedEffectAmount = 0f;
@@ -47,7 +50,7 @@ public class SectionHealth : MonoBehaviour
         sectionHealth = 100;
         isActive = true;
         inUse = false;
-        timeToDecrease = Random.Range(decayIntervalMin, decayIntervalMax); // stagger sections from the start
+        timeToDecrease = Random.Range(decayIntervalMin, decayIntervalMax);
         smoothedEffectAmount = 0f;
 
         ResetMixer();
@@ -58,7 +61,6 @@ public class SectionHealth : MonoBehaviour
     {
         if (!isActive) return;
 
-        // Health decay timer
         timeToDecrease -= Time.deltaTime;
         if (timeToDecrease <= 0)
         {
@@ -72,11 +74,9 @@ public class SectionHealth : MonoBehaviour
 
         healthText.text = "Health: " + sectionHealth;
 
-        // effectAmount is near 0 at high health, only rises sharply when health is low
         float damage01 = 1f - (sectionHealth / 100f);
         float targetEffectAmount = Mathf.Pow(damage01, effectCurveExponent);
 
-        // Gradually ease toward target so effects fade in slowly
         smoothedEffectAmount = Mathf.Lerp(smoothedEffectAmount, targetEffectAmount, effectSmoothSpeed * Time.deltaTime);
 
         mixer.SetFloat(pitchParam,     Mathf.Lerp(0f, brokenPitch,         smoothedEffectAmount));
@@ -86,7 +86,7 @@ public class SectionHealth : MonoBehaviour
 
     public void ChangeHealth(int delta)
     {
-        sectionHealth += delta;
+        Debug.Log($"ChangeHealth delta: {delta} | Current health: {sectionHealth}");        sectionHealth += delta;
         sectionHealth = Mathf.Clamp(sectionHealth, 0, 100);
 
         healthText.text = "Health: " + sectionHealth;
