@@ -6,77 +6,111 @@ using UnityEngine.Audio;
 
 public class SectionHealth : MonoBehaviour
 {
-    // Start is called before the first frame update
     public int sectionHealth;
     private float timeToDecrease;
     public bool inUse;
-    private bool isActive; // is the decrementer currently running, can we change the sectionHealth
+    private bool isActive;
     public TMP_Text healthText;
     [SerializeField] SongMap sectionSong;
 
-    [Header("Mixer & Parameters (hard‑coded for safety)")]
-    public AudioMixer mixer; // drag OrchestraMixer here
+    [Header("Section Identity")]
+    public SectionType sectionType;  // set this in the Inspector for each section GameObject
 
-    // These strings MUST match your exposed parameter names exactly
+    [Header("Mixer & Parameters")]
+    public AudioMixer mixer;
     [SerializeField] private string pitchParam;
     [SerializeField] private string distWetParam;
     [SerializeField] private string flangeWetParam;
 
     [Header("Broken Effect Amounts (Health = 0)")]
-    private float brokenPitch = 8f;    // semitones
+    private float brokenPitch = 8f;
     private float brokenDistortionWet = 1f;
     private float brokenFlangeWet = 1f;
 
-    [Header("Current Health")]
-    [Range(0f, 1f)]
-    [SerializeField] private float health = 1f;   // start each section fully fixed
-    public float Health => health;                // other scripts can read it
+    [Header("Health Decay")]
+    [SerializeField] private float decayIntervalMin = 0.5f;
+    [SerializeField] private float decayIntervalMax = 4.0f;
+    [SerializeField] private int decayMin = 1;
+    [SerializeField] private int decayMax = 6;
+    [Tooltip("1 in X chance of a catastrophic health drop each tick. 100 = 1% chance.")]
+    [SerializeField] private int catastropheOdds = 100;
+    [Tooltip("How much health is lost in a catastrophic drop.")]
+    [SerializeField] private int catastropheDamage = 50;
+
+    [Header("Effect Curve")]
+    [Tooltip("Higher = effects stay subtle longer, only peaking at very low health. Try 5-10.")]
+    [SerializeField] private float effectCurveExponent = 6f;
+    [Tooltip("How slowly the audio effects blend in/out. Lower = slower/smoother. 0.02 = very gradual.")]
+    [SerializeField] private float effectSmoothSpeed = 0.02f;
+
+    private float smoothedEffectAmount = 0f;
 
     void Start()
     {
         sectionHealth = 100;
-        ChangeHealth(0);
-        timeToDecrease = (float)0.9;
+        isActive = true;
         inUse = false;
+        timeToDecrease = Random.Range(decayIntervalMin, decayIntervalMax);
+        smoothedEffectAmount = 0f;
+
+        ResetMixer();
+        healthText.text = "Health: " + sectionHealth;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (isActive)
+        if (!isActive) return;
+
+        timeToDecrease -= Time.deltaTime;
+        if (timeToDecrease <= 0)
         {
-            timeToDecrease -= Time.deltaTime;
-            if (timeToDecrease <= 0)
-            {
-                ChangeHealth(Random.Range(0, 3));
-                timeToDecrease = (float)0.9;
-            }
+            if (!inUse && Random.Range(0, catastropheOdds) == 0)
+                ChangeHealth(-catastropheDamage);
+            else
+                ChangeHealth(-Random.Range(decayMin, decayMax));
 
-            healthText.text = "Health: " + sectionHealth;
-
-            float effectAmount = 1f - Mathf.Pow(health, 3f);
-
-            mixer.SetFloat(pitchParam, Mathf.Lerp(0f, brokenPitch, effectAmount));
-            mixer.SetFloat(distWetParam, Mathf.Lerp(0f, brokenDistortionWet, effectAmount));
-            mixer.SetFloat(flangeWetParam, Mathf.Lerp(0f, brokenFlangeWet, effectAmount));
+            timeToDecrease = Random.Range(decayIntervalMin, decayIntervalMax);
         }
+
+        healthText.text = "Health: " + sectionHealth;
+
+        float damage01 = 1f - (sectionHealth / 100f);
+        float targetEffectAmount = Mathf.Pow(damage01, effectCurveExponent);
+
+        smoothedEffectAmount = Mathf.Lerp(smoothedEffectAmount, targetEffectAmount, effectSmoothSpeed * Time.deltaTime);
+
+        mixer.SetFloat(pitchParam,     Mathf.Lerp(0f, brokenPitch,         smoothedEffectAmount));
+        mixer.SetFloat(distWetParam,   Mathf.Lerp(0f, brokenDistortionWet, smoothedEffectAmount));
+        mixer.SetFloat(flangeWetParam, Mathf.Lerp(0f, brokenFlangeWet,     smoothedEffectAmount));
     }
 
     public void ChangeHealth(int delta)
     {
-        sectionHealth += delta;
+        Debug.Log($"ChangeHealth delta: {delta} | Current health: {sectionHealth}");        sectionHealth += delta;
+        sectionHealth = Mathf.Clamp(sectionHealth, 0, 100);
+
         healthText.text = "Health: " + sectionHealth;
-        if (sectionHealth > 100)
+
+        if (sectionHealth >= 100)
         {
-            sectionHealth = 100;
             isActive = false;
             healthText.color = Color.yellow;
+            ResetMixer();
         }
-
-        if (sectionHealth < 0)
+        else
         {
-            sectionHealth = 0;
+            isActive = true;
+            healthText.color = Color.white;
         }
+    }
+
+    private void ResetMixer()
+    {
+        if (mixer == null) return;
+        smoothedEffectAmount = 0f;
+        mixer.SetFloat(pitchParam,     0f);
+        mixer.SetFloat(distWetParam,   0f);
+        mixer.SetFloat(flangeWetParam, 0f);
     }
 
     public SongMap GetSong()
