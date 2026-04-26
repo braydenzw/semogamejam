@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Audio;
 
-public class SectionHealth : MonoBehaviour
+public class SectionHealthFuck : MonoBehaviour
 {
     [Header("Mixer & Parameters (hard‑coded for safety)")]
     public AudioMixer mixer; // drag OrchestraMixer here

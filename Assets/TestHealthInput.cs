@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class TestHealthInput : MonoBehaviour
 {
-    public SectionHealth violinSection;   
+    public SectionHealthFuck violinSection;   
 
     void Update()
     {
