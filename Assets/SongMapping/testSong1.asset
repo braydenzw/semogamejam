@@ -17,7 +17,7 @@ MonoBehaviour:
   notesPerMeasure: 4
   noteDivision: 4
   beats:
-  - timestamp: 0
+  - timestamp: -5
     duration: 0
     noteDirection: 0
   - timestamp: 0

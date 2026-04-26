@@ -142,7 +142,7 @@ public class BeatManagerScript : MonoBehaviour
 
     public void InitiateSong(SongMap newSong)
     {
-        beatsList = newSong.beats;
+        beatsList = new List<BeatData>(newSong.beats);
         for(int i = 0; i<beatsList.Count; i++)
         {
             beatsList[i].timestamp=beatsList[i].timestamp-timeToClick;
