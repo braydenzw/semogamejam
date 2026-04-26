@@ -87,7 +87,7 @@ public class BeatManagerScript : MonoBehaviour
         {
             while(beatIndex<beatsList.Count && beatsList[beatIndex].timestamp-timeToClick<currentTime)
             {
-                Debug.Log(currentTime);
+                //Debug.Log(currentTime);
                 BeatData currentBeat = beatsList[beatIndex];
                 SpawnObject(currentBeat.noteDirection);
                 beatIndex++;
@@ -202,12 +202,14 @@ public class BeatManagerScript : MonoBehaviour
         // Handle Scoring
         if (beatScore == BeatScore.Failure)
         {
-           // Debug.Log("TEMP: FAILURE");
+            // Debug.Log("TEMP: FAILURE");
+            ComboManager.instance.EndCombo();
             section.GetComponent<SectionHealth>().sectionHealth-=5;
         }
         else if (beatScore == BeatScore.Success)
         {
-           // Debug.Log("TEMP: SUCCESS");
+            // Debug.Log("TEMP: SUCCESS");
+            ComboManager.instance.ExtendCombo();
             section.GetComponent<SectionHealth>().sectionHealth+=5;
             //scoreText.text = "Score: " + player.GetComponent<Player>().score;
         }

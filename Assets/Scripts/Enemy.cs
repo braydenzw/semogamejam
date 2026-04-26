@@ -7,12 +7,12 @@ public class Enemy : MonoBehaviour
     [SerializeField] int health;
     private SpriteRenderer spriteRenderer;
     private string neutralColor = "#FFFFFF"; // the color of the enemy at hurt (not getting hurt) 
-    private HurtEffectSpawner hurtEffectSpawner;
+    [SerializeField] HurtEffectSpawner hurtEffectSpawner;
 
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        hurtEffectSpawner = GetComponent<HurtEffectSpawner>();
+        //hurtEffectSpawner = GetComponent<HurtEffectSpawner>();
     }
 
     public void TakeDamage(int damage)

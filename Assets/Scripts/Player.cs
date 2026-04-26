@@ -132,10 +132,8 @@ public class Player : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Debug.Log("Cream of the cream crop");
         if((collided != null) && (collision.tag == "Orchestra"))
         {
-            Debug.Log("Welcome to the cum zone");
             collided.GetComponent<SectionHealth>().inUse = false;
             beatManager.GetComponent<BeatManagerScript>().minigameOn = false;
             collideMaybe = false;
