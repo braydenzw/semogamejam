@@ -40,6 +40,7 @@ public class BeatManagerScript : MonoBehaviour
 
     public GameObject beatPrefab;
     public GameObject player;
+    public GameObject section;
     public TMP_Text scoreText;
 
     //bool so code can stop and start
@@ -79,7 +80,22 @@ public class BeatManagerScript : MonoBehaviour
         currentTime += Time.deltaTime;
         if (timeToPlay > 0)
         {
+<<<<<<< Updated upstream
             while (beatIndex < beatsList.Count && (beatsList[beatIndex].timestamp - timeToClick < currentTime))
+=======
+            currentTime += Time.deltaTime;
+             if (currentTime >= timeInterval)
+             {
+                 if (count % 4 == 0) SpawnObject(NoteDirection.up);
+                 if (count % 4 == 1) SpawnObject(NoteDirection.down);
+                 if (count % 4 == 2) SpawnObject(NoteDirection.left);
+                 if (count % 4 == 3) SpawnObject(NoteDirection.right);
+                 currentTime -= timeInterval;
+                 count++;
+                 timeToPlay -= Time.deltaTime;
+             }
+            while(beatIndex<beatsList.Count && beatsList[beatIndex].timestamp-timeToClick<currentTime)
+>>>>>>> Stashed changes
             {
                 Debug.Log(currentTime);
                 BeatData currentBeat = beatsList[beatIndex];
@@ -195,6 +211,7 @@ public class BeatManagerScript : MonoBehaviour
         // Handle Scoring
         if (beatScore == BeatScore.Failure)
         {
+<<<<<<< Updated upstream
             // Debug.Log("TEMP: FAILURE");
             player.GetComponent<Health>().Damage();
         }
@@ -203,6 +220,16 @@ public class BeatManagerScript : MonoBehaviour
             // Debug.Log("TEMP: SUCCESS");
             player.GetComponent<Player>().score++;
             scoreText.text = "Score: " + player.GetComponent<Player>().score;
+=======
+           // Debug.Log("TEMP: FAILURE");
+            section.GetComponent<SectionHealth>().sectionHealth-=5;
+        }
+        else if (beatScore == BeatScore.Success)
+        {
+           // Debug.Log("TEMP: SUCCESS");
+            section.GetComponent<SectionHealth>().sectionHealth+=5;
+            //scoreText.text = "Score: " + player.GetComponent<Player>().score;
+>>>>>>> Stashed changes
         }
     }
 }

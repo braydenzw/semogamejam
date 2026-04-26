@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3844729444695855526}
   - component: {fileID: 2780004806466351636}
   - component: {fileID: 2283868392912196994}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Beat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
